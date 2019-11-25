@@ -3,8 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Net.Http;
-using System.Web.Http;
-
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
@@ -23,7 +21,7 @@ namespace JumboAPIecht.Controllers
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
             //var url = "https://www.jumbo.com/spa-reine-mineraalwater-koolzuurvrij-75cl/727334FLS/";
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("kanker");
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Maaktnietuit");
             var html = await httpClient.GetStringAsync(url);
 
             var htmlDocument = new HtmlDocument();
@@ -40,8 +38,8 @@ namespace JumboAPIecht.Controllers
             return Task.Run(() => Productnaam(barcode)).Result;
         }
 
-        [HttpGet("code/{code}")]
-        public ActionResult<string> Get(string code)
+        [HttpPost("code/{code}")]
+        public ActionResult<string> Post(string code)
         {
             string resultaat = GetProductByCode(code);
             if (resultaat == null)

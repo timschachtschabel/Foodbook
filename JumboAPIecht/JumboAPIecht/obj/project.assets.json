@@ -8268,23 +8268,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joep\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\joepv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joep\\source\\repos\\JumboAPIecht\\JumboAPIecht\\JumboAPIecht.csproj",
+      "projectUniqueName": "C:\\Users\\joepv\\OneDrive\\DNS\\Documenten\\Git\\Proftaak2\\Proftaak2\\JumboAPIecht\\JumboAPIecht\\JumboAPIecht.csproj",
       "projectName": "JumboAPIecht",
-      "projectPath": "C:\\Users\\joep\\source\\repos\\JumboAPIecht\\JumboAPIecht\\JumboAPIecht.csproj",
-      "packagesPath": "C:\\Users\\joep\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joep\\source\\repos\\JumboAPIecht\\JumboAPIecht\\obj\\",
+      "projectPath": "C:\\Users\\joepv\\OneDrive\\DNS\\Documenten\\Git\\Proftaak2\\Proftaak2\\JumboAPIecht\\JumboAPIecht\\JumboAPIecht.csproj",
+      "packagesPath": "C:\\Users\\joepv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joepv\\OneDrive\\DNS\\Documenten\\Git\\Proftaak2\\Proftaak2\\JumboAPIecht\\JumboAPIecht\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\joep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joepv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
