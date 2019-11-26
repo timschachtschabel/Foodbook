@@ -8,3 +8,13 @@ C:\Users\joep\source\repos\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.d
 C:\Users\joep\source\repos\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\joep\source\repos\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.xml
 C:\Users\joep\source\repos\ScraperJumbo\ScraperJumbo\obj\Debug\ScraperJumbo.csproj.CopyComplete
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\ScraperJumbo.exe.config
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\ScraperJumbo.exe
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\ScraperJumbo.pdb
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.dll
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\bin\Debug\HtmlAgilityPack.xml
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\obj\Debug\ScraperJumbo.csprojAssemblyReference.cache
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\obj\Debug\ScraperJumbo.csproj.CopyComplete
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\obj\Debug\ScraperJumbo.exe
+C:\Users\joep\Documents\Nieuwe map\FoodBook\ScraperJumbo\ScraperJumbo\obj\Debug\ScraperJumbo.pdb
