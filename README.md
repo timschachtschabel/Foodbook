@@ -3,13 +3,27 @@ Food ordering system
 
 ## To Do List
 
-Startfase
+# Startfase
 
 - √ Samenwerkingscontract
 
-- Plan van aanpak groepsproject
+- √ Plan van aanpak groepsproject
 
-- Plan van aanpak individueel
+- √ Plan van aanpak individueel
 
 - Projectbeschrijving
+
+
+# Voorbereidingsfase
+
+- √ Use cases
+
+- Activiteitendiagrammen
+
+- Sequentiediagrammen
+
+- GIT handleiding
+
+- Vooronderzoek
+
 
