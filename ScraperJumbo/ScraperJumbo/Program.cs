@@ -13,15 +13,14 @@ namespace ScraperJumbo
 {
     class Program
     {
-        static string[] imgList = new string[20];
 
         static void Main(string[] args)
         {
             Console.WriteLine(GetProductName("5410013117001"));
             Console.WriteLine(GetProductPrice("5410013117001"));
-            //   Console.WriteLine(GetProductFoto("5410013117001"));
             Console.ReadLine();
         }
+
         public static async Task<string> Productnaam(string barcode)
         {
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
@@ -41,6 +40,7 @@ namespace ScraperJumbo
             return title;
 
         }
+
         public static async Task<string> Productprijs(string barcode)
         {
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
