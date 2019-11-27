@@ -8,7 +8,6 @@ namespace JumboLibrary
 {
     public static class Jumbo
     {
-        //Krijgt naam uit de titel van de website
         private static async Task<string> Productnaam(string barcode)
         {
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
@@ -23,12 +22,16 @@ namespace JumboLibrary
             string title = (from x in htmlDocument.DocumentNode.Descendants()
                             where x.Name.ToLower() == "title"
                             select x.InnerText).FirstOrDefault();
+            //Error handeling, dit betekend dat het product niet gevonden is
+            if (title == "Jumbo Groceries")
+            {
+                return "Product niet gevonden";
+            }
+            else return title;
 
-
-            return title;
 
         }
-        //Krijgt prijs vanaf website
+
         private static async Task<string> Productprijs(string barcode)
         {
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
@@ -43,22 +46,24 @@ namespace JumboLibrary
                             where x.Name == "span" && x.Attributes.Contains("class")
                             where x.Attributes["class"].Value == "jum-price-format"
                             select x.InnerText).FirstOrDefault();
-
-            return prijs;
+            // Error handeling, als de prijs niet gevonden kan worden
+            if (prijs != null)
+            {
+                return prijs;
+            }
+            else return "Prijs niet gevonden";
         }
 
 
-        //Callt de task en geeft het resultaat terug
+
         public static string GetProductPrice(string barcode)
         {
             return Task.Run(() => Productprijs(barcode)).Result;
         }
-
-        //Callt de task en geeft het resultaat terug
         public static string GetProductName(string barcode)
-        {  
+        {
+
             return Task.Run(() => Productnaam(barcode)).Result;
         }
-
     }
 }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
@@ -35,9 +30,13 @@ namespace ScraperJumbo
             string title = (from x in htmlDocument.DocumentNode.Descendants()
                             where x.Name.ToLower() == "title"
                             select x.InnerText).FirstOrDefault();
+            //Error handeling, dit betekend dat het product niet gevonden is
+            if (title == "Jumbo Groceries")
+            {
+                return "Product niet gevonden";
+            }
+            else return title;
 
-
-            return title;
 
         }
 
@@ -55,8 +54,12 @@ namespace ScraperJumbo
                         where x.Name == "span" && x.Attributes.Contains("class")
                         where x.Attributes["class"].Value == "jum-price-format"
                             select x.InnerText).FirstOrDefault();
-
-            return prijs;
+           // Error handeling, als de prijs niet gevonden kan worden
+            if (prijs != null)
+            {
+                return prijs;
+            }
+            else return "Prijs niet gevonden";
         }
 
         
