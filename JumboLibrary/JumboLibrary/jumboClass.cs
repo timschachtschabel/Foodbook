@@ -23,13 +23,11 @@ namespace JumboLibrary
                             where x.Name.ToLower() == "title"
                             select x.InnerText).FirstOrDefault();
             //Error handeling, dit betekend dat het product niet gevonden is
-            if (title == "Jumbo Groceries")
+            if (title == "Jumbo Groceries" || title.Contains("Boodschappen")) 
             {
                 return "Product niet gevonden";
             }
             else return title;
-
-
         }
 
         private static async Task<string> Productprijs(string barcode)
@@ -54,15 +52,12 @@ namespace JumboLibrary
             else return "Prijs niet gevonden";
         }
 
-
-
         public static string GetProductPrice(string barcode)
         {
             return Task.Run(() => Productprijs(barcode)).Result;
         }
         public static string GetProductName(string barcode)
         {
-
             return Task.Run(() => Productnaam(barcode)).Result;
         }
     }
