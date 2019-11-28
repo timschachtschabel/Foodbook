@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joep\\source\\repos\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {}
+    "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joep\\source\\repos\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {
+    "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joep\\source\\repos\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj",
+        "projectUniqueName": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj",
         "projectName": "Apptest2",
-        "projectPath": "C:\\Users\\joep\\source\\repos\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj",
+        "projectPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj",
         "packagesPath": "C:\\Users\\joep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joep\\source\\repos\\Apptest2\\Apptest2\\Apptest2\\obj\\",
+        "outputPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

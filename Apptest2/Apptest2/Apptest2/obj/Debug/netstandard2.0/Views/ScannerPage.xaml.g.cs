@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Apptest2.Views.ScannerPage.xaml", "Views/ScannerPage.xaml", typeof(global::Apptest2.Views.AboutPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Apptest2.Views.ScannerPage.xaml", "Views/ScannerPage.xaml", typeof(global::Apptest2.Views.ScannerPage))]
 
 namespace Apptest2.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ScannerPage.xaml")]
-    public partial class AboutPage : global::Xamarin.Forms.ContentPage {
+    public partial class ScannerPage : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AboutPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ScannerPage));
         }
     }
 }

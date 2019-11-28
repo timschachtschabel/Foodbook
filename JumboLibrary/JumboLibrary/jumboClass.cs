@@ -23,7 +23,7 @@ namespace JumboLibrary
                             where x.Name.ToLower() == "title"
                             select x.InnerText).FirstOrDefault();
             //Error handeling, dit betekend dat het product niet gevonden is
-            if (title == "Jumbo Groceries" || title.Contains("Boodschappen")) 
+            if (title == "Jumbo Groceries")
             {
                 return "Product niet gevonden";
             }
@@ -32,21 +32,26 @@ namespace JumboLibrary
 
         private static async Task<string> Productprijs(string barcode)
         {
-            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
-            //var url = "https://www.jumbo.com/spa-reine-mineraalwater-koolzuurvrij-75cl/727334FLS/";
+            //var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+            var url = "https://www.jumbo.com/spa-reine-mineraalwater-koolzuurvrij-75cl/727334FLS/";
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("maaktnietuit");
             var html = await httpClient.GetStringAsync(url);
 
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
-            string prijs = (from x in htmlDocument.DocumentNode.Descendants()
-                            where x.Name == "span" && x.Attributes.Contains("class")
-                            where x.Attributes["class"].Value == "jum-price-format"
-                            select x.InnerText).FirstOrDefault();
+            string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
+                               where x.Name == "span" && x.Attributes.Contains("class")
+                               where x.Attributes["class"].Value == "jum-price-format"
+                               select x.InnerText).FirstOrDefault();
             // Error handeling, als de prijs niet gevonden kan worden
-            if (prijs != null)
+            if (prijsruw != null)
             {
+                //Formattering
+                int count = prijsruw.Count();
+                int pos = count - 2;
+                string prijs = prijsruw.Insert(pos, ".");
+
                 return prijs;
             }
             else return "Prijs niet gevonden";
@@ -60,5 +65,6 @@ namespace JumboLibrary
         {
             return Task.Run(() => Productnaam(barcode)).Result;
         }
+
     }
 }
