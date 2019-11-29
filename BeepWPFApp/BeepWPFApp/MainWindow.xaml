@@ -24,6 +24,10 @@
         </ListView>
         <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="206,10,0,0"/>
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="223,33,0,0" Click="Button_Click"/>
+        <ItemsControl>
+            <TextBlock><Run Text="Test"/></TextBlock>
+            <TextBlock><Run Text="Jot"/></TextBlock>
 
+        </ItemsControl>
     </Grid>
 </Window>

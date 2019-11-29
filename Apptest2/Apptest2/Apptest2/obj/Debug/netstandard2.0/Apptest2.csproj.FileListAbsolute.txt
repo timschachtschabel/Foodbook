@@ -37,3 +37,7 @@ C:\Users\joep\Documents\Nieuwe map\FoodBook\Apptest2\Apptest2\Apptest2\obj\Debug
 C:\Users\joep\Documents\Nieuwe map\FoodBook\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Views\CartPage.xaml.g.cs
 C:\Users\joep\Documents\Nieuwe map\FoodBook\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Views\ListPage.xaml.g.cs
 C:\Users\joep\Documents\Nieuwe map\FoodBook\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\joepv\Documents\Proktaak\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Apptest2.csprojAssemblyReference.cache
+C:\Users\joepv\Documents\Proktaak\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Apptest2.dll
+C:\Users\joepv\Documents\Proktaak\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\ref\Apptest2.dll
+C:\Users\joepv\Documents\Proktaak\Apptest2\Apptest2\Apptest2\obj\Debug\netstandard2.0\Apptest2.pdb

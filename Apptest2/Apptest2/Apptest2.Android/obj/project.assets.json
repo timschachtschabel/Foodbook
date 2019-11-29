@@ -1911,24 +1911,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joep\\.nuget\\packages\\": {},
+    "C:\\Users\\joepv\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2.Android\\Apptest2.Android.csproj",
+      "projectUniqueName": "C:\\Users\\joepv\\Documents\\Proktaak\\Apptest2\\Apptest2\\Apptest2.Android\\Apptest2.Android.csproj",
       "projectName": "Apptest2.Android",
-      "projectPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2.Android\\Apptest2.Android.csproj",
-      "packagesPath": "C:\\Users\\joep\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2.Android\\obj\\",
+      "projectPath": "C:\\Users\\joepv\\Documents\\Proktaak\\Apptest2\\Apptest2\\Apptest2.Android\\Apptest2.Android.csproj",
+      "packagesPath": "C:\\Users\\joepv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joepv\\Documents\\Proktaak\\Apptest2\\Apptest2\\Apptest2.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\joep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joepv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1942,8 +1942,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {
-              "projectPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj"
+            "C:\\Users\\joepv\\Documents\\Proktaak\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj": {
+              "projectPath": "C:\\Users\\joepv\\Documents\\Proktaak\\Apptest2\\Apptest2\\Apptest2\\Apptest2.csproj"
             }
           }
         }

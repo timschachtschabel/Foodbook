@@ -21,20 +21,17 @@ namespace BeepWPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> productenPrijs = null;
-        List<string> productenNaam = null;
+
         
         public MainWindow()
         {
             InitializeComponent();
-            lstPrijs.ItemsSource = productenPrijs;
-            lstNaam.ItemsSource = productenNaam;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string naam = Jumbo.GetProductName(txtBox.Text);
-            string prijs = Jumbo.GetProductPrice(txtBox.Text);
+            var naam = Jumbo.GetProductName(txtBox.Text);
+            var prijs = Jumbo.GetProductPrice(txtBox.Text);
 
             lstPrijs.Items.Add(prijs);
             lstNaam.Items.Add(naam);
