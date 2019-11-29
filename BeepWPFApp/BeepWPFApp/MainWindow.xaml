@@ -15,7 +15,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="lstPrijs" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="101" Margin="101,47,0,0">
+        <ListView x:Name="lstPrijs" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="101" Margin="101,47,0,0" DataContextChanged="lstPrijs_DataContextChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

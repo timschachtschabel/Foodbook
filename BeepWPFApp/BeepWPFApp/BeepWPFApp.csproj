@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,32 +37,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dynamsoft.BarcodeGenerator">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeGenerator.dll</HintPath>
+    <Reference Include="Emgu.CV.UI, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Dynamsoft.BarcodeReader">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeReader.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.Camera">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Camera.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.Forms.Viewer">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Forms.Viewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.ImageCore">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.ImageCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.OCR">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.OCR.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.PDF">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.PDF.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.Twain">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Twain.dll</HintPath>
-    </Reference>
-    <Reference Include="Dynamsoft.WPF.Viewer">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.WPF.Viewer.dll</HintPath>
+    <Reference Include="Emgu.CV.World, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.World.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.17.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -69,8 +50,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="PQScan.BarcodeScanner">
+      <HintPath>..\..\..\..\Desktop\PQScan.BarcodeScanner.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -83,6 +68,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -136,5 +124,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="License-LGPL.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets'))" />
+  </Target>
 </Project>

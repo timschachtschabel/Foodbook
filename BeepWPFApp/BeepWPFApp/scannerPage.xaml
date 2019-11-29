@@ -8,7 +8,9 @@
       d:DesignHeight="480" d:DesignWidth="360"
       Title="scannerPage">
 
-    <Grid Background="White">
-        
+    <Grid Background="Purple">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="138,138,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Margin="104,128,0,116" Width="108" Name="picturebox" RenderTransformOrigin="0.238,0.973"/>
+
     </Grid>
 </Page>
