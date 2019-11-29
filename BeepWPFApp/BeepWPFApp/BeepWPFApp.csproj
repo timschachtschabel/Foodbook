@@ -35,6 +35,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dynamsoft.BarcodeGenerator">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.BarcodeReader">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.BarcodeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Camera">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Camera.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Forms.Viewer">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Forms.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.ImageCore">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.ImageCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.OCR">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.PDF">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.Twain">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.Twain.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamsoft.WPF.Viewer">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Dynamsoft\Dynamic .NET TWAIN 8.0\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.WPF.Viewer.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.17.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -62,6 +89,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="scannerPage.xaml.cs">
+      <DependentUpon>scannerPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="scannerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

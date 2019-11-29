@@ -32,9 +32,12 @@ namespace BeepWPFApp
         {
             var naam = Jumbo.GetProductName(txtBox.Text);
             var prijs = Jumbo.GetProductPrice(txtBox.Text);
-
             lstPrijs.Items.Add(prijs);
             lstNaam.Items.Add(naam);
+        }
+
+        private void lstPrijs_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
 
         }
     }
