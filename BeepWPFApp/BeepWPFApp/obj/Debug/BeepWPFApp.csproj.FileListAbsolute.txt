@@ -1,52 +1,20 @@
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe.config
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.pdb
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.xml
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.pdb
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\App.g.cs
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.cache
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.lref
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.baml
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.g.resources
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.Properties.Resources.resources
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.GenerateResource.cache
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x64\concrt140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x64\cvextern.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x64\msvcp140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x64\opencv_videoio_ffmpeg411_64.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x64\vcruntime140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x86\concrt140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x86\cvextern.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x86\msvcp140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x86\opencv_videoio_ffmpeg411.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\x86\vcruntime140.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.UI.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.World.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\PQScan.BarcodeScanner.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\ZedGraph.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.UI.xml
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.World.xml
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\ZedGraph.xml
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\de\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\es\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\fr\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\hu\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\it\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\ja\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\pt\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\ru\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\sk\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\sv\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\tr\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\zh-cn\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\bin\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.g.cs
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.baml
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe.config
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.pdb
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.dll
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.pdb
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\App.g.cs
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.cache
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.lref
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.baml
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.g.resources
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.Properties.Resources.resources
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.GenerateResource.cache
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
