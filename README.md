@@ -11,7 +11,7 @@ Food ordering system
 
 - √ Plan van aanpak individueel
 
-- Projectbeschrijving
+- √ Planning
 
 
 # Voorbereidingsfase
@@ -25,5 +25,7 @@ Food ordering system
 - GIT handleiding
 
 - Vooronderzoek
+
+
 
 
