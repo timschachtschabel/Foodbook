@@ -1,0 +1,16 @@
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.deps.json
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.dll
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.csprojAssemblyReference.cache
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.AssemblyInfoInputs.cache
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.AssemblyInfo.cs
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.pdb
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.dll
+C:\Users\joep\source\repos\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.pdb
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.deps.json
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.dll
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.pdb
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.csprojAssemblyReference.cache
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.AssemblyInfoInputs.cache
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.AssemblyInfo.cs
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.dll
+C:\Users\joep\Documents\Nieuwe map\FoodBook\JumboLibrary\JumboLibrary\obj\Debug\netstandard2.0\JumboLibrary.pdb
