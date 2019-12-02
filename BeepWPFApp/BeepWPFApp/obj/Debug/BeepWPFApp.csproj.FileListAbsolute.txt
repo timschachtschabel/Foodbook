@@ -18,3 +18,11 @@ C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.g.cs
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\App.g.cs
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.cache
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.lref
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
+C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
