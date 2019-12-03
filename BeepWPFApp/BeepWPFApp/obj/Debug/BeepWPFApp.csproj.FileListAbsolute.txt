@@ -19,6 +19,7 @@ C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
@@ -83,5 +84,7 @@ C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp
 C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\betaalschermpie.g.cs
 C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\betaalschermpie.baml
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

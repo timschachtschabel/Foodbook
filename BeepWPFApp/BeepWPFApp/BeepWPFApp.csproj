@@ -84,7 +84,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Compile Include="Jumbo.cs" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     <Compile Include="scannerPage.xaml.cs">
