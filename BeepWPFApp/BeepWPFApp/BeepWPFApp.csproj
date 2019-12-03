@@ -83,9 +83,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="betaalschermpie.xaml.cs">
-      <DependentUpon>betaalschermpie.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Jumbo.cs" />
     <Compile Include="scannerPage.xaml.cs">
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>

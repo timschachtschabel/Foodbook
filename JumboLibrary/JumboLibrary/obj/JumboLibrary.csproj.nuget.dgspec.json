@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj": {}
+    "C:\\Users\\joepv\\Documents\\Proktaak\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj": {
+    "C:\\Users\\joepv\\Documents\\Proktaak\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\joepv\\Documents\\Proktaak\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj",
         "projectName": "JumboLibrary",
-        "projectPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj",
-        "packagesPath": "C:\\Users\\joep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joep\\Documents\\Nieuwe map\\FoodBook\\JumboLibrary\\JumboLibrary\\obj\\",
+        "projectPath": "C:\\Users\\joepv\\Documents\\Proktaak\\JumboLibrary\\JumboLibrary\\JumboLibrary.csproj",
+        "packagesPath": "C:\\Users\\joepv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joepv\\Documents\\Proktaak\\JumboLibrary\\JumboLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\joep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joepv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

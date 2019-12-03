@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\
+=======
 C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\
+>>>>>>> master
 BeepWPFApp
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\App.xaml
+21404621439
+
+81439799199
+21-2079693803
+MainWindow.xaml;scannerPage.xaml;
+=======
 C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\App.xaml
 31053361331
 
 8-2016029698
 20-1955691101
 betaalschermpie.xaml;MainWindow.xaml;scannerPage.xaml;
+>>>>>>> master
 
 True
 
