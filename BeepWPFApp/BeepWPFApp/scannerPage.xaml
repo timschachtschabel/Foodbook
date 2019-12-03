@@ -8,39 +8,9 @@
       d:DesignHeight="480" d:DesignWidth="360"
       Title="scannerPage">
 
-    <Grid Background="#FFE8EBE4">
-        <Button Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="97,72,0,0" VerticalAlignment="Top" Width="170" Height="96">
-            <Button.Background>
-                <ImageBrush ImageSource="bleep.png"/>
-            </Button.Background>
-        </Button>
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="0,430,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" Fill="#FF9DC0BC"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="0,430,0,0" VerticalAlignment="Top" Width="120" Height="50" BorderBrush="#FF707070">
-            <Button.Background>
-                <ImageBrush ImageSource="list.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="120,430,0,0" VerticalAlignment="Top" Width="120" Height="50">
-            <Button.Background>
-                <ImageBrush ImageSource="barcode.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="240,430,0,0" VerticalAlignment="Top" Width="120" Height="50">
-            <Button.Background>
-                <ImageBrush ImageSource="shopping-cart.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="headers.png" Stretch="Uniform"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <ListBox HorizontalAlignment="Left" Height="172" Margin="10,235,0,0" VerticalAlignment="Top" Width="127"/>
-        <Label Content="BARCODE" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ListBox HorizontalAlignment="Left" Height="172" Margin="142,235,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label Content="PRODUCTNAAM" HorizontalAlignment="Left" Margin="142,209,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ListBox HorizontalAlignment="Left" Height="172" Margin="272,235,0,0" VerticalAlignment="Top" Width="78"/>
-        <Label Content="PRIJS" HorizontalAlignment="Left" Margin="272,209,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+    <Grid Background="Purple">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="138,138,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Margin="104,128,0,116" Width="108" Name="picturebox" RenderTransformOrigin="0.238,0.973"/>
 
     </Grid>
 </Page>
