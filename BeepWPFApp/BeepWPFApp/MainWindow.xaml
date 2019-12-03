@@ -16,7 +16,7 @@
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
-            <Label Content="Productnaam" Width="81" Height="24"/>
+            <Label Content="Productnaam" Height="24" Width="81"/>
         </ListView>
 
         <ListView x:Name="lstPrijs" HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="101" Margin="161,132,0,0" DataContextChanged="lstPrijs_DataContextChanged">
@@ -29,29 +29,29 @@
             </ListView.View>
             <Label Content="Prijs" Width="91"/>
         </ListView>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="274" Margin="19,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC"/>
-        <Rectangle Fill="#FF9DC0BC" HorizontalAlignment="Left" Height="50" Margin="0,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="352"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="274" Margin="19,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic"/>
+        <Rectangle Fill="#FF9DC0BC" HorizontalAlignment="Left" Height="50" Margin="0,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
         <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="298,47,0,0" Click="Button_Click" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4">
             <Button.Background>
                 <ImageBrush ImageSource="search.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="232,399,0,0" VerticalAlignment="Top" Width="120" Height="50" Foreground="{x:Null}" BorderBrush="#FF9DC0BC">
+        <Button Content="" HorizontalAlignment="Left" Margin="232,399,0,0" VerticalAlignment="Top" Width="120" Height="50" Foreground="{x:Null}" BorderBrush="#FF707070">
             <Button.Background>
                 <ImageBrush ImageSource="shopping-cart.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Content="&#xA;" HorizontalAlignment="Left" Margin="120,399,0,0" VerticalAlignment="Top" Width="120" Height="50" BorderBrush="#FF9DC0BC" Foreground="#FFD32020">
+        <Button Content="&#xA;" HorizontalAlignment="Left" Margin="120,399,0,0" VerticalAlignment="Top" Width="112" Height="50" BorderBrush="#FF707070" Foreground="#FFD32020">
             <Button.Background>
                 <ImageBrush ImageSource="barcode.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="0,399,0,0" VerticalAlignment="Top" Width="120" Height="50" BorderBrush="#FF9DC0BC">
+        <Button Content="" HorizontalAlignment="Left" Margin="0,399,0,0" VerticalAlignment="Top" Width="120" Height="50" BorderBrush="#FF707070">
             <Button.Background>
                 <ImageBrush ImageSource="list.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Rectangle HorizontalAlignment="Left" Height="47" Margin="1,0,0,0" Stroke="#FFC19A9A" VerticalAlignment="Top" Width="351" RenderTransformOrigin="0.521,1.872">
+        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="352" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
