@@ -6,35 +6,32 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Drawing;
-using System.IO;
-using System.Media;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Emgu.CV;
-using System.Windows.Navigation;
-
 using System.Windows.Shapes;
-
 
 namespace BeepWPFApp
 {
     /// <summary>
-    /// Interaction logic for scannerPage.xaml
+    /// Interaction logic for betaalschermpie.xaml
     /// </summary>
-    public partial class scannerPage : Page
+    public partial class betaalschermpie : Window
     {
-        public scannerPage()
+        public betaalschermpie()
         {
             InitializeComponent();
         }
-       
-        
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
-        
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
