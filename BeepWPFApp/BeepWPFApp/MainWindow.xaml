@@ -19,7 +19,7 @@
             <Label Content="Productnaam" Height="24" Width="81"/>
         </ListView>
 
-        <ListView x:Name="lstPrijs" HorizontalAlignment="Left" Height="238" VerticalAlignment="Top" Width="101" Margin="161,132,0,0" DataContextChanged="lstPrijs_DataContextChanged">
+        <ListView x:Name="lstPrijs" HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="101" Margin="161,132,0,0" DataContextChanged="lstPrijs_DataContextChanged">
 
 
             <ListView.View>
