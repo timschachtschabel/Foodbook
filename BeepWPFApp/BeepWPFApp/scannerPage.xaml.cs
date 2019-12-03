@@ -23,6 +23,8 @@ namespace BeepWPFApp
     public partial class scannerPage : Page
     {
         string nummer = null;
+        private string productnaam;
+        private string productprijs;
 
         public scannerPage()
         {
@@ -42,6 +44,7 @@ namespace BeepWPFApp
             {
                 e.Handled = true;
                 MessageBox.Show("I only accept numbers, sorry. :(", "This textbox says...");
+                nummer = null;
             }
             //Voeg keycode toe, zet keycode om naar cijfer
             else
@@ -49,7 +52,17 @@ namespace BeepWPFApp
                 nummer += e.Key;
                 int index = nummer.Length - 2;
                 nummer = nummer.Remove(index, 1);
-                MessageBox.Show(nummer);
+
+                if (nummer.Length == 13)
+                {
+                    productnaam = Jumbo.GetProductName(nummer);
+                    productprijs = Jumbo.GetProductPrice(nummer);
+                }
+                if (nummer.Length >= 13)
+                {
+                    nummer = null;
+                }
+
             }
         }
 
