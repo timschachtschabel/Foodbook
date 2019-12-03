@@ -18,6 +18,7 @@ C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
+<<<<<<< HEAD
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.g.cs
@@ -26,3 +27,58 @@ C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\Beep
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.lref
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
 C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
+=======
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csprojAssemblyReference.cache
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.g.cs
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.g.cs
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\App.g.cs
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.cache
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp_MarkupCompile.lref
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x64\concrt140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x64\cvextern.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x64\msvcp140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x64\opencv_videoio_ffmpeg411_64.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x64\vcruntime140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x86\concrt140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x86\cvextern.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x86\msvcp140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x86\opencv_videoio_ffmpeg411.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\x86\vcruntime140.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe.config
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.exe
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\BeepWPFApp.pdb
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.World.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\ZedGraph.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\Emgu.CV.World.xml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\JumboLibrary.pdb
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\ZedGraph.xml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\MainWindow.baml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\scannerPage.baml
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.g.resources
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.Properties.Resources.resources
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.GenerateResource.cache
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\betaalschermpie.g.cs
+C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\betaalschermpie.baml
+>>>>>>> master

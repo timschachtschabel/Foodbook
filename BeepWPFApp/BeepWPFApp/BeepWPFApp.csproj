@@ -87,6 +87,10 @@
     <Compile Include="scannerPage.xaml.cs">
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="betaalschermpie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -149,6 +153,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ideal.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pinlogo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="telefoon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" />
