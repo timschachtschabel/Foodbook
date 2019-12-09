@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,21 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV.UI, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <HintPath>..\packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.World, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <HintPath>..\packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.World.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.17.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="JumboLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="PQScan.BarcodeScanner">
-      <HintPath>..\..\..\..\Desktop\PQScan.BarcodeScanner.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -83,11 +75,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="betaalScherm.xaml.cs">
+      <DependentUpon>betaalScherm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="betaalschermpie.xaml.cs">
+      <DependentUpon>betaalschermpie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Jumbo.cs" />
+    <Compile Include="lstPage.xaml.cs">
+      <DependentUpon>lstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt.cs" />
     <Compile Include="scannerPage.xaml.cs">
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="betaalScherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="betaalschermpie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lstPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,32 +147,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="License-LGPL.txt" />
-    <Resource Include="list.png" />
+    <Resource Include="Resources\list.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="barcode.png" />
+    <Resource Include="Resources\barcode.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="shopping-cart.png" />
+    <Resource Include="Resources\shopping-cart.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bleep.png" />
+    <Resource Include="Resources\bleep.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="headers.png" />
+    <Resource Include="Resources\headers.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="search.png" />
+    <Resource Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ideal.gif" />
+    <Resource Include="Resources\ideal.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pinlogo.gif" />
+    <Resource Include="Resources\pinlogo.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="telefoon.jpg" />
+    <Resource Include="Resources\telefoon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.4.1.1.3497\build\EMGU.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+  </Target>
 </Project>
