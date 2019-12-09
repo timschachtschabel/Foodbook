@@ -4,56 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\obj\Debug\
-=======
-C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> master
-=======
-C:\Users\joepv\Desktop\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> Stashed changes
-=======
-C:\Users\joepv\Desktop\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> Stashed changes
+C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\obj\Debug\
 BeepWPFApp
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\joepv\Documents\Proktaak\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
+C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\App.xaml
+52099711119
 
-81439799199
-21-2079693803
-MainWindow.xaml;scannerPage.xaml;
-=======
-C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\App.xaml
-31053361331
+12-572789374
+18-570771163
+betaalScherm.xaml;betaalschermpie.xaml;lstPage.xaml;MainWindow.xaml;scannerPage.xaml;
 
-8-2016029698
-20-1955691101
-betaalschermpie.xaml;MainWindow.xaml;scannerPage.xaml;
->>>>>>> master
-=======
-C:\Users\joepv\Desktop\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
-
-7-684691292
-17643716183
-MainWindow.xaml;scannerPage.xaml;
->>>>>>> Stashed changes
-=======
-C:\Users\joepv\Desktop\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
-
-7-684691292
-17643716183
-MainWindow.xaml;scannerPage.xaml;
->>>>>>> Stashed changes
-
-True
+False
 

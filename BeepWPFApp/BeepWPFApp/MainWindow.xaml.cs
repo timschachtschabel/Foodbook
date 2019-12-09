@@ -22,23 +22,40 @@ namespace BeepWPFApp
     public partial class MainWindow : Window
     {
 
-        
+        scannerPage scan = new scannerPage();
+        betaalScherm betaal = new betaalScherm();
+        lstPage lst = new lstPage();
+
         public MainWindow()
         {
             InitializeComponent();
+            main.Content = new scannerPage();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var naam = Jumbo.GetProductName(txtBox.Text);
-            var prijs = Jumbo.GetProductPrice(txtBox.Text);
-            lstPrijs.Items.Add(prijs);
-            lstNaam.Items.Add(naam);
+
         }
 
         private void lstPrijs_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
+        }
+
+        private void btnScanner_Click(object sender, RoutedEventArgs e)
+        {
+            main.Content = scan;
+        }
+
+        private void btnCart_Click(object sender, RoutedEventArgs e)
+        {
+            main.Content = betaal;
+        }
+
+        private void BtnList_OnClick(object sender, RoutedEventArgs e)
+        {
+            main.Content = lst;
         }
     }
 }

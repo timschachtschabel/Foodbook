@@ -1,18 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Drawing;
-using System.IO;
-using System.Media;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+
 
 
 namespace BeepWPFApp
@@ -23,21 +14,14 @@ namespace BeepWPFApp
     public partial class scannerPage : Page
     {
         string nummer = null;
-        private string productnaam;
-        private string productprijs;
-
+        public  static List<Produkt> ProductenLijst = new List<Produkt>();
+      
         public scannerPage()
         {
             InitializeComponent();
-
-
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void Page_KeyDown(object sender, KeyEventArgs e)
+        public void Page_KeyDown_1(object sender, KeyEventArgs e)
         {
             //laat alleen nummers toe
             if (!char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
@@ -55,8 +39,15 @@ namespace BeepWPFApp
 
                 if (nummer.Length == 13)
                 {
-                    productnaam = Jumbo.GetProductName(nummer);
-                    productprijs = Jumbo.GetProductPrice(nummer);
+                    //maak nieuw product aan
+                    Produkt nieuwProdukt = new Produkt(Jumbo.GetProductPrice(nummer), Jumbo.GetProductName(nummer), nummer);
+
+                    //voeg product toe aan de lijst
+                    ProductenLijst.Add(nieuwProdukt);
+                    
+                    //push naar lijst
+                    lstPrijs.Items.Add(nieuwProdukt.Prijs);
+                    lstNaam.Items.Add(nieuwProdukt.Naam);
                 }
                 if (nummer.Length >= 13)
                 {
@@ -65,6 +56,22 @@ namespace BeepWPFApp
 
             }
         }
+        
+        
 
+        private void btnScan_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+//            foreach (var produkt in ProductenLijst)
+//            {
+//                lstPrijs.Items.Add(produkt.Prijs);
+//                lstNaam.Items.Add(produkt.Naam);
+//            }
+
+        }
     }
 }

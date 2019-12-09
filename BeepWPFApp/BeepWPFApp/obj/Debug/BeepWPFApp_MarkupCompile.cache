@@ -4,68 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\
-=======
-<<<<<<< HEAD
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\
-=======
-C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> master
->>>>>>> master
-=======
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> Stashed changes
-=======
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\
->>>>>>> Stashed changes
+C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\obj\Debug\
 BeepWPFApp
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\timsc\Documents\projects\Proftaak2\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
+C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\App.xaml
+52099711119
 
-61003353693
-20-649932461
-=======
-<<<<<<< HEAD
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
+111115255611
+18-570771163
+betaalScherm.xaml;betaalschermpie.xaml;lstPage.xaml;MainWindow.xaml;scannerPage.xaml;
 
-71133138731
-20350569706
->>>>>>> master
-MainWindow.xaml;scannerPage.xaml;
-=======
-C:\Users\Mees\Documents\git\Proftaak2\BeepWPFApp\BeepWPFApp\App.xaml
-31053361331
-
-7-2145814736
-20-1955691101
-betaalschermpie.xaml;MainWindow.xaml;scannerPage.xaml;
->>>>>>> master
-=======
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
-
-71133138731
-20350569706
-MainWindow.xaml;scannerPage.xaml;
->>>>>>> Stashed changes
-=======
-C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\App.xaml
-21404621439
-
-71133138731
-20350569706
-MainWindow.xaml;scannerPage.xaml;
->>>>>>> Stashed changes
-
-True
+False
 
