@@ -13,12 +13,15 @@ namespace BeepWPFApp
     /// </summary>
     public partial class scannerPage : Page
     {
+        //var aanmaken
         string nummer = null;
+        //list moet static anders gaat ie leeg na refresh.
         public  static List<Produkt> ProductenLijst = new List<Produkt>();
       
         public scannerPage()
         {
             InitializeComponent();
+
         }
 
         public void Page_KeyDown_1(object sender, KeyEventArgs e)
@@ -66,11 +69,14 @@ namespace BeepWPFApp
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-//            foreach (var produkt in ProductenLijst)
-//            {
-//                lstPrijs.Items.Add(produkt.Prijs);
-//                lstNaam.Items.Add(produkt.Naam);
-//            }
+            //clear om daarna toe te voegen, als ik dit niet doe gaat t mis
+            lstNaam.Items.Clear();
+            lstPrijs.Items.Clear();
+            foreach (var produkt in ProductenLijst)
+            {
+                lstPrijs.Items.Add(produkt.Prijs);
+                lstNaam.Items.Add(produkt.Naam);
+            }
 
         }
     }
