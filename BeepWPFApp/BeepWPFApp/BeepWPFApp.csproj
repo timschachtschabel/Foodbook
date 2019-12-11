@@ -78,8 +78,8 @@
     <Compile Include="betaalScherm.xaml.cs">
       <DependentUpon>betaalScherm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="betaalschermpie.xaml.cs">
-      <DependentUpon>betaalschermpie.xaml</DependentUpon>
+    <Compile Include="Favorieten.xaml.cs">
+      <DependentUpon>Favorieten.xaml</DependentUpon>
     </Compile>
     <Compile Include="Jumbo.cs" />
     <Compile Include="lstPage.xaml.cs">
@@ -93,7 +93,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="betaalschermpie.xaml">
+    <Page Include="Favorieten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
