@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
-C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\obj\Debug\
+<<<<<<< HEAD
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\
+=======
+C:\Users\joepv\OneDrive\DNS\Documenten\GitHub\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\
+>>>>>>> develop
 BeepWPFApp
 none
 false
 DEBUG;TRACE
-C:\Users\joepv\OneDrive\Bureaublad\BeepWPFApp\BeepWPFApp\App.xaml
-52099711119
+<<<<<<< HEAD
+C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\App.xaml
+5447550037
 
-111115255611
-18-570771163
-betaalScherm.xaml;betaalschermpie.xaml;lstPage.xaml;MainWindow.xaml;scannerPage.xaml;
+11-10695070
+181549968816
+betaalScherm.xaml;Favorieten.xaml;lstPage.xaml;MainWindow.xaml;scannerPage.xaml;
+=======
+C:\Users\joepv\OneDrive\DNS\Documenten\GitHub\Proftaak\BeepWPFApp\BeepWPFApp\App.xaml
+4-1843996069
+
+10-30543256
+16-1013989199
+betaalScherm.xaml;lstPage.xaml;MainWindow.xaml;scannerPage.xaml;
+>>>>>>> develop
 
 False
 

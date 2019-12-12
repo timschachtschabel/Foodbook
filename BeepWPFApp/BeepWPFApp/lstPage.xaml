@@ -10,20 +10,22 @@
 
 
     <Grid Height="480" Width="360">
-        <Rectangle HorizontalAlignment="Left" Height="480" Margin="1,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="351" Fill="#FFE8EBE4"/>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="274" Margin="19,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="298,47,0,0" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4">
+        <Rectangle HorizontalAlignment="Left" Height="480" Margin="1,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" Fill="#FFE8EBE4"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="274" Margin="19,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic" />
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="298,47,0,0" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/search.png"/>
             </Button.Background>
         </Button>
-        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="352" RenderTransformOrigin="0.521,1.872">
+        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="212" Margin="20,117,0,0"/>
+        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="212" Margin="20,117,0,0" SelectionMode="Extended" SelectionChanged="lstNaam_SelectionChanged"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="250" Margin="237,117,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="favorietbutton" Content="Toevoegen aan favorieten" HorizontalAlignment="Left" Margin="194,372,0,0" VerticalAlignment="Top" Width="143" Click="favorietbutton_Click"/>
+        <Button Content="Open Favorieten" HorizontalAlignment="Left" Margin="20,372,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_1"/>
 
 
     </Grid>
