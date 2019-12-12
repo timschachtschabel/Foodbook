@@ -115,6 +115,9 @@
     <Compile Include="betaalScherm.xaml.cs">
       <DependentUpon>betaalScherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Favorieten.xaml.cs">
+      <DependentUpon>Favorieten.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Jumbo.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
@@ -124,6 +127,10 @@
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>
     <Page Include="betaalScherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Favorieten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
