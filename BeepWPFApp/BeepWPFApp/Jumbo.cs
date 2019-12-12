@@ -1,24 +1,24 @@
-﻿using System;
-using HtmlAgilityPack; //Program heeft HTMLAgilityPack als dependency, installeren via NuGet
-using System.Net.Http;
+﻿using HtmlAgilityPack; //Program heeft HTMLAgilityPack als dependency, installeren via NuGet
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+using System.Net;
 
 namespace BeepWPFApp
 {
     class Jumbo
     {
-        private static async Task<string> Productnaam(string barcode)
+        public static string GetProductName(string barcode)
         {
+            string htmlcode;
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
-            //var url = "https://www.jumbo.com/spa-reine-mineraalwater-koolzuurvrij-75cl/727334FLS/";
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("maaktnietuit");
-            var html = await httpClient.GetStringAsync(url);
-
+            using (WebClient wc = new WebClient())
+            {
+                wc.Headers["User-Agent"] = "maaktnietuit";
+                htmlcode = wc.DownloadString(url);
+            }
             var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(html);
+            htmlDocument.LoadHtml(htmlcode);
 
             string title = (from x in htmlDocument.DocumentNode.Descendants()
                             where x.Name.ToLower() == "title"
@@ -31,16 +31,18 @@ namespace BeepWPFApp
             else return title;
         }
 
-        private static async Task<double> Productprijs(string barcode)
+        public static double GetProductprijs(string barcode)
         {
+            string htmlcode;
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
-            //var url = "https://www.jumbo.com/spa-reine-mineraalwater-koolzuurvrij-75cl/727334FLS/";
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("maaktnietuit");
-            var html = await httpClient.GetStringAsync(url);
+            using (WebClient wc = new WebClient())
+            {
+                wc.Headers["User-Agent"] = "maaktnietuit";
+                htmlcode = wc.DownloadString(url);
+            }
 
             var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(html);
+            htmlDocument.LoadHtml(htmlcode);
 
             string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
@@ -60,14 +62,62 @@ namespace BeepWPFApp
             }
         }
 
-        public static double GetProductPrice(string barcode)
+        public static double GetProductPromotie(string barcode)
         {
-            double resultaat = Task.Run(() => Productprijs(barcode)).Result;
-            return resultaat;
+            string htmlcode;
+            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+
+            using (WebClient wc = new WebClient())
+            {
+                wc.Headers["User-Agent"] = "maaktnietuit";
+                htmlcode = wc.DownloadString(url);
+            }
+            ;
+
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(htmlcode);
+
+            string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
+                where x.Name == "span" && x.Attributes.Contains("class")
+                where x.Attributes["class"].Value == "jum-price-format jum-was-price"
+                               select x.InnerText).FirstOrDefault();
+            // Error handeling, als de prijs niet gevonden kan worden
+            if (prijsruw == null) return 0.0;
+            else
+            {
+                //Formattering
+                var count = prijsruw.Count();
+                var pos = count - 2;
+                var prijs = prijsruw.Insert(pos, ".");
+
+                double echteprijs = Convert.ToDouble(prijs);
+                return echteprijs;
+            }
+
         }
-        public static string GetProductName(string barcode)
+
+        public static List<string> GetAllergie(string barcode)
         {
-            return Task.Run(() => Productnaam(barcode)).Result;
+            string htmlcode;
+            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+
+            // var url = "https://www.jumbo.com/jumbo-witte-bollen-10-stuks/300211STK/";
+            using (WebClient wc = new WebClient())
+            {
+                wc.Headers["User-Agent"] = "maaktnietuit";
+                htmlcode = wc.DownloadString(url);
+            }
+
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(htmlcode);
+
+            IEnumerable<string> listItemHtml = htmlDocument.DocumentNode.SelectNodes(
+                    @"//div[@class='jum-product-allergy-info jum-product-info-item col-12']/ul/li")
+                .Select(li => li.InnerHtml);
+
+            List<string> list = listItemHtml.ToList();
+
+            return list;
         }
     }
 }

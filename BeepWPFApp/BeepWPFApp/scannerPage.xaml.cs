@@ -21,7 +21,7 @@ namespace BeepWPFApp
         public scannerPage()
         {
             InitializeComponent();
-
+            
         }
 
         public void Page_KeyDown_1(object sender, KeyEventArgs e)
@@ -43,7 +43,7 @@ namespace BeepWPFApp
                 if (nummer.Length == 13)
                 {
                     //maak nieuw product aan
-                    Produkt nieuwProdukt = new Produkt(Jumbo.GetProductPrice(nummer), Jumbo.GetProductName(nummer), nummer);
+                    Produkt nieuwProdukt = new Produkt(Jumbo.GetProductprijs(nummer), Jumbo.GetProductName(nummer), nummer);
 
                     //voeg product toe aan de lijst
                     ProductenLijst.Add(nieuwProdukt);
@@ -64,7 +64,12 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
+            List<string> waarschuwingen = Jumbo.GetAllergie("8712800006046");
 
+            foreach (var VARIABLE in waarschuwingen)
+            {
+                lstNaam.Items.Add(VARIABLE);
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
