@@ -118,6 +118,9 @@
     <Compile Include="Favorieten.xaml.cs">
       <DependentUpon>Favorieten.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InlogScherm.xaml.cs">
+      <DependentUpon>InlogScherm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Jumbo.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Favorieten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InlogScherm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using AutoUpdaterDotNET;
+
 
 namespace BeepWPFApp
 {
@@ -16,9 +16,9 @@ namespace BeepWPFApp
         public MainWindow()
         {
             InitializeComponent();
-            main.Content = new scannerPage();
+            main.Content = new InlogScherm();
 
-            AutoUpdater.Start("http://192.168.178.33/update.xaml");
+            
 
         }
 
