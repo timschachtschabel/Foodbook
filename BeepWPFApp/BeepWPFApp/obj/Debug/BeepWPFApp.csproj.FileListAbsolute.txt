@@ -214,3 +214,5 @@ C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.cs
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.csproj.CopyComplete
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.exe
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\DetailsPage.g.cs
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\DetailsPage.baml

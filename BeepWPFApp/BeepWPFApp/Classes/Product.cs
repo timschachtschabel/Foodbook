@@ -1,7 +1,6 @@
 ﻿using HtmlAgilityPack; //Program heeft HTMLAgilityPack als dependency, installeren via NuGet
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Net;
 
@@ -49,6 +48,11 @@ namespace BeepWPFApp
                 return "notfound";
             } 
             return title;
+        }
+
+        public override string ToString()
+        {
+            return Naam;
         }
 
         private static double GetProductprijs(string barcode)

@@ -111,17 +111,26 @@
     <Compile Include="betaalScherm.xaml.cs">
       <DependentUpon>betaalScherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetailsPage.xaml.cs">
+      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\Allergie.cs" />
     <Compile Include="Favorieten.xaml.cs">
       <DependentUpon>Favorieten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="scannerPage.xaml.cs">
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\User.cs" />
     <Page Include="betaalScherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +230,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

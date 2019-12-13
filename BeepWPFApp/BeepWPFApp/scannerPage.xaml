@@ -26,7 +26,7 @@
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="172" Margin="10,235,0,0" VerticalAlignment="Top" Width="275" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="172" Margin="10,235,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" Width="275" Grid.ColumnSpan="2" MouseDoubleClick="lstNaam_MouseDoubleClick"/>
         <Label Content="PRODUCTNAAM" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="218" Grid.ColumnSpan="2"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="172" Margin="255.76,235,0,0" VerticalAlignment="Top" Width="42" Grid.Column="1"/>
         <Label Content="PRIJS" HorizontalAlignment="Left" Margin="255.76,209,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>

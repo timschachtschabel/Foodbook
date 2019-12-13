@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace BeepWPFApp
 {
@@ -21,6 +25,8 @@ namespace BeepWPFApp
             InitializeComponent();
         }
 
+        //Capture barcode
+        //Get info via barcode
         public void Page_KeyDown_1(object sender, KeyEventArgs e)
         {
             //laat alleen nummers toe
@@ -28,7 +34,7 @@ namespace BeepWPFApp
                 (e.Key == Key.Space))
             {
                 e.Handled = true;
-                MessageBox.Show("I only accept numbers, sorry. :(", "This textbox says...");
+                MessageBox.Show("Alleen nummers, sorry. :(", "Error!");
                 _nummer = null;
             }
             //Voeg keycode toe, zet keycode om naar cijfer
@@ -54,7 +60,11 @@ namespace BeepWPFApp
 
                         //push naar lijst
                         lstPrijs.Items.Add(nieuwProdukt.Prijs);
-                        lstNaam.Items.Add(nieuwProdukt.Naam);
+                        if (User.IsAllergic(nieuwProdukt))
+                        {
+                            lstNaam.Items.Add(new ListBoxItem {Content = nieuwProdukt, Background = Brushes.Red});
+                        }
+                        else lstNaam.Items.Add(nieuwProdukt);
                     }
                 }
 
@@ -67,6 +77,7 @@ namespace BeepWPFApp
         {
         }
 
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             //clear om daarna toe te voegen, als ik dit niet doe gaat t mis
@@ -75,7 +86,49 @@ namespace BeepWPFApp
             foreach (var product in ProductenLijst)
             {
                 lstPrijs.Items.Add(product.Prijs);
-                lstNaam.Items.Add(product.Naam);
+                lstNaam.Items.Add(product);
+            }
+        }
+
+        //Krijg product informatie
+        private void lstNaam_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Product product = lstNaam.SelectedItem as Product;
+
+            //Maak nieuwe window aan
+            var mw = Application.Current.Windows
+                .Cast<Window>()
+                .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            if (product != null)
+            {
+                DetailsPage detail = new DetailsPage();
+
+                //Check of product null is en of de lijst wel iets bevat
+                //Daarna info pushen
+                if (product.Ingredient.Any())
+                {
+                    foreach (var VARIABLE in product.Ingredient)
+                    {
+                        detail.ingredientenLstBox.Items.Add(VARIABLE);
+                    }
+                }
+                else detail.ingredientenLstBox.Items.Add("Dit product heeft geen ingredienten!");
+
+
+                if (product.Allergie.Any())
+                {
+                    foreach (var VARIABLE in product.Allergie)
+                    {
+                        detail.AllergieLstBox.Items.Add(VARIABLE);
+                    }
+                }
+                else detail.AllergieLstBox.Items.Add("Dit product heeft geen Allergie informatie!");
+
+                //Heb je wel iets geselecteerd?
+                if (lstNaam.SelectedItem != null)
+                {
+                    mw.main.Content = detail;
+                }
             }
         }
     }
