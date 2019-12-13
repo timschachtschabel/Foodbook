@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-
-
 namespace BeepWPFApp
 {
     /// <summary>
-    /// Interaction logic for scannerPage.xaml
+    ///     Interaction logic for scannerPage.xaml
     /// </summary>
     public partial class scannerPage : Page
     {
-        //var aanmaken
-        string _nummer = null;
         //list moet static anders gaat ie leeg na refresh.
-        public  static List<Product> ProductenLijst = new List<Product>();
-      
+        public static List<Product> ProductenLijst = new List<Product>();
+
+        //var aanmaken
+        private string _nummer;
+
         public scannerPage()
         {
             InitializeComponent();
@@ -26,7 +24,8 @@ namespace BeepWPFApp
         public void Page_KeyDown_1(object sender, KeyEventArgs e)
         {
             //laat alleen nummers toe
-            if (!char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+            if ((!char.IsDigit((char) KeyInterop.VirtualKeyFromKey(e.Key)) & (e.Key != Key.Back)) |
+                (e.Key == Key.Space))
             {
                 e.Handled = true;
                 MessageBox.Show("I only accept numbers, sorry. :(", "This textbox says...");
@@ -44,7 +43,7 @@ namespace BeepWPFApp
                     //maak nieuw product aan
                     Product nieuwProdukt = new Product(_nummer);
 
-                    if (nieuwProdukt.Naam=="notfound")
+                    if (nieuwProdukt.Naam == "notfound")
                     {
                         MessageBox.Show("Product niet gevonden", "error");
                     }
@@ -57,21 +56,15 @@ namespace BeepWPFApp
                         lstPrijs.Items.Add(nieuwProdukt.Prijs);
                         lstNaam.Items.Add(nieuwProdukt.Naam);
                     }
-                    
-                }
-                if (_nummer.Length >= 13)
-                {
-                    _nummer = null;
                 }
 
+                if (_nummer.Length >= 13) _nummer = null;
             }
         }
-        
-        
+
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -84,7 +77,6 @@ namespace BeepWPFApp
                 lstPrijs.Items.Add(product.Prijs);
                 lstNaam.Items.Add(product.Naam);
             }
-
         }
     }
 }
