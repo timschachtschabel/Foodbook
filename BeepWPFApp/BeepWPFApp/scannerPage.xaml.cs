@@ -14,14 +14,13 @@ namespace BeepWPFApp
     public partial class scannerPage : Page
     {
         //var aanmaken
-        string nummer = null;
+        string _nummer = null;
         //list moet static anders gaat ie leeg na refresh.
-        public  static List<Produkt> ProductenLijst = new List<Produkt>();
+        public  static List<Product> ProductenLijst = new List<Product>();
       
         public scannerPage()
         {
             InitializeComponent();
-            
         }
 
         public void Page_KeyDown_1(object sender, KeyEventArgs e)
@@ -31,30 +30,38 @@ namespace BeepWPFApp
             {
                 e.Handled = true;
                 MessageBox.Show("I only accept numbers, sorry. :(", "This textbox says...");
-                nummer = null;
+                _nummer = null;
             }
             //Voeg keycode toe, zet keycode om naar cijfer
             else
             {
-                nummer += e.Key;
-                int index = nummer.Length - 2;
-                nummer = nummer.Remove(index, 1);
+                _nummer += e.Key;
+                int index = _nummer.Length - 2;
+                _nummer = _nummer.Remove(index, 1);
 
-                if (nummer.Length == 13)
+                if (_nummer.Length == 13)
                 {
                     //maak nieuw product aan
-                    Produkt nieuwProdukt = new Produkt(Jumbo.GetProductprijs(nummer), Jumbo.GetProductName(nummer), nummer);
+                    Product nieuwProdukt = new Product(_nummer);
 
-                    //voeg product toe aan de lijst
-                    ProductenLijst.Add(nieuwProdukt);
+                    if (nieuwProdukt.Naam=="notfound")
+                    {
+                        MessageBox.Show("Product niet gevonden", "error");
+                    }
+                    else
+                    {
+                        //voeg product toe aan de lijst
+                        ProductenLijst.Add(nieuwProdukt);
+
+                        //push naar lijst
+                        lstPrijs.Items.Add(nieuwProdukt.Prijs);
+                        lstNaam.Items.Add(nieuwProdukt.Naam);
+                    }
                     
-                    //push naar lijst
-                    lstPrijs.Items.Add(nieuwProdukt.Prijs);
-                    lstNaam.Items.Add(nieuwProdukt.Naam);
                 }
-                if (nummer.Length >= 13)
+                if (_nummer.Length >= 13)
                 {
-                    nummer = null;
+                    _nummer = null;
                 }
 
             }
@@ -64,12 +71,7 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
-            List<string> waarschuwingen = Jumbo.GetAllergie("8712800006046");
 
-            foreach (var VARIABLE in waarschuwingen)
-            {
-                lstNaam.Items.Add(VARIABLE);
-            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -77,10 +79,10 @@ namespace BeepWPFApp
             //clear om daarna toe te voegen, als ik dit niet doe gaat t mis
             lstNaam.Items.Clear();
             lstPrijs.Items.Clear();
-            foreach (var produkt in ProductenLijst)
+            foreach (var product in ProductenLijst)
             {
-                lstPrijs.Items.Add(produkt.Prijs);
-                lstNaam.Items.Add(produkt.Naam);
+                lstPrijs.Items.Add(product.Prijs);
+                lstNaam.Items.Add(product.Naam);
             }
 
         }

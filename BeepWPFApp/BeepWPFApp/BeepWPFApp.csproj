@@ -81,10 +81,6 @@
     <Reference Include="HtmlAgilityPack, Version=1.11.17.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="JumboLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\JumboLibrary\JumboLibrary\bin\Debug\netstandard2.0\JumboLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -118,11 +114,10 @@
     <Compile Include="Favorieten.xaml.cs">
       <DependentUpon>Favorieten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Jumbo.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Produkt.cs" />
     <Compile Include="scannerPage.xaml.cs">
       <DependentUpon>scannerPage.xaml</DependentUpon>
     </Compile>
