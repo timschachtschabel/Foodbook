@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace BeepWPFApp
 {
@@ -34,6 +35,8 @@ namespace BeepWPFApp
 
         public static bool  IsAllergic(Product product)
         {
+            AllergieList = AllergieString.Split(',').ToList();
+
             if (!AllergieList.Any())
             {
                 return false;
