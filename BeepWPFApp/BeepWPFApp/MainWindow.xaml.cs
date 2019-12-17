@@ -2,8 +2,8 @@
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Navigation;
-using AutoUpdaterDotNET;
 using BeepWPFApp.Enum;
+
 
 namespace BeepWPFApp
 {
@@ -24,8 +24,9 @@ namespace BeepWPFApp
         public MainWindow()
         {
             InitializeComponent();
-            main.Content = new scannerPage();
-            AutoUpdater.Start("http://192.168.178.33/update.xaml");
+            main.Content = new InlogScherm();
+
+            
 
         }
 
