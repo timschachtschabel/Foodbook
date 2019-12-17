@@ -47,8 +47,6 @@ namespace BeepWPFApp
             lstFav.Add(lstNaam.SelectedItem.ToString());
 
 
-
-
         }
 
         private void lstNaam_SelectionChanged(object sender, SelectionChangedEventArgs e)
