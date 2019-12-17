@@ -2,8 +2,8 @@
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Navigation;
-using AutoUpdaterDotNET;
 using BeepWPFApp.Enum;
+
 
 namespace BeepWPFApp
 {
@@ -24,20 +24,12 @@ namespace BeepWPFApp
         public MainWindow()
         {
             InitializeComponent();
-            main.Content = new scannerPage();
-            AutoUpdater.Start("http://192.168.178.33/update.xaml");
+            main.Content = new InlogScherm();
 
-            allergie.Add(Allergien.Lactose);
-            CreateUser("Joep","Diessen",16,allergie);
+            
+
         }
 
-        public void CreateUser(string Naam, string Achternaam, int leeftijd, List<string> allergieList)
-        {
-            User.Voornaam = Naam;
-            User.Achternaam = Achternaam;
-            User.Leeftijd = leeftijd;
-            User.AllergieList = allergieList;
-        }
 
 
         private void btnScanner_Click(object sender, RoutedEventArgs e)
