@@ -19,9 +19,7 @@ namespace BeepWPFApp
     public partial class lstPage : Page
     {
         public static List<string> lstFav = new List<string>();
-        string SelectedItemText;
-        int SelectedIndex;
-        
+
         public lstPage()
         {
             

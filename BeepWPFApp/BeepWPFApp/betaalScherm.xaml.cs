@@ -20,7 +20,7 @@ namespace BeepWPFApp
         {
             List<double> prijzen = new List<double>();
 
-            foreach (Produkt nieuwProdukt in scannerPage.ProductenLijst)
+            foreach (Product nieuwProdukt in scannerPage.ProductenLijst)
             {
                 prijzen.Add(nieuwProdukt.Prijs);
             }

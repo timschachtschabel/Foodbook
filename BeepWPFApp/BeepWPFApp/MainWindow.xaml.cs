@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Navigation;
+using BeepWPFApp.Enum;
 
 
 namespace BeepWPFApp
@@ -9,9 +13,13 @@ namespace BeepWPFApp
     public partial class MainWindow : Window
     {
 
+        
         scannerPage scan = new scannerPage();
         betaalScherm betaal = new betaalScherm();
         lstPage lst = new lstPage();
+        static DetailsPage details = new DetailsPage();
+        public static List<string> allergie = new List<string>();
+
 
         public MainWindow()
         {
@@ -20,17 +28,18 @@ namespace BeepWPFApp
 
             
 
+            allergie.Add(Allergien.Lactose);
+            CreateUser("Joep","Diessen",16,allergie);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void CreateUser(string Naam, string Achternaam, int leeftijd, List<string> allergieList)
         {
-
+            User.Voornaam = Naam;
+            User.Achternaam = Achternaam;
+            User.Leeftijd = leeftijd;
+            User.AllergieList = allergieList;
         }
 
-        private void lstPrijs_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
 
         private void btnScanner_Click(object sender, RoutedEventArgs e)
         {
