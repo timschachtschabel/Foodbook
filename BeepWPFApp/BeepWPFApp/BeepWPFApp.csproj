@@ -121,7 +121,6 @@
     <Compile Include="InlogScherm.xaml.cs">
       <DependentUpon>InlogScherm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Jumbo.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
