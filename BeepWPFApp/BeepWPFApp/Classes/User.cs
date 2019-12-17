@@ -11,6 +11,7 @@ namespace BeepWPFApp
         public static int Leeftijd { get; set; }
         public static string Voornaam { get; set; }
         public static string Achternaam { get; set; }
+
         public static List<string> AllergieList = new List<string>();
 
 //        //maak allergisch

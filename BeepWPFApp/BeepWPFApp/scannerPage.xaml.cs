@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using BeepWPFApp.Classes;
+using BeepWPFApp.Enum;
 
 namespace BeepWPFApp
 {
@@ -75,6 +77,12 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
+            List<string> allergien = new List<string>();
+            allergien.Add(Allergien.Lactose);
+            allergien.Add(Allergien.Lupine);
+
+            Database db = new Database();
+            db.CreateUser("kanker", "jot", "Joepvandiessen@gmail.com1", allergien);
         }
 
 
