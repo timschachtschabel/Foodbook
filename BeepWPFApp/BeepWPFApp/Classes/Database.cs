@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 using BeepWPFApp.Enum;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Cms;
@@ -13,11 +14,11 @@ namespace BeepWPFApp.Classes
     {
         static string Server = "194.171.226.182";
         private static string DB = "bleep";
-        private static string User = "joep";
+        private static string UserName = "joep";
         private static string Password = "yeet";
 
 
-       static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + User + ";" + "PASSWORD=" + Password + ";";
+       static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
 
         MySqlConnection connection = new MySqlConnection(connectionString);
         public Database()
@@ -63,12 +64,13 @@ namespace BeepWPFApp.Classes
             }
             catch (MySqlException e)
             {
+                MessageBox.Show(e.ToString());
                 // ex.message
                 return false;
             }
         }
 
-        public void CreateUser(string naam, string password, string email, List<string>Allergie)
+        public bool CreateUser(string naam, string password, string email, List<string>Allergie)
         {
             try
             {
@@ -90,12 +92,45 @@ namespace BeepWPFApp.Classes
 
                 //opruimen 
                 CloseConnection();
+                return true;
             }
             catch (MySqlException e)
             {
                 MessageBox.Show(e.ToString());
+                return false;
             }
 
+        }
+
+        public bool CheckUser(string naam, string password)
+        {
+            try
+            {
+                //Verbind
+                OpenConnection();
+                string cmd = $"SELECT * from bl_user WHERE Name = '{naam}' and password = '{password}'";
+
+                //write Query
+                MySqlCommand command = new MySqlCommand(cmd, connection);
+                MySqlDataReader result = command.ExecuteReader();
+
+                //Voeg data toe
+                while (result.Read())
+                {
+                    User.AllergieString = result.GetString("Allergies");
+                    User.Naam = result.GetString("Name");
+                    User.Email = result.GetString("Email");
+                    User.CreationTime = result.GetString("Date_created");
+                }
+
+                CloseConnection();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
         }
     }
 }

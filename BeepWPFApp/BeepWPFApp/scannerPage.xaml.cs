@@ -82,7 +82,7 @@ namespace BeepWPFApp
             allergien.Add(Allergien.Lupine);
 
             Database db = new Database();
-            db.CreateUser("kanker", "jot", "Joepvandiessen@gmail.com1", allergien);
+            db.CheckUser("joep", "123");
         }
 
 
