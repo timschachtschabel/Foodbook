@@ -28,17 +28,8 @@ namespace BeepWPFApp
 
             
 
-            allergie.Add(Allergien.Lactose);
-            CreateUser("Joep","Diessen",16,allergie);
         }
 
-        public void CreateUser(string Naam, string Achternaam, int leeftijd, List<string> allergieList)
-        {
-            User.Voornaam = Naam;
-            User.Achternaam = Achternaam;
-            User.Leeftijd = leeftijd;
-            User.AllergieList = allergieList;
-        }
 
 
         private void btnScanner_Click(object sender, RoutedEventArgs e)

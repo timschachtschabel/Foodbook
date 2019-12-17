@@ -190,8 +190,18 @@ C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.ex
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\BeepWPFApp.pdb
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\DetailsPage.g.cs
 C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\obj\Debug\DetailsPage.baml
+<<<<<<< HEAD
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\Google.Protobuf.dll
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\MySql.Data.dll
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\Renci.SshNet.dll
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\Google.Protobuf.xml
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\MySql.Data.xml
+C:\Users\joepv\Documents\Prokftaak\BeepWPFApp\BeepWPFApp\bin\Debug\Renci.SshNet.xml
+=======
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\AutoUpdater.NET.dll
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\AutoUpdater.NET.pdb
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\bin\Debug\AutoUpdater.NET.xml
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\InlogScherm.g.cs
 C:\Users\Mees\OneDrive - FHICT\Proftaak\Proftaak\BeepWPFApp\BeepWPFApp\obj\Debug\InlogScherm.baml
+>>>>>>> origin/inlogScherm
