@@ -77,12 +77,8 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
-            List<string> allergien = new List<string>();
-            allergien.Add(Allergien.Lactose);
-            allergien.Add(Allergien.Lupine);
 
-            Database db = new Database();
-            db.CheckUser("joep", "123");
+
         }
 
 

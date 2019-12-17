@@ -102,7 +102,7 @@ namespace BeepWPFApp.Classes
 
         }
 
-        public bool CheckUser(string naam, string password)
+        public void CheckUser(string naam, string password)
         {
             try
             {
@@ -114,22 +114,28 @@ namespace BeepWPFApp.Classes
                 MySqlCommand command = new MySqlCommand(cmd, connection);
                 MySqlDataReader result = command.ExecuteReader();
 
-                //Voeg data toe
-                while (result.Read())
+                if (result.HasRows)
                 {
-                    User.AllergieString = result.GetString("Allergies");
-                    User.Naam = result.GetString("Name");
-                    User.Email = result.GetString("Email");
-                    User.CreationTime = result.GetString("Date_created");
+                    while (result.Read())
+                    {
+                        User.AllergieString = result.GetString("Allergies");
+                        User.Naam = result.GetString("Name");
+                        User.Email = result.GetString("Email");
+                        User.CreationTime = result.GetString("Date_created");
+                        MessageBox.Show(User.Naam);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
                 }
 
+
                 CloseConnection();
-                return true;
             }
             catch (MySqlException e)
             {
                 MessageBox.Show(e.ToString());
-                return false;
             }
         }
     }
