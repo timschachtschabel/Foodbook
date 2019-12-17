@@ -24,6 +24,8 @@ namespace BeepWPFApp
         {
             
             InitializeComponent();
+            
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,15 +51,6 @@ namespace BeepWPFApp
 
         }
 
-        private void lstNaam_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void listbox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

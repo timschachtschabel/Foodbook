@@ -19,6 +19,8 @@ namespace BeepWPFApp
     /// </summary>
     public partial class Favorieten : Window
     {
+        public static List<string> lstLijst = new List<string>();
+
         public Favorieten()
         {
             InitializeComponent();
@@ -26,44 +28,50 @@ namespace BeepWPFApp
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             favlb1.Items.Add(listbox2.SelectedItem);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             favlb2.Items.Add(listbox2.SelectedItem);
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             favlb3.Items.Add(listbox2.SelectedItem);
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            listbox2.Items.Add(favlb1.SelectedItem);
+            favlb1.Items.Remove(listbox2.SelectedItem);
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            listbox2.Items.Add(favlb2.SelectedItem);
+            favlb2.Items.Remove(listbox2.SelectedItem);
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            listbox2.Items.Add(favlb3.SelectedItem);
+            favlb3.Items.Remove(listbox2.SelectedItem);
         }
 
-        private void listbox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        public void Button_Click_4(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void favlb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            
         }
+
     }
 }
