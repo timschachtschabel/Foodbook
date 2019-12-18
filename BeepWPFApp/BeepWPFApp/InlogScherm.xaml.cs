@@ -25,6 +25,7 @@ namespace BeepWPFApp
         public InlogScherm()
         {
             InitializeComponent();
+            
         }
 
         public void login(string Name, string Pass)
@@ -44,14 +45,14 @@ namespace BeepWPFApp
         }
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
-            login(txtUser.Text,txtPass.Text);
+            login(txtUser.Text,txtPass.Password);
         }
 
         private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                login(txtUser.Text,txtPass.Text);
+                login(txtUser.Text,txtPass.Password);
             }
         }
     }
