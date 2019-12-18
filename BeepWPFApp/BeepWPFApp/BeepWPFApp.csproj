@@ -115,10 +115,10 @@
       <DependentUpon>DetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enum\Allergie.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Favorieten.xaml.cs">
       <DependentUpon>Favorieten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Product.cs" />
     <Compile Include="lstPage.xaml.cs">
       <DependentUpon>lstPage.xaml</DependentUpon>
     </Compile>

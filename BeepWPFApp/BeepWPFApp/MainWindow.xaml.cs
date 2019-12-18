@@ -19,11 +19,13 @@ namespace BeepWPFApp
         lstPage lst = new lstPage();
         static DetailsPage details = new DetailsPage();
         public static List<string> allergie = new List<string>();
-
+        public static MainWindow AppWindow;
 
         public MainWindow()
+
         {
             InitializeComponent();
+            AppWindow = this;
             main.Content = new scannerPage();
             AutoUpdater.Start("http://192.168.178.33/update.xaml");
 

@@ -18,7 +18,7 @@ namespace BeepWPFApp
     
     public partial class lstPage : Page
     {
-        public static List<string> lstFav = new List<string>();
+        public static List<string> lstFav = new List<string>(); 
 
         public lstPage()
         {
@@ -54,8 +54,10 @@ namespace BeepWPFApp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Favorieten fav = new Favorieten();
-            fav.ShowDialog();          
+            Favorieten favo = new Favorieten();
+            
+
+                     
            
         }
     }
