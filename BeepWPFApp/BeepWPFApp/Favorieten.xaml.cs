@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BeepWPFApp
@@ -17,14 +18,17 @@ namespace BeepWPFApp
     /// <summary>
     /// Interaction logic for Favorieten.xaml
     /// </summary>
-    public partial class Favorieten : Window
+    public partial class Favorieten : Page
     {
         public Favorieten()
         {
             InitializeComponent();
-            listbox2.ItemsSource = lstPage.lstFav;
         }
 
-        
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

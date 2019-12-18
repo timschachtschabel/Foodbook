@@ -13,17 +13,17 @@
     <Grid>
         <Rectangle Fill="#9dc0dc" HorizontalAlignment="Left" Height="53" Margin="0,436,-0.4,-0.6" VerticalAlignment="Bottom" Width="354"/>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
-            <Button x:Name="btnCart"  Click="btnCart_Click" Width="120" Height="53">
+            <Button x:Name="btnCart"  Click="btnCart_Click" Width="120" Height="53" IsEnabled="False">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/shopping-cart.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnScanner" Click="btnScanner_Click" Width="120" Height="53" >
+            <Button x:Name="btnScanner" Click="btnScanner_Click" Width="120" Height="53" IsEnabled="False" >
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/barcode.png" Stretch="Uniform" />
                 </Button.Background>
             </Button>
-            <Button x:Name="BtnList" Click="BtnList_OnClick" Width="120" Height="53">
+            <Button x:Name="BtnList" Click="BtnList_OnClick" Width="120" Height="53" IsEnabled="False" x:FieldModifier="public">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/list.png" Stretch="Uniform"/>
                 </Button.Background>

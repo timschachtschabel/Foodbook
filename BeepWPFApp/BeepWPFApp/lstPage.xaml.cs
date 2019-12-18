@@ -18,12 +18,14 @@ namespace BeepWPFApp
     
     public partial class lstPage : Page
     {
-        public static List<string> lstFav = new List<string>();
+        public static List<string> lstFav = new List<string>(); 
 
         public lstPage()
         {
             
             InitializeComponent();
+            
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,24 +49,15 @@ namespace BeepWPFApp
             lstFav.Add(lstNaam.SelectedItem.ToString());
 
 
-
-
         }
 
-        private void lstNaam_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void listbox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Favorieten fav = new Favorieten();
-            fav.ShowDialog();          
+            Favorieten favo = new Favorieten();
+            
+
+                     
            
         }
     }

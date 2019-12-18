@@ -22,7 +22,7 @@
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="212" Margin="20,117,0,0" SelectionMode="Extended" SelectionChanged="lstNaam_SelectionChanged"/>
+        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="212" Margin="20,117,0,0" SelectionMode="Extended"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="250" Margin="237,117,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="favorietbutton" Content="Toevoegen aan favorieten" HorizontalAlignment="Left" Margin="194,372,0,0" VerticalAlignment="Top" Width="143" Click="favorietbutton_Click"/>
         <Button Content="Open Favorieten" HorizontalAlignment="Left" Margin="20,372,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_1"/>
