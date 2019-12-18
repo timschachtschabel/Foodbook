@@ -13,12 +13,11 @@ namespace BeepWPFApp
         public static string Email { get; set; }
         public static string AllergieString { get; set; }
         public static string CreationTime { get; set; }
-        private static List<string> AllergieList = new List<string>();
 
 
         public static bool  IsAllergic(Product product)
         {
-            AllergieList = AllergieString.Split(',').ToList();
+            /*List<string>AllergieList = AllergieString.Split(',').ToList();
 
             if (!AllergieList.Any())
             {
@@ -26,7 +25,7 @@ namespace BeepWPFApp
             }
 
             var newData = AllergieList.Select(i => i.ToString()).Intersect(product.Allergie);
-            if (newData.Any()) return true;
+            if (newData.Any()) return true;*/
 
             return false;
         }

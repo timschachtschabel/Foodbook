@@ -3,10 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Windows;
 
 namespace BeepWPFApp
+{
+    public class Product
     {
-        public class Product
+        private static bool caching = false;
+        public string barcode { get; set; }
+        public string Naam { get; }
+        public double Prijs { get; }
+        public double PromotiePrijs { get; }
+        public List<string> Allergie { get; }
+        public List<string> Ingredient { get; }
+
+        public Product(string barcode)
         {
             public string barcode { get; set; }
             public string Naam { get; }
@@ -15,16 +26,45 @@ namespace BeepWPFApp
             public List<string> Allergie { get; }
             public List<string> Ingredient { get; }
 
-            public Product(string barcode)
-            {
-                this.barcode = barcode;
-                this.Naam = GetProductName(barcode);
-                this.Prijs = GetProductprijs(barcode);
-                this.PromotiePrijs = GetProductPromotie(barcode);
-                this.Allergie = GetAllergie(barcode);
-                this.Ingredient = GetIngredient(barcode);
-            }
 
+        private static string GetProductName(string barcode)
+        {
+            Database db = new Database();
+            if (db.ProductExist(barcode))
+            {
+                string resultaat = db.DbGetProductName(barcode);
+                return resultaat;
+            }
+            else
+            {
+                
+                string htmlcode;
+                var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+                using (WebClient wc = new WebClient())
+                {
+                    wc.Headers["User-Agent"] = "maaktnietuit";
+                    htmlcode = wc.DownloadString(url);
+                }
+
+                var htmlDocument = new HtmlDocument();
+                htmlDocument.LoadHtml(htmlcode);
+
+                string title = (from x in htmlDocument.DocumentNode.Descendants()
+                    where x.Name.ToLower() == "title"
+                    select x.InnerText).FirstOrDefault();
+                //Error handeling, dit betekend dat het product niet gevonden is
+                if (title == "Jumbo Groceries " || title == null)
+                {
+                    return "notfound";
+                }
+
+                if (caching == false)
+                {
+                    CacheProduct(barcode);
+                }
+                return title;
+            }
+        }
 
 
             private static string GetProductName(string barcode)
@@ -85,21 +125,27 @@ namespace BeepWPFApp
                     return echteprijs;
                 }
             }
+            ;
 
-            private static double GetProductPromotie(string barcode)
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(htmlcode);
+
+            string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
+                where x.Name == "span" && x.Attributes.Contains("class")
+                where x.Attributes["class"].Value == "jum-price-format jum-was-price"
+                               select x.InnerText).FirstOrDefault();
+            // Error handeling, als de prijs niet gevonden kan worden
+            if (prijsruw == null) return 0.0;
+            else
             {
                 string htmlcode;
                 var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
 
-                using (WebClient wc = new WebClient())
-                {
-                    wc.Headers["User-Agent"] = "maaktnietuit";
-                    htmlcode = wc.DownloadString(url);
-                }
-                ;
+                double echteprijs = Convert.ToDouble(prijs);
+                return echteprijs;
+            }
 
-                var htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(htmlcode);
+        }
 
                 string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
                                    where x.Name == "span" && x.Attributes.Contains("class")
@@ -122,16 +168,11 @@ namespace BeepWPFApp
 
             private static List<string> GetAllergie(string barcode)
             {
-                List<string> list = new List<string>();
-                string htmlcode;
-                var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+                list = listItemHtml.ToList();
+            }
 
-                // var url = "https://www.jumbo.com/jumbo-witte-bollen-10-stuks/300211STK/";
-                using (WebClient wc = new WebClient())
-                {
-                    wc.Headers["User-Agent"] = "maaktnietuit";
-                    htmlcode = wc.DownloadString(url);
-                }
+            return list;
+        }
 
                 var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(htmlcode);
@@ -182,6 +223,32 @@ namespace BeepWPFApp
                 return list;
             }
         }
+
+        private static void CacheProduct(string barcode)
+        {
+            caching = true;
+            Database db = new Database();
+            string cProductNaam = GetProductName(barcode);
+            string cProductPrijs = GetProductprijs(barcode).ToString();
+            string cAllergie ="";
+            string cIngredient = "";
+            List<string> allergienList = GetAllergie(barcode);
+            List<string> ingredientList = GetIngredient(barcode);
+
+            foreach (var VARIABLE in allergienList)
+            {
+                string input = VARIABLE.Replace("'", "\\'");
+                cAllergie = cAllergie + input + ".";
+            }
+
+            foreach (var VARIABLE in ingredientList)
+            {
+                string input = VARIABLE.Replace("'", "\\'");
+                cIngredient = cIngredient + input + ".";
+            }
+
+            db.CacheProduct(barcode, cProductNaam, cProductPrijs, cIngredient, cAllergie);
+            caching = false;
+        }
     }
-
-
+}
