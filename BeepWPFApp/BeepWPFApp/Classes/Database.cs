@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Windows;
 using MySql.Data.MySqlClient;
 
@@ -119,12 +120,14 @@ namespace BeepWPFApp
                         User.Naam = result.GetString("Name");
                         User.Email = result.GetString("Email");
                         User.CreationTime = result.GetString("Date_created");
+                        CloseConnection();
                         return true;
                     }
                     
                 }
                 else
                 {
+                    CloseConnection();
                     return false;
 
                 }
@@ -136,7 +139,71 @@ namespace BeepWPFApp
             catch (MySqlException e)
             {
                 MessageBox.Show(e.ToString());
+                CloseConnection();
                 return false;
+            }
+        }
+
+        public bool ProductExist(string barcode)
+        {
+            OpenConnection();
+
+            string cmd = $"SELECT * FROM `bleep`.`bl_product` WHERE `Barcode` = '{barcode}' LIMIT 0,1000";
+            MySqlCommand Command = new MySqlCommand(cmd, connection);
+
+            MySqlDataReader result = Command.ExecuteReader();
+            if (result.HasRows)
+            {
+                CloseConnection();
+                return true;
+            }
+
+            CloseConnection();
+            return false;
+        }
+
+        public string DbGetProductName(string barcode)
+        {
+            OpenConnection();
+            string cmd = $"SELECT * FROM `bleep`.`bl_product` WHERE `Barcode` = '{barcode}'";
+            MySqlCommand Command = new MySqlCommand(cmd, connection);
+
+            MySqlDataReader result = Command.ExecuteReader();
+
+            while (result.Read())
+            {
+                string naam = result.GetString("Name");
+                CloseConnection();
+                return naam;
+            }
+
+            CloseConnection();
+            
+            return "notfound";
+        }
+
+        public void CacheProduct(string barcode, string naam,string prijs, string ingredient, string allergie)
+        {
+            try
+            {
+                
+                //Verbind
+                OpenConnection();
+                string cmd =
+                    $"INSERT INTO bleep.bl_product (Name, Price, Barcode, Ingredient_information, Allergy_information) Values ('{naam}','{prijs}','{barcode}','{ingredient}','{allergie}');";
+
+                //write Queru
+                MySqlCommand command = new MySqlCommand(cmd, connection);
+                command.ExecuteNonQuery();
+
+                //opruimen 
+                CloseConnection();
+                
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show(e.ToString());
+                
             }
         }
     }
