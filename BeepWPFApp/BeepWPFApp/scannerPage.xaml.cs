@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using BeepWPFApp.Enum;
 
 namespace BeepWPFApp
 {
@@ -75,6 +76,8 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
+
+
         }
 
 
