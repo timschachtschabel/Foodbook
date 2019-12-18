@@ -1,16 +1,12 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
-using System.Windows.Documents;
-using BeepWPFApp.Enum;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Cms;
 
-namespace BeepWPFApp.Classes
+namespace BeepWPFApp
 {
     
-    class Database
+    public class Database
     {
         static string Server = "194.171.226.182";
         private static string DB = "bleep";
@@ -21,6 +17,7 @@ namespace BeepWPFApp.Classes
        static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
 
         MySqlConnection connection = new MySqlConnection(connectionString);
+
         public Database()
         {
 //            Server = "localhost";
@@ -102,7 +99,7 @@ namespace BeepWPFApp.Classes
 
         }
 
-        public void CheckUser(string naam, string password)
+        public bool CheckUser(string naam, string password)
         {
             try
             {
@@ -122,20 +119,24 @@ namespace BeepWPFApp.Classes
                         User.Naam = result.GetString("Name");
                         User.Email = result.GetString("Email");
                         User.CreationTime = result.GetString("Date_created");
-                        MessageBox.Show(User.Naam);
+                        return true;
                     }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
+                    return false;
+
                 }
-
-
                 CloseConnection();
+
+                return false;
+
             }
             catch (MySqlException e)
             {
                 MessageBox.Show(e.ToString());
+                return false;
             }
         }
     }

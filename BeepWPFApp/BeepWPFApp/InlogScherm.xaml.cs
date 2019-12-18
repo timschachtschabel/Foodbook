@@ -28,18 +28,20 @@ namespace BeepWPFApp
 
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
-            string user, pass;
-            user = txtUser.Text;
-            pass = txtPass.Text;
-            if (user == "Perry" && pass == "vogelbekdier")
+            Database db = new Database();
+            if (db.CheckUser(txtUser.Text, txtPass.Text))
             {
+                MessageBox.Show("Succesvol ingelogd");
 
-               
+
+
             }
-            else
+            else 
             {
-                MessageBox.Show("U heeft een verkeerde gebruikersnaam of wachtwoord ingevoerd.");
+                MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
             }
+
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -47,9 +49,7 @@ namespace BeepWPFApp
 
         }
 
-        private void txtPass_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
+      
     }
 }
