@@ -130,9 +130,6 @@
     </Compile>
     <Compile Include="Enum\Allergie.cs" />
     <Compile Include="Classes\Product.cs" />
-    <Compile Include="Favorieten.xaml.cs">
-      <DependentUpon>Favorieten.xaml</DependentUpon>
-    </Compile>
     <Compile Include="InlogScherm.xaml.cs">
       <DependentUpon>InlogScherm.xaml</DependentUpon>
     </Compile>
@@ -148,10 +145,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Favorieten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
