@@ -43,7 +43,7 @@ namespace BeepWPFApp
                             where x.Name.ToLower() == "title"
                             select x.InnerText).FirstOrDefault();
             //Error handeling, dit betekend dat het product niet gevonden is
-            if (title == "Jumbo Groceries " || title == null)
+            if (title == "Jumbo Groceries " || title == null || title == "Boodschappen | Jumbo Supermarkten ")
             {
                 return "notfound";
             } 
