@@ -102,7 +102,6 @@ namespace BeepWPFApp
             var mw = Application.Current.Windows
                 .Cast<Window>()
                 .FirstOrDefault(window => window is MainWindow) as MainWindow;
-
             if (product != null)
             {
                 DetailsPage detail = new DetailsPage();
@@ -135,7 +134,5 @@ namespace BeepWPFApp
                 }
             }
         }
-
-       
     }
 }
