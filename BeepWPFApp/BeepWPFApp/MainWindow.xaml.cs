@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Navigation;
+using AutoUpdaterDotNET;
 using BeepWPFApp.Enum;
 
 
@@ -21,8 +22,6 @@ namespace BeepWPFApp
         lstPage lst = new lstPage();
         static DetailsPage details = new DetailsPage();
         public static List<string> allergie = new List<string>();
-        public static MainWindow AppWindow;
-
         public static MainWindow AppWindow;
         public MainWindow()
 

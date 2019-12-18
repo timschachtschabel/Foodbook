@@ -33,6 +33,7 @@ namespace BeepWPFApp
             Database db = new Database();
             if (db.CheckUser(Name, Pass))
             {
+                
                 MainWindow.AppWindow.EnableButtons();
                 MainWindow.AppWindow.changePage(2);
             }
