@@ -9,28 +9,11 @@ namespace BeepWPFApp
 {
     public static class User
     {
-        public static string Naam { get; set; }
+        public static string Naam  { get; set; } = string.Empty;
         public static string Email { get; set; }
         public static string AllergieString { get; set; }
         public static string CreationTime { get; set; }
         private static List<string> AllergieList = new List<string>();
-
-//        //maak allergisch
-//        public User(List<string> allergieInput, string voornaam, string achternaam, int leeftijd)
-//        {
-//            AllergieList = allergieInput;
-//            Voornaam = voornaam;
-//            Achternaam = achternaam;
-//            Leeftijd = leeftijd;
-//        }
-//
-//        //maak zonder allergie
-//        public User(string naam, string achternaam, int leeftijd)
-//        {
-//            Voornaam = naam;
-//            Achternaam = achternaam;
-//            Leeftijd = leeftijd;
-//        }
 
 
         public static bool  IsAllergic(Product product)
@@ -47,6 +30,7 @@ namespace BeepWPFApp
 
             return false;
         }
+
 
     }
 }
