@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Windows;
 
 namespace BeepWPFApp
 {
-   public class Product
+    public class Product
     {
+        private static bool caching = false;
         public string barcode { get; set; }
         public string Naam { get; }
         public double Prijs { get; }
@@ -26,28 +28,43 @@ namespace BeepWPFApp
         }
 
 
-
         private static string GetProductName(string barcode)
         {
-            string htmlcode;
-            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
-            using (WebClient wc = new WebClient())
+            Database db = new Database();
+            if (db.ProductExist(barcode))
             {
-                wc.Headers["User-Agent"] = "maaktnietuit";
-                htmlcode = wc.DownloadString(url);
+                string resultaat = db.DbGetProductName(barcode);
+                return resultaat;
             }
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(htmlcode);
-
-            string title = (from x in htmlDocument.DocumentNode.Descendants()
-                            where x.Name.ToLower() == "title"
-                            select x.InnerText).FirstOrDefault();
-            //Error handeling, dit betekend dat het product niet gevonden is
-            if (title == "Jumbo Groceries " || title == null || title == "Boodschappen | Jumbo Supermarkten ")
+            else
             {
-                return "notfound";
-            } 
-            return title;
+                
+                string htmlcode;
+                var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+                using (WebClient wc = new WebClient())
+                {
+                    wc.Headers["User-Agent"] = "maaktnietuit";
+                    htmlcode = wc.DownloadString(url);
+                }
+
+                var htmlDocument = new HtmlDocument();
+                htmlDocument.LoadHtml(htmlcode);
+
+                string title = (from x in htmlDocument.DocumentNode.Descendants()
+                    where x.Name.ToLower() == "title"
+                    select x.InnerText).FirstOrDefault();
+                //Error handeling, dit betekend dat het product niet gevonden is
+                if (title == "Jumbo Groceries " || title == null)
+                {
+                    return "notfound";
+                }
+
+                if (caching == false)
+                {
+                    CacheProduct(barcode);
+                }
+                return title;
+            }
         }
 
         public override string ToString()
@@ -96,6 +113,7 @@ namespace BeepWPFApp
                 wc.Headers["User-Agent"] = "maaktnietuit";
                 htmlcode = wc.DownloadString(url);
             }
+
             ;
 
             var htmlDocument = new HtmlDocument();
@@ -104,7 +122,7 @@ namespace BeepWPFApp
             string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
                 where x.Attributes["class"].Value == "jum-price-format jum-was-price"
-                               select x.InnerText).FirstOrDefault();
+                select x.InnerText).FirstOrDefault();
             // Error handeling, als de prijs niet gevonden kan worden
             if (prijsruw == null) return 0.0;
             else
@@ -117,7 +135,6 @@ namespace BeepWPFApp
                 double echteprijs = Convert.ToDouble(prijs);
                 return echteprijs;
             }
-
         }
 
         private static List<string> GetAllergie(string barcode)
@@ -143,7 +160,7 @@ namespace BeepWPFApp
             {
                 list = listItemHtml.ToList();
             }
-            
+
 
             return list;
         }
@@ -180,6 +197,33 @@ namespace BeepWPFApp
             }
 
             return list;
+        }
+
+        private static void CacheProduct(string barcode)
+        {
+            caching = true;
+            Database db = new Database();
+            string cProductNaam = GetProductName(barcode);
+            string cProductPrijs = GetProductprijs(barcode).ToString();
+            string cAllergie ="";
+            string cIngredient = "";
+            List<string> allergienList = GetAllergie(barcode);
+            List<string> ingredientList = GetIngredient(barcode);
+
+            foreach (var VARIABLE in allergienList)
+            {
+                string input = VARIABLE.Replace("'", "\\'");
+                cAllergie = cAllergie + input + ".";
+            }
+
+            foreach (var VARIABLE in ingredientList)
+            {
+                string input = VARIABLE.Replace("'", "\\'");
+                cIngredient = cIngredient + input + ".";
+            }
+
+            db.CacheProduct(barcode, cProductNaam, cProductPrijs, cIngredient, cAllergie);
+            caching = false;
         }
     }
 }

@@ -24,7 +24,6 @@
         <Label Content="Inlognaam" HorizontalAlignment="Left" Margin="144,52,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Wachtwoord" HorizontalAlignment="Left" Margin="136,95,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="inlogknop" HorizontalAlignment="Left" Margin="90,164,0,0" VerticalAlignment="Top" Width="170" Height="35" Click="Button_Click" Content="Inloggen"/>
-        
 
     </Grid>
 </Page>

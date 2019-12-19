@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,35 +24,41 @@ namespace BeepWPFApp
         public InlogScherm()
         {
             InitializeComponent();
-            
         }
 
-        public void login(string Name, string Pass)
+        private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
             Database db = new Database();
-            if (db.CheckUser(Name, Pass))
+            if (db.CheckUser(txtUser.Text, txtPass.Text))
             {
-                MainWindow.AppWindow.EnableButtons();
-                MainWindow.AppWindow.changePage(2);
+                MessageBox.Show("Succesvol ingelogd");
+
+
+
             }
-            else
+            else 
             {
                 MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
                 TxtUser.Clear();
                 TxtPass.Clear();
             }
+
+
         }
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
             login(TxtUser.Text, TxtPass.Password);
         }
 
-        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 login(TxtUser.Text,TxtPass.Password);
             }
         }
+
+
+      
     }
 }
