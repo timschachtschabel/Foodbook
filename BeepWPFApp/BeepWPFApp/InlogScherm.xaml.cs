@@ -26,15 +26,12 @@ namespace BeepWPFApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
+        private void Login(string naam, string pass) // inlogknop
         {
             Database db = new Database();
-            if (db.CheckUser(txtUser.Text, txtPass.Text))
+            if (db.CheckUser(naam,pass))
             {
                 MessageBox.Show("Succesvol ingelogd");
-
-
-
             }
             else 
             {
@@ -47,18 +44,15 @@ namespace BeepWPFApp
         }
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
-            login(TxtUser.Text, TxtPass.Password);
+            Login(TxtUser.Text, TxtPass.Password);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                login(TxtUser.Text,TxtPass.Password);
+                Login(TxtUser.Text, TxtPass.Password);
             }
         }
-
-
-      
     }
 }

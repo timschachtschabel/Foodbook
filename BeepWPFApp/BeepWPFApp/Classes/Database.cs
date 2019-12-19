@@ -21,10 +21,7 @@ namespace BeepWPFApp
 
         public Database()
         {
-//            Server = "localhost";
-//            DB = "csharp";
-//            User = "user";
-//            Password = "";
+
         }
         public bool OpenConnection()
         {
