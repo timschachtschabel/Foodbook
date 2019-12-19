@@ -7,12 +7,16 @@
         xmlns:emit="clr-namespace:System.Reflection.Emit;assembly=mscorlib"
         mc:Ignorable="d"
 
-        Title="Beep Scanner" ResizeMode="NoResize" Height="532" Width="360" WindowStartupLocation="CenterScreen"
+        Title="Beep Scanner" ResizeMode="NoResize" Height="532" Width="360" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
         >
 
     <Grid>
-        <Rectangle Fill="#9dc0dc" HorizontalAlignment="Left" Height="53" Margin="0,436,-0.4,-0.6" VerticalAlignment="Bottom" Width="354"/>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="164*"/>
+            <ColumnDefinition Width="189*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#9dc0dc" HorizontalAlignment="Left" Height="53" Margin="0,0,-0.4,-0.6" VerticalAlignment="Bottom" Width="354" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
             <Button x:Name="btnCart"  Click="btnCart_Click" Width="120" Height="53" IsEnabled="False">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/shopping-cart.png" Stretch="Uniform"/>
@@ -29,6 +33,6 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Frame x:Name="main" Margin="0,0,0,53" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="main" Margin="0,0,-0.4,53.4" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

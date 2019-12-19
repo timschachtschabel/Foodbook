@@ -16,63 +16,22 @@ namespace BeepWPFApp
         public double PromotiePrijs { get; }
         public List<string> Allergie { get; }
         public List<string> Ingredient { get; }
+        private  HtmlDocument htmlFile;
+
 
         public Product(string barcode)
         {
+            htmlFile = GetHtmlDocument(barcode);
+
             this.barcode = barcode;
-            this.Naam = GetProductName(barcode);
-            this.Prijs = GetProductprijs(barcode);
-            this.PromotiePrijs = GetProductPromotie(barcode);
-            this.Allergie = GetAllergie(barcode);
-            this.Ingredient = GetIngredient(barcode);
+            this.Naam = GetProductName(barcode, htmlFile);
+            this.Prijs = GetProductprijs(barcode, htmlFile);
+            this.PromotiePrijs = GetProductPromotie(barcode, htmlFile);
+            this.Allergie = GetAllergie(barcode, htmlFile);
+            this.Ingredient = GetIngredient(barcode, htmlFile);
         }
 
-
-        private static string GetProductName(string barcode)
-        {
-            Database db = new Database();
-            if (db.ProductExist(barcode))
-            {
-                string resultaat = db.DbGetProductName(barcode);
-                return resultaat;
-            }
-            else
-            {
-                
-                string htmlcode;
-                var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
-                using (WebClient wc = new WebClient())
-                {
-                    wc.Headers["User-Agent"] = "maaktnietuit";
-                    htmlcode = wc.DownloadString(url);
-                }
-
-                var htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(htmlcode);
-
-                string title = (from x in htmlDocument.DocumentNode.Descendants()
-                    where x.Name.ToLower() == "title"
-                    select x.InnerText).FirstOrDefault();
-                //Error handeling, dit betekend dat het product niet gevonden is
-                if (title == "Jumbo Groceries " || title == null)
-                {
-                    return "notfound";
-                }
-
-                if (caching == false)
-                {
-                    CacheProduct(barcode);
-                }
-                return title;
-            }
-        }
-
-        public override string ToString()
-        {
-            return Naam;
-        }
-
-        private static double GetProductprijs(string barcode)
+        private HtmlDocument GetHtmlDocument(string barcode)
         {
             string htmlcode;
             var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
@@ -85,7 +44,47 @@ namespace BeepWPFApp
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(htmlcode);
 
-            string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
+            return htmlDocument;
+        }
+
+        private string GetProductName(string barcode, HtmlDocument htmlFileInput)
+        {
+            Database db = new Database();
+            if (!MainWindow.Devmode && db.ProductExist(barcode))
+            {
+                string resultaat = db.DbGetProductName(barcode);
+                return resultaat;
+            }
+            else
+            {
+                
+
+                string title = (from x in htmlFileInput.DocumentNode.Descendants()
+                    where x.Name.ToLower() == "title"
+                    select x.InnerText).FirstOrDefault();
+                //Error handeling, dit betekend dat het product niet gevonden is
+                if (title == "Jumbo Groceries " || title == null)
+                {
+                    return "notfound";
+                }
+
+                if (!MainWindow.Devmode && caching == false)
+                {
+                    CacheProduct(barcode);
+                }
+                return title;
+            }
+        }
+
+        public override string ToString()
+        {
+            return Naam;
+        }
+
+        private static double GetProductprijs(string barcode, HtmlDocument htmlFileInput)
+        {
+
+            string prijsruw = (from x in htmlFileInput.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
                 where x.Attributes["class"].Value == "jum-price-format"
                 select x.InnerText).FirstOrDefault();
@@ -103,23 +102,10 @@ namespace BeepWPFApp
             }
         }
 
-        private static double GetProductPromotie(string barcode)
+        private static double GetProductPromotie(string barcode, HtmlDocument htmlfileInput)
         {
-            string htmlcode;
-            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
 
-            using (WebClient wc = new WebClient())
-            {
-                wc.Headers["User-Agent"] = "maaktnietuit";
-                htmlcode = wc.DownloadString(url);
-            }
-
-            ;
-
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(htmlcode);
-
-            string prijsruw = (from x in htmlDocument.DocumentNode.DescendantsAndSelf()
+            string prijsruw = (from x in htmlfileInput.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
                 where x.Attributes["class"].Value == "jum-price-format jum-was-price"
                 select x.InnerText).FirstOrDefault();
@@ -137,23 +123,12 @@ namespace BeepWPFApp
             }
         }
 
-        private static List<string> GetAllergie(string barcode)
+        private static List<string> GetAllergie(string barcode, HtmlDocument htmlFileInput)
         {
             List<string> list = new List<string>();
-            string htmlcode;
-            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
+            
 
-            // var url = "https://www.jumbo.com/jumbo-witte-bollen-10-stuks/300211STK/";
-            using (WebClient wc = new WebClient())
-            {
-                wc.Headers["User-Agent"] = "maaktnietuit";
-                htmlcode = wc.DownloadString(url);
-            }
-
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(htmlcode);
-
-            IEnumerable<string> listItemHtml = htmlDocument.DocumentNode.SelectNodes(
+            IEnumerable<string> listItemHtml = htmlFileInput.DocumentNode.SelectNodes(
                     @"//div[@class='jum-product-allergy-info jum-product-info-item col-12']/ul/li")
                 ?.Select(li => li.InnerHtml);
             if (listItemHtml != null)
@@ -165,22 +140,10 @@ namespace BeepWPFApp
             return list;
         }
 
-        private static List<string> GetIngredient(string barcode)
+        private static List<string> GetIngredient(string barcode, HtmlDocument htmlFileInput)
         {
-            string htmlcode;
-            var url = "https://www.jumbo.com/zoeken?SearchTerm=" + barcode;
 
-            // var url = "https://www.jumbo.com/jumbo-witte-bollen-10-stuks/300211STK/";
-            using (WebClient wc = new WebClient())
-            {
-                wc.Headers["User-Agent"] = "maaktnietuit";
-                htmlcode = wc.DownloadString(url);
-            }
-
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(htmlcode);
-
-            IEnumerable<string> listItemHtml = htmlDocument.DocumentNode.SelectNodes(
+            IEnumerable<string> listItemHtml = htmlFileInput.DocumentNode.SelectNodes(
                     @"//div[@class='jum-ingredients-info jum-product-info-item col-12']/ul/li")
                 ?.Select(li => li.InnerHtml);
 
@@ -199,16 +162,19 @@ namespace BeepWPFApp
             return list;
         }
 
-        private static void CacheProduct(string barcode)
+        private void CacheProduct(string barcode)
         {
             caching = true;
             Database db = new Database();
-            string cProductNaam = GetProductName(barcode);
-            string cProductPrijs = GetProductprijs(barcode).ToString();
+
+            string cProductNaam = GetProductName(barcode, htmlFile);
+            string cProductPrijs = GetProductprijs(barcode, htmlFile).ToString();
+
             string cAllergie ="";
             string cIngredient = "";
-            List<string> allergienList = GetAllergie(barcode);
-            List<string> ingredientList = GetIngredient(barcode);
+
+            List<string> allergienList = GetAllergie(barcode, htmlFile);
+            List<string> ingredientList = GetIngredient(barcode, htmlFile);
 
             foreach (var VARIABLE in allergienList)
             {
