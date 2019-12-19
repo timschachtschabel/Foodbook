@@ -39,14 +39,23 @@ namespace BeepWPFApp
             else 
             {
                 MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
+                TxtUser.Clear();
+                TxtPass.Clear();
             }
 
 
         }
+        private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
+        {
+            login(TxtUser.Text, TxtPass.Password);
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            if (e.Key == Key.Enter)
+            {
+                login(TxtUser.Text,TxtPass.Password);
+            }
         }
 
 

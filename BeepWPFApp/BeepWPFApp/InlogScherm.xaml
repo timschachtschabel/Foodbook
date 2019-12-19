@@ -14,8 +14,8 @@
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="117,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="23" Margin="117,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TxtUser" HorizontalAlignment="Left" Height="23" Margin="117,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="TxtPass" HorizontalAlignment="Left" Height="23" Margin="117,118,0,0" PasswordChar="*" VerticalAlignment="Top" Width="120" KeyDown="txtPass_KeyDown" Password="1234"/>
         <Rectangle HorizontalAlignment="Left" Height="222" Margin="90,216,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="170">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/bleep.png" Stretch="Uniform"/>
