@@ -31,7 +31,7 @@ namespace BeepWPFApp
             Database db = new Database();
             if (db.CheckUser(naam,pass))
             {
-                MessageBox.Show("Succesvol ingelogd");
+                MainWindow.AppWindow.switchPage(2);
             }
             else 
             {
