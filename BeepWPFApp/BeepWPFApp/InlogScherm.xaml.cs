@@ -26,30 +26,33 @@ namespace BeepWPFApp
             InitializeComponent();
         }
 
+        private void Login(string naam, string pass) // inlogknop
+        {
+            Database db = new Database();
+            if (db.CheckUser(naam,pass))
+            {
+                MainWindow.AppWindow.switchPage(2);
+            }
+            else 
+            {
+                MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
+                TxtUser.Clear();
+                TxtPass.Clear();
+            }
+
+
+        }
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
-            string user, pass;
-            user = txtUser.Text;
-            pass = txtPass.Text;
-            if (user == "Perry" && pass == "vogelbekdier")
-            {
-
-               
-            }
-            else
-            {
-                MessageBox.Show("U heeft een verkeerde gebruikersnaam of wachtwoord ingevoerd.");
-            }
+            Login(TxtUser.Text, TxtPass.Password);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void txtPass_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            if (e.Key == Key.Enter)
+            {
+                Login(TxtUser.Text, TxtPass.Password);
+            }
         }
     }
 }

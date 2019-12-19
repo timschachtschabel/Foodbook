@@ -1,16 +1,13 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
+using System.Net.Sockets;
 using System.Windows;
-using System.Windows.Documents;
-using BeepWPFApp.Enum;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Cms;
 
-namespace BeepWPFApp.Classes
+namespace BeepWPFApp
 {
     
-    class Database
+    public class Database
     {
         static string Server = "194.171.226.182";
         private static string DB = "bleep";
@@ -21,12 +18,10 @@ namespace BeepWPFApp.Classes
        static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
 
         MySqlConnection connection = new MySqlConnection(connectionString);
+
         public Database()
         {
-//            Server = "localhost";
-//            DB = "csharp";
-//            User = "user";
-//            Password = "";
+
         }
         public bool OpenConnection()
         {
@@ -102,7 +97,7 @@ namespace BeepWPFApp.Classes
 
         }
 
-        public void CheckUser(string naam, string password)
+        public bool CheckUser(string naam, string password)
         {
             try
             {
@@ -122,20 +117,90 @@ namespace BeepWPFApp.Classes
                         User.Naam = result.GetString("Name");
                         User.Email = result.GetString("Email");
                         User.CreationTime = result.GetString("Date_created");
-                        MessageBox.Show(User.Naam);
+                        CloseConnection();
+                        return true;
                     }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Kan gebruiker niet vinden", "Error!", MessageBoxButton.OK);
+                    CloseConnection();
+                    return false;
+
                 }
-
-
                 CloseConnection();
+
+                return false;
+
             }
             catch (MySqlException e)
             {
                 MessageBox.Show(e.ToString());
+                CloseConnection();
+                return false;
+            }
+        }
+
+        public bool ProductExist(string barcode)
+        {
+            OpenConnection();
+
+            string cmd = $"SELECT * FROM `bleep`.`bl_product` WHERE `Barcode` = '{barcode}' LIMIT 0,1000";
+            MySqlCommand Command = new MySqlCommand(cmd, connection);
+
+            MySqlDataReader result = Command.ExecuteReader();
+            if (result.HasRows)
+            {
+                CloseConnection();
+                return true;
+            }
+
+            CloseConnection();
+            return false;
+        }
+
+        public string DbGetProductName(string barcode)
+        {
+            OpenConnection();
+            string cmd = $"SELECT * FROM `bleep`.`bl_product` WHERE `Barcode` = '{barcode}'";
+            MySqlCommand Command = new MySqlCommand(cmd, connection);
+
+            MySqlDataReader result = Command.ExecuteReader();
+
+            while (result.Read())
+            {
+                string naam = result.GetString("Name");
+                CloseConnection();
+                return naam;
+            }
+
+            CloseConnection();
+            
+            return "notfound";
+        }
+
+        public void CacheProduct(string barcode, string naam,string prijs, string ingredient, string allergie)
+        {
+            try
+            {
+                
+                //Verbind
+                OpenConnection();
+                string cmd =
+                    $"INSERT INTO bleep.bl_product (Name, Price, Barcode, Ingredient_information, Allergy_information) Values ('{naam}','{prijs}','{barcode}','{ingredient}','{allergie}');";
+
+                //write Queru
+                MySqlCommand command = new MySqlCommand(cmd, connection);
+                command.ExecuteNonQuery();
+
+                //opruimen 
+                CloseConnection();
+                
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show(e.ToString());
+                
             }
         }
     }

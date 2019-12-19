@@ -6,7 +6,6 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using BeepWPFApp.Classes;
 using BeepWPFApp.Enum;
 
 namespace BeepWPFApp
