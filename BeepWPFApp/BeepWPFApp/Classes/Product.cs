@@ -1,9 +1,12 @@
 ﻿using HtmlAgilityPack; //Program heeft HTMLAgilityPack als dependency, installeren via NuGet
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Net;
 using System.Windows;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace BeepWPFApp
 {
@@ -12,11 +15,43 @@ namespace BeepWPFApp
         private static bool caching = false;
         public string barcode { get; set; }
         public string Naam { get; set; }
-        public string Prijs { get; set; }
+        public double Prijs { get; set; }
         public List<string> Allergie { get; set; }
         public List<string> Ingredient { get; set; }
         private  HtmlDocument htmlFile;
 
+        public Product(string barcode)
+        {
+            //product bestaat, check info
+            if (CheckProductExist(barcode))
+            {
+
+            }
+            //Product bestaat niet, check jumbo website
+            else
+            {
+                this.barcode = barcode;
+                this.Naam = GetProductName(barcode, htmlFile);
+                Prijs = GetProductprijs(barcode, htmlFile);
+                
+            }
+
+        }
+        private bool CheckProductExist(string barcode)
+        {
+            string url = "http://localhost:50000/getproduct?barcode=" + barcode;
+
+            var client = new RestClient(url);
+            var response = client.Execute(new RestRequest());
+
+            Product testProduct = JsonConvert.DeserializeObject<Product>(response.Content);
+            if (testProduct != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         private HtmlDocument GetHtmlDocument(string barcode)
         {
