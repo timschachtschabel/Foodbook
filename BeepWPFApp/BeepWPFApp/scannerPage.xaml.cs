@@ -112,9 +112,9 @@ namespace BeepWPFApp
 
                 //Check of product null is en of de lijst wel iets bevat
                 //Daarna info pushen
-                if (product.Ingredient.Any())
+                if (product.IngredientList.Any())
                 {
-                    foreach (var VARIABLE in product.Ingredient)
+                    foreach (var VARIABLE in product.IngredientList)
                     {
                         detail.ingredientenLstBox.Items.Add(VARIABLE);
                     }
@@ -122,9 +122,9 @@ namespace BeepWPFApp
                 else detail.ingredientenLstBox.Items.Add("Dit product heeft geen ingredienten!");
 
 
-                if (product.Allergie.Any())
+                if (product.AllergieList.Any())
                 {
-                    foreach (var VARIABLE in product.Allergie)
+                    foreach (var VARIABLE in product.AllergieList)
                     {
                         detail.AllergieLstBox.Items.Add(VARIABLE);
                     }

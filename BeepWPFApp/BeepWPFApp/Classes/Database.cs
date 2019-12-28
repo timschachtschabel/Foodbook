@@ -9,10 +9,10 @@ namespace BeepWPFApp
     
     public class Database
     {
-        static string Server = "194.171.226.182";
-        private static string DB = "bleep";
-        private static string UserName = "joep";
-        private static string Password = "yeet";
+        static string Server = "localhost";
+        private static string DB = "producten";
+        private static string UserName = "root";
+        private static string Password = "";
 
 
        static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
@@ -187,7 +187,7 @@ namespace BeepWPFApp
                 //Verbind
                 OpenConnection();
                 string cmd =
-                    $"INSERT INTO bleep.bl_product (Name, Price, Barcode, Ingredient_information, Allergy_information) Values ('{naam}','{prijs}','{barcode}','{ingredient}','{allergie}');";
+                    $"INSERT INTO producten (Naam, Prijs, Barcode, Ingredienten, Allergie) Values ('{naam}','{prijs}','{barcode}','{ingredient}','{allergie}');";
 
                 //write Queru
                 MySqlCommand command = new MySqlCommand(cmd, connection);

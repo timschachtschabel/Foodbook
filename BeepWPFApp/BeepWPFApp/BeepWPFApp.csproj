@@ -137,6 +137,7 @@
     <Compile Include="betaalScherm.xaml.cs">
       <DependentUpon>betaalScherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ApiResult.cs" />
     <Compile Include="Classes\Database.cs" />
     <Compile Include="DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>

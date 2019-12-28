@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Net;
 using System.Windows;
+using BeepWPFApp.Classes;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -16,35 +17,57 @@ namespace BeepWPFApp
         public string barcode { get; set; }
         public string Naam { get; set; }
         public double Prijs { get; set; }
-        public List<string> Allergie { get; set; }
-        public List<string> Ingredient { get; set; }
-        private  HtmlDocument htmlFile;
+
+        public List<string> AllergieList { get; set; }
+        public List<string> IngredientList { get; set; }
+        private HtmlDocument htmlFile;
 
         public Product(string barcode)
         {
             //product bestaat, check info
             if (CheckProductExist(barcode))
             {
+                char[] seperator = ".".ToCharArray();
+                var url = "http://localhost:50000/getproduct?barcode=" + barcode;
+                var client = new RestClient(url);
+                var response = client.Execute(new RestRequest());
+
+                ApiResult kaas = JsonConvert.DeserializeObject<ApiResult>(response.Content);
+
+                this.barcode = barcode;
+                Naam = kaas.Naam;
+                Prijs = kaas.Prijs;
+
+                AllergieList = kaas.Allergie.Split(seperator).ToList();
+                IngredientList = kaas.Ingredient.Split(seperator).ToList();
 
             }
+
             //Product bestaat niet, check jumbo website
             else
             {
+                htmlFile = GetHtmlDocument(barcode);
+
                 this.barcode = barcode;
                 this.Naam = GetProductName(barcode, htmlFile);
-                Prijs = GetProductprijs(barcode, htmlFile);
-                
-            }
+                this.Prijs = GetProductprijs(barcode, htmlFile);
 
+                this.AllergieList = GetAllergie(barcode, htmlFile);
+                this.IngredientList = GetIngredient(barcode, htmlFile);
+
+                CacheProduct(barcode);
+            }
         }
+
         private bool CheckProductExist(string barcode)
         {
-            string url = "http://localhost:50000/getproduct?barcode=" + barcode;
-
+            var url = "http://localhost:50000/getproduct?barcode=" + barcode;
             var client = new RestClient(url);
             var response = client.Execute(new RestRequest());
 
-            Product testProduct = JsonConvert.DeserializeObject<Product>(response.Content);
+            ApiResult testProduct = JsonConvert.DeserializeObject<ApiResult>(response.Content);
+
+
             if (testProduct != null)
             {
                 return true;
@@ -71,41 +94,34 @@ namespace BeepWPFApp
 
         private string GetProductName(string barcode, HtmlDocument htmlFileInput)
         {
-            Database db = new Database();
-            if (!MainWindow.Devmode && db.ProductExist(barcode))
-            {
-                string resultaat = db.DbGetProductName(barcode);
-                return resultaat;
-            }
-            else
-            {
-                
+            string title = (from x in htmlFileInput.DocumentNode.Descendants()
+                where x.Name.ToLower() == "title"
+                select x.InnerText).FirstOrDefault();
 
-                string title = (from x in htmlFileInput.DocumentNode.Descendants()
-                    where x.Name.ToLower() == "title"
-                    select x.InnerText).FirstOrDefault();
-                //Error handeling, dit betekend dat het product niet gevonden is
-                if (title == "Jumbo Groceries " || title == null)
-                {
-                    return "notfound";
-                }
-
-                if (!MainWindow.Devmode && caching == false)
-                {
-                    CacheProduct(barcode);
-                }
-                return title;
+            
+            //Error handeling, dit betekend dat het product niet gevonden is
+            if (title == "Jumbo Groceries " || title == null)
+            {
+                return "notfound";
             }
+
+            if (!MainWindow.Devmode && caching == false)
+            {
+                CacheProduct(barcode);
+            }
+
+            return title;
         }
+
 
         public override string ToString()
         {
-            return Naam;
+            string productname = Naam.Replace("&#39;", "'");
+            return productname;
         }
 
         private static double GetProductprijs(string barcode, HtmlDocument htmlFileInput)
         {
-
             string prijsruw = (from x in htmlFileInput.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
                 where x.Attributes["class"].Value == "jum-price-format"
@@ -126,7 +142,6 @@ namespace BeepWPFApp
 
         private static double GetProductPromotie(string barcode, HtmlDocument htmlfileInput)
         {
-
             string prijsruw = (from x in htmlfileInput.DocumentNode.DescendantsAndSelf()
                 where x.Name == "span" && x.Attributes.Contains("class")
                 where x.Attributes["class"].Value == "jum-price-format jum-was-price"
@@ -148,7 +163,7 @@ namespace BeepWPFApp
         private static List<string> GetAllergie(string barcode, HtmlDocument htmlFileInput)
         {
             List<string> list = new List<string>();
-            
+
 
             IEnumerable<string> listItemHtml = htmlFileInput.DocumentNode.SelectNodes(
                     @"//div[@class='jum-product-allergy-info jum-product-info-item col-12']/ul/li")
@@ -164,7 +179,6 @@ namespace BeepWPFApp
 
         private static List<string> GetIngredient(string barcode, HtmlDocument htmlFileInput)
         {
-
             IEnumerable<string> listItemHtml = htmlFileInput.DocumentNode.SelectNodes(
                     @"//div[@class='jum-ingredients-info jum-product-info-item col-12']/ul/li")
                 ?.Select(li => li.InnerHtml);
@@ -192,7 +206,7 @@ namespace BeepWPFApp
             string cProductNaam = GetProductName(barcode, htmlFile);
             string cProductPrijs = GetProductprijs(barcode, htmlFile).ToString();
 
-            string cAllergie ="";
+            string cAllergie = "";
             string cIngredient = "";
 
             List<string> allergienList = GetAllergie(barcode, htmlFile);
@@ -213,5 +227,8 @@ namespace BeepWPFApp
             db.CacheProduct(barcode, cProductNaam, cProductPrijs, cIngredient, cAllergie);
             caching = false;
         }
+
+
     }
+
 }
