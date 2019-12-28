@@ -11,25 +11,12 @@ namespace BeepWPFApp
     {
         private static bool caching = false;
         public string barcode { get; set; }
-        public string Naam { get; }
-        public double Prijs { get; }
-        public double PromotiePrijs { get; }
-        public List<string> Allergie { get; }
-        public List<string> Ingredient { get; }
+        public string Naam { get; set; }
+        public string Prijs { get; set; }
+        public List<string> Allergie { get; set; }
+        public List<string> Ingredient { get; set; }
         private  HtmlDocument htmlFile;
 
-
-        public Product(string barcode)
-        {
-            htmlFile = GetHtmlDocument(barcode);
-
-            this.barcode = barcode;
-            this.Naam = GetProductName(barcode, htmlFile);
-            this.Prijs = GetProductprijs(barcode, htmlFile);
-            this.PromotiePrijs = GetProductPromotie(barcode, htmlFile);
-            this.Allergie = GetAllergie(barcode, htmlFile);
-            this.Ingredient = GetIngredient(barcode, htmlFile);
-        }
 
         private HtmlDocument GetHtmlDocument(string barcode)
         {

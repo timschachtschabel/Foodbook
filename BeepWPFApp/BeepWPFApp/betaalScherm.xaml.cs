@@ -22,7 +22,7 @@ namespace BeepWPFApp
 
             foreach (Product nieuwProdukt in scannerPage.ProductenLijst)
             {
-                prijzen.Add(nieuwProdukt.Prijs);
+               // prijzen.Add(nieuwProdukt.Prijs);
             }
             double totaalbedrag = prijzen.Sum();
             MessageBox.Show("Uw totaal bedrag is: " + totaalbedrag.ToString(), "totaalbedrag:");

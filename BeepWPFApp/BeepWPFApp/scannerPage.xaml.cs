@@ -7,6 +7,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using BeepWPFApp.Enum;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace BeepWPFApp
 {
@@ -48,7 +50,8 @@ namespace BeepWPFApp
                 if (_nummer.Length == 13)
                 {
                     //maak nieuw product aan
-                    Product nieuwProdukt = new Product(_nummer);
+
+                    Product nieuwProdukt = nieuwProduct(_nummer);
 
                     if (nieuwProdukt.Naam == "notfound")
                     {
@@ -80,6 +83,16 @@ namespace BeepWPFApp
 
         }
 
+        private Product nieuwProduct(string barcode)
+        {
+            string url = "http://localhost:50000/getproduct?barcode=" + barcode;
+
+            var client = new RestClient(url);
+            var response = client.Execute(new RestRequest());
+
+            Product kaas = JsonConvert.DeserializeObject<Product>(response.Content);
+            return kaas;
+        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
