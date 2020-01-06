@@ -32,6 +32,7 @@ namespace BeepWPFApp
             if (db.CheckUser(naam,pass))
             {
                 MainWindow.AppWindow.switchPage(2);
+                MainWindow.AppWindow.EnableButtons();
             }
             else 
             {

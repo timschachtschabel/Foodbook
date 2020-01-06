@@ -71,6 +71,13 @@ namespace BeepWPFApp
             }
         }
 
+        public void EnableButtons()
+        {
+            btnCart.IsEnabled = true;
+            btnScanner.IsEnabled = true;
+            BtnList.IsEnabled = true;  
+        }
+
 
         private void btnScanner_Click(object sender, RoutedEventArgs e)
         {
