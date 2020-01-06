@@ -9,10 +9,10 @@ namespace BeepWPFApp
     
     public class Database
     {
-        static string Server = "localhost";
-        private static string DB = "producten";
-        private static string UserName = "root";
-        private static string Password = "";
+        static string Server = "194.171.226.182";
+        private static string DB = "bleep";
+        private static string UserName = "bleepdb";
+        private static string Password = "wachtwoord";
 
 
        static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";

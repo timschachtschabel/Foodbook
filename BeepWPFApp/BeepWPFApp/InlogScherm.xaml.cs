@@ -55,5 +55,10 @@ namespace BeepWPFApp
                 Login(TxtUser.Text, TxtPass.Password);
             }
         }
+
+        private void register_click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.AppWindow.switchPage(5);
+        }
     }
 }
