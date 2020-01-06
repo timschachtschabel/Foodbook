@@ -110,6 +110,8 @@ namespace BeepWPFApp
                 where x.Attributes["class"].Value == "jum-price-format jum-was-price"
                 select x.InnerText).FirstOrDefault();
             // Error handeling, als de prijs niet gevonden kan worden
+
+            //test
             if (prijsruw == null) return 0.0;
             else
             {

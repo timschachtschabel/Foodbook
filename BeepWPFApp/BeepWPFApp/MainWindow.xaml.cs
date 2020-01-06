@@ -14,7 +14,7 @@ namespace BeepWPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static bool Devmode = true;
+        public static bool Devmode = false;
         public static MainWindow AppWindow;
 
         static scannerPage scan = new scannerPage();
