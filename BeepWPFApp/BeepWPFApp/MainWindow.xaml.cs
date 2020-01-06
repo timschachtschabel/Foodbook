@@ -68,6 +68,7 @@ namespace BeepWPFApp
                 case 4:
                     main.Content = details;
                     break;
+               
             }
         }
 

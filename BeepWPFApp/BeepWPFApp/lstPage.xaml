@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
+    
       mc:Ignorable="d" 
       Title="Beep Scanner">
 
@@ -11,8 +12,8 @@
 
     <Grid Height="480" Width="360">
         <Rectangle HorizontalAlignment="Left" Height="480" Margin="1,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" Fill="#FFE8EBE4"/>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="274" Margin="19,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic" />
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="298,47,0,0" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4" Click="Button_Click">
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="266" Margin="27,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic" />
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Margin="298,47,0,0" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/search.png"/>
             </Button.Background>
@@ -22,6 +23,20 @@
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
+        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,82,0,0" SelectionMode="Extended"/>
+        <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,82,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="favadd1" Content="+" HorizontalAlignment="Left" Margin="27,295,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
+        <ListBox x:Name="favlb1" HorizontalAlignment="Left" Height="114" Margin="27,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="favremove1" Content="-" HorizontalAlignment="Left" Margin="60,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove1_Click"/>
+        <ListBox x:Name="favlb2" HorizontalAlignment="Left" Height="114" Margin="132,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="favadd2" Content="+" HorizontalAlignment="Left" Margin="132,295,0,0" VerticalAlignment="Top" Width="33" Click="favadd2_Click"/>
+        <Button x:Name="favremove2" Content="-" HorizontalAlignment="Left" Margin="165,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove2_Click"/>
+        <ListBox x:Name="favlb3" HorizontalAlignment="Left" Height="114" Margin="237,315,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="favadd3" Content="+" HorizontalAlignment="Left" Margin="237,295,0,0" VerticalAlignment="Top" Width="33" Click="favadd3_Click"/>
+        <Button x:Name="favremove3" Content="-" HorizontalAlignment="Left" Margin="270,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove3_Click"/>
+        <Button x:Name="favall1" Content="&gt;" HorizontalAlignment="Left" Margin="93,295,0,0" VerticalAlignment="Top" Width="33" Height="20" Click="favall1_Click"/>
+        <Button x:Name="favall2" Content="&gt;" HorizontalAlignment="Left" Margin="198,295,0,0" VerticalAlignment="Top" Width="33" Click="favall2_Click"/>
+        <Button x:Name="favall3" Content="&gt;" HorizontalAlignment="Left" Margin="303,295,-18,0" VerticalAlignment="Top" Width="33" Click="favall3_Click"/>
         <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="212" Margin="20,117,0,0" SelectionMode="Extended" SelectionChanged="lstNaam_SelectionChanged"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="250" Margin="237,117,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="favorietbutton" Content="Toevoegen aan favorieten" HorizontalAlignment="Left" Margin="194,372,0,0" VerticalAlignment="Top" Width="143" Click="favorietbutton_Click"/>
