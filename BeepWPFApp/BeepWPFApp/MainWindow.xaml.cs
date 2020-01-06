@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
@@ -35,10 +36,6 @@ namespace BeepWPFApp
                 btnCart.IsEnabled = true;
                 btnScanner.IsEnabled = true;
                 BtnList.IsEnabled = true;
-
-                main.Content = scan;
-
-                db.CheckUser("joep", "123");
             }
             
 
@@ -77,6 +74,19 @@ namespace BeepWPFApp
         private void BtnList_OnClick(object sender, RoutedEventArgs e)
         {
             switchPage(3);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Database db = new Database();
+            if (!Devmode)
+            {
+                if (!db.OpenConnection())
+                {
+                    MessageBox.Show("Kan geen verbinding maken met de Database server!", "Error!");
+                }
+            }
+
         }
     }
 }
