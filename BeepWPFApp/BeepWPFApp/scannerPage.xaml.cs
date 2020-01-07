@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using BeepWPFApp.Classes;
 using BeepWPFApp.Enum;
 using Newtonsoft.Json;
 using RestSharp;
@@ -43,6 +44,7 @@ namespace BeepWPFApp
             //Voeg keycode toe, zet keycode om naar cijfer
             else
             {
+                api api = new api();
                 _nummer += e.Key;
                 int index = _nummer.Length - 2;
                 _nummer = _nummer.Remove(index, 1);
@@ -51,9 +53,9 @@ namespace BeepWPFApp
                 {
                     //maak nieuw product aan
 
-                    Product nieuwProdukt = new Product(_nummer);
+                    Product nieuwProdukt = api.GetProduct(_nummer);
 
-                    if (nieuwProdukt.Naam == "notfound")
+                    if (nieuwProdukt.naam == "notfound")
                     {
                         MessageBox.Show("Product niet gevonden", "error");
                     }
@@ -63,8 +65,8 @@ namespace BeepWPFApp
                         ProductenLijst.Add(nieuwProdukt);
 
                         //push naar lijst
-                        lstPrijs.Items.Add(nieuwProdukt.Prijs);
-                        if (User.IsAllergic(nieuwProdukt))
+                        lstPrijs.Items.Add(nieuwProdukt.prijs);
+                        if (GlobalSettings.IsAllergic(nieuwProdukt))
                         {
                             lstNaam.Items.Add(new ListBoxItem {Content = nieuwProdukt, Background = Brushes.Red});
                         }
@@ -92,7 +94,7 @@ namespace BeepWPFApp
             lstPrijs.Items.Clear();
             foreach (var product in ProductenLijst)
             {
-                lstPrijs.Items.Add(product.Prijs);
+                lstPrijs.Items.Add(product.prijs);
                 lstNaam.Items.Add(product);
             }
         }

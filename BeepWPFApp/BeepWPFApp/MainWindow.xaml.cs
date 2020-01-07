@@ -32,7 +32,6 @@ namespace BeepWPFApp
 
             if (Devmode)
             {
-                Database db = new Database();
                 btnCart.IsEnabled = true;
                 btnScanner.IsEnabled = true;
                 BtnList.IsEnabled = true;
@@ -78,15 +77,6 @@ namespace BeepWPFApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Database db = new Database();
-            if (!Devmode)
-            {
-                if (!db.OpenConnection())
-                {
-                    MessageBox.Show("Kan geen verbinding maken met de Database server!", "Error!");
-                }
-            }
-
         }
     }
 }
