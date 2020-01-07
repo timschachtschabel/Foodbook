@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BeepWPFApp.Classes;
 
 namespace BeepWPFApp
 {
@@ -28,10 +29,17 @@ namespace BeepWPFApp
 
         private void Login(string naam, string pass) // inlogknop
         {
-            Database db = new Database();
-            if (db.CheckUser(naam,pass))
+            api api = new api();
+            User loginUser = api.GetUser(naam, pass);
+            if (loginUser.Name !=null)
             {
+                GlobalSettings.Naam = loginUser.Name;
+                GlobalSettings.Email = loginUser.Email;
+                char[] seperator = ".".ToCharArray();
+
+                GlobalSettings.AllergieList = loginUser.allergies.Split(seperator).ToList();
                 MainWindow.AppWindow.switchPage(2);
+
             }
             else 
             {

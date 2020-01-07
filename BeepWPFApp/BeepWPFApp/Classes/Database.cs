@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Windows;
+using BeepWPFApp.Classes;
 using MySql.Data.MySqlClient;
 
 namespace BeepWPFApp
@@ -15,7 +16,7 @@ namespace BeepWPFApp
         private static string Password = "";
 
 
-       static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
+        static string connectionString = "SERVER=" + Server + ";" + "DATABASE = " + DB + ";" + "UID=" + UserName + ";" + "PASSWORD=" + Password + ";";
 
         MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -113,10 +114,9 @@ namespace BeepWPFApp
                 {
                     while (result.Read())
                     {
-                        User.AllergieString = result.GetString("Allergies");
-                        User.Naam = result.GetString("Name");
-                        User.Email = result.GetString("Email");
-                        User.CreationTime = result.GetString("Date_created");
+                        GlobalSettings.AllergieString = result.GetString("Allergies");
+                        GlobalSettings.Naam = result.GetString("Name");
+                        GlobalSettings.Email = result.GetString("Email");
                         CloseConnection();
                         return true;
                     }
