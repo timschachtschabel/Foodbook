@@ -22,7 +22,6 @@ namespace BeepWPFApp
         public Favorieten()
         {
             InitializeComponent();
-            listbox2.ItemsSource = lstPage.lstFav;
         }
 
         
