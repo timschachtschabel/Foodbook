@@ -23,7 +23,8 @@
         </Rectangle>
         <Label Content="Inlognaam" HorizontalAlignment="Left" Margin="144,52,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Wachtwoord" HorizontalAlignment="Left" Margin="136,95,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="inlogknop" HorizontalAlignment="Left" Margin="90,164,0,0" VerticalAlignment="Top" Width="170" Height="35" Click="Button_Click" Content="Inloggen"/>
+        <Button x:Name="inlogknop" HorizontalAlignment="Left" Margin="33,157,0,0" VerticalAlignment="Top" Width="141" Height="35" Click="Button_Click" Content="Inloggen"/>
+        <Button x:Name="registreren" HorizontalAlignment="Left" Margin="189,157,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="register_click" Content="registreren"/>
 
     </Grid>
 </Page>

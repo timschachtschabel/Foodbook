@@ -32,6 +32,7 @@ namespace BeepWPFApp
             if (db.CheckUser(naam,pass))
             {
                 MainWindow.AppWindow.switchPage(2);
+                MainWindow.AppWindow.EnableButtons();
             }
             else 
             {
@@ -53,6 +54,11 @@ namespace BeepWPFApp
             {
                 Login(TxtUser.Text, TxtPass.Password);
             }
+        }
+
+        private void register_click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.AppWindow.switchPage(5);
         }
     }
 }
