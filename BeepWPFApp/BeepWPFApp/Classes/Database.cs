@@ -65,6 +65,8 @@ namespace BeepWPFApp
             }
         }
 
+
+        // Register function
         public bool CreateUser(string naam, string password, string email, List<string>Allergie)
         {
             try
