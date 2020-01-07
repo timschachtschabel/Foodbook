@@ -73,7 +73,7 @@ namespace BeepWPFApp
                 string allergie = "";
                 foreach (var item in Allergie)
                 {
-                    allergie = allergie + item + ",";
+                    allergie = allergie + item + ".";
                 }
 
                 //Verbind
@@ -86,12 +86,14 @@ namespace BeepWPFApp
                 command.ExecuteNonQuery();
 
                 //opruimen 
+                MessageBox.Show("Uw account is aangemaakt", "Succes", MessageBoxButton.OK);
                 CloseConnection();
                 return true;
             }
             catch (MySqlException e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("De ingevoerde email bestaat al", "Error!", MessageBoxButton.OK);
+               // MessageBox.Show(e.ToString());
                 return false;
             }
 
