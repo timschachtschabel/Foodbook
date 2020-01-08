@@ -54,7 +54,11 @@ namespace BeepWPFApp
                     //maak nieuw product aan
 
                     Product nieuwProdukt = api.GetProduct(_nummer);
-
+                    if (nieuwProdukt == null)
+                    {
+                        MessageBox.Show("Product niet gevonden");
+                        return;
+                    }
                     if (nieuwProdukt.naam == "notfound")
                     {
                         MessageBox.Show("Product niet gevonden", "error");

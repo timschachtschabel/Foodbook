@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BeepWPFApp.Classes;
 using BeepWPFApp.Enum;
 
 namespace BeepWPFApp
@@ -28,9 +29,9 @@ namespace BeepWPFApp
 
         private void RegisterUser(string naam, string wachtwoord, string email, List<string> allergie)
         {
-            Database db = new Database();
+            api api = new api();
 
-            db.CreateUser(naam, wachtwoord, email, allergie);
+            api.CreateUser(naam, wachtwoord, email, allergie);
 
             MainWindow.AppWindow.switchPage(6);
 

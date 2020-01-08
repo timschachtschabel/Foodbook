@@ -16,8 +16,10 @@ namespace BeepWPFApp.Classes
     class api
     {
         //URL voor API endpoints
-        private string ProductEndpoint = "http://localhost:5050/api/products?";
-        private string UserEndpoint = "http://localhost:5050/api/user?";
+        private static readonly string BaseUrl = "https://webapibeep.azurewebsites.net/";
+        private readonly string ProductEndpoint = BaseUrl +"api/products?";
+        private readonly string UserEndpoint = BaseUrl + "api/user?";
+        private readonly string AuthEndpoint = BaseUrl + "api/auth/token";
         //auth token
         private string jwt = "";
 
@@ -40,7 +42,7 @@ namespace BeepWPFApp.Classes
 
             //Zet de string om in een list
             char[] seperator = ".".ToCharArray();
-            if (resultProduct != null)
+            if (resultProduct.naam != null)
             {
                 if (resultProduct.allergie != null)
                 {
@@ -53,6 +55,10 @@ namespace BeepWPFApp.Classes
                 }
 
                 resultProduct.naam = resultProduct.naam.Replace("&#39;", "'");
+            }
+            else
+            {
+                return null;
             }
             
             //return het eindproduct
@@ -123,8 +129,8 @@ namespace BeepWPFApp.Classes
         //verkrijg nieuwe token
         private void Auth()
         {
-            var authClient = new RestClient("http://localhost:5050/api/auth/token");
-                
+            var authClient = new RestClient("https://webapibeep.azurewebsites.net/api/auth/token");
+            authClient.UserAgent = "ApiClient";
             var authResponse = authClient.Execute(new RestRequest(Method.POST));
 
             var result = JsonConvert.DeserializeObject(authResponse.Content);
