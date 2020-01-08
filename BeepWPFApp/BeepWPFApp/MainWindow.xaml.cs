@@ -14,13 +14,15 @@ namespace BeepWPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static bool Devmode = true;
+        public static bool Devmode = false;
         public static MainWindow AppWindow;
 
         static scannerPage scan = new scannerPage();
         static betaalScherm betaal = new betaalScherm();
         static lstPage lst = new lstPage();
         static DetailsPage details = new DetailsPage();
+        static Registreer registerpage = new Registreer();
+        static InlogScherm login = new InlogScherm();
 
 
         public MainWindow()
@@ -56,6 +58,12 @@ namespace BeepWPFApp
                 case 4:
                     main.Content = details;
                     break;
+                case 5:
+                    main.Content = registerpage;
+                    break;
+                case 6:
+                    main.Content = login;
+                    break;
             }
         }
 
@@ -73,6 +81,13 @@ namespace BeepWPFApp
         private void BtnList_OnClick(object sender, RoutedEventArgs e)
         {
             switchPage(3);
+        }
+
+        public void EnableButtons()
+        {
+            btnCart.IsEnabled = true;
+            btnScanner.IsEnabled = true;
+            BtnList.IsEnabled = true;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
