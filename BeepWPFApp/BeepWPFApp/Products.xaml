@@ -16,7 +16,7 @@
                     <ImageBrush ImageSource="Resources/headers.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <ListBox Name="productlist" HorizontalAlignment="Left" Height="248" Margin="20,69,0,0" VerticalAlignment="Top" Width="320" SelectionChanged="ListBox_SelectionChanged"/>
+            <ListBox Name="productlist" HorizontalAlignment="Left" Height="248" Margin="10,69,0,0" VerticalAlignment="Top" Width="320" SelectionChanged="ListBox_SelectionChanged"/>
 
         </Grid>
     </Grid>
