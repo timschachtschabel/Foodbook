@@ -25,7 +25,7 @@
         </Rectangle>
         <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,82,0,0" SelectionMode="Extended"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,82,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="261,395,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Bekijk de producten" HorizontalAlignment="Left" Margin="213,398,0,0" VerticalAlignment="Top" Width="124" Height="33" Background="#FF9DC0BC" FontWeight="Bold" Click="Button_Click_1"/>
 
 
     </Grid>
