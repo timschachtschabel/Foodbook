@@ -162,7 +162,9 @@ namespace BeepWPFApp.Classes
         //verkrijg nieuwe token
         private void Auth()
         {
-            var authClient = new RestClient("https://webapibeep.azurewebsites.net/api/auth/token");
+            string user = GlobalSettings.Naam;
+            string pass = GlobalSettings.Pass;
+            var authClient = new RestClient($"https://webapibeep.azurewebsites.net/api/auth/token?naam={user}&pass={pass}");
             authClient.UserAgent = "ApiClient";
             var authResponse = authClient.Execute(new RestRequest(Method.POST));
 

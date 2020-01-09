@@ -10,6 +10,7 @@ namespace BeepWPFApp.Classes
     {
         public static string Naam { get; set; }
         public static string Email { get; set; }
+        public static string Pass { get; set; }
         public static List<string> AllergieList { get; set; }
 
         

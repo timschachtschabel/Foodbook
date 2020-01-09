@@ -12,6 +12,7 @@ namespace BeepWPFApp
         public string Name { get; set; }
         public string Email { get; set; }
         public string allergies { get; set; }
+        public string Password { get; set; }
 
     }
 }
