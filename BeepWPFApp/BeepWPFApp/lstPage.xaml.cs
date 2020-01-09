@@ -50,5 +50,10 @@ namespace BeepWPFApp
         {
             MainWindow.AppWindow.switchPage(7);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

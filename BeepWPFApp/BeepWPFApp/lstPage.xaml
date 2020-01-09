@@ -25,7 +25,10 @@
         </Rectangle>
         <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,82,0,0" SelectionMode="Extended"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,82,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="261,395,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="237,336,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1" Height="43"/>
+        <TextBox x:Name="favobox" HorizontalAlignment="Left" Height="104" Margin="27,311,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="205"/>
+        <Button x:Name="addfavo" Content="&lt;" HorizontalAlignment="Left" Margin="237,311,0,0" VerticalAlignment="Top" Width="45"/>
+        <Button x:Name="deletefavo" Content="&gt;" HorizontalAlignment="Left" Margin="291,311,0,0" VerticalAlignment="Top" Width="45" Click="Button_Click_2"/>
 
 
     </Grid>
