@@ -25,10 +25,17 @@ namespace BeepWPFApp
         {
             InitializeComponent();
 
-            api Testapi = new api();
-            Product testproduct = Testapi.GetProduct("8710398159458");
 
-            productlist.Items.Add(testproduct);
+            api Testapi = new api();
+            //Product testproduct = Testapi.GetProduct("8710398159458");
+            //productlist.Items.Add(testproduct);
+
+            var testlist = Testapi.GetAllProducts();
+
+            foreach (var testproduct in testlist)
+            {
+                productlist.Items.Add(testproduct);
+            }
 
         }
 

@@ -65,6 +65,39 @@ namespace BeepWPFApp.Classes
             return resultProduct;
         }
 
+        public List<Product> GetAllProducts()
+        {
+            List<Product> resultl = new List<Product>();
+            string url = "https://webapibeep.azurewebsites.net/api/products/all";
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest());
+
+            resultl = JsonConvert.DeserializeObject<List<Product>>(response.Content);
+            char[] seperator = ".".ToCharArray();
+
+            foreach (Product result in resultl)
+            {
+                if (result.allergie != null)
+                {
+                    result.AllergieList = result.allergie.Split(seperator).ToList();
+                }
+
+                if (result.ingredient != null)
+                {
+                    result.IngredientList = result.ingredient.Split(seperator).ToList();
+                }
+
+                result.naam = result.naam.Replace("&#39;", "'");
+            }
+
+            return resultl;
+        }
+
         public User GetUser(string naam, string password)
         {
             //URL voor API Endpoint
