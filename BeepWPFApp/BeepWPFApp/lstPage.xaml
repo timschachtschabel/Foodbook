@@ -25,18 +25,7 @@
         </Rectangle>
         <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,82,0,0" SelectionMode="Extended"/>
         <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,82,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="favadd1" Content="+" HorizontalAlignment="Left" Margin="27,295,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
-        <ListBox x:Name="favlb1" HorizontalAlignment="Left" Height="114" Margin="27,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="favremove1" Content="-" HorizontalAlignment="Left" Margin="60,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove1_Click"/>
-        <ListBox x:Name="favlb2" HorizontalAlignment="Left" Height="114" Margin="132,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="favadd2" Content="+" HorizontalAlignment="Left" Margin="132,295,0,0" VerticalAlignment="Top" Width="33" Click="favadd2_Click"/>
-        <Button x:Name="favremove2" Content="-" HorizontalAlignment="Left" Margin="165,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove2_Click"/>
-        <ListBox x:Name="favlb3" HorizontalAlignment="Left" Height="114" Margin="237,315,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="favadd3" Content="+" HorizontalAlignment="Left" Margin="237,295,0,0" VerticalAlignment="Top" Width="33" Click="favadd3_Click"/>
-        <Button x:Name="favremove3" Content="-" HorizontalAlignment="Left" Margin="270,295,0,0" VerticalAlignment="Top" Width="33" Click="favremove3_Click"/>
-        <Button x:Name="favall1" Content="&gt;" HorizontalAlignment="Left" Margin="93,295,0,0" VerticalAlignment="Top" Width="33" Height="20" Click="favall1_Click"/>
-        <Button x:Name="favall2" Content="&gt;" HorizontalAlignment="Left" Margin="198,295,0,0" VerticalAlignment="Top" Width="33" Click="favall2_Click"/>
-        <Button x:Name="favall3" Content="&gt;" HorizontalAlignment="Left" Margin="303,295,-18,0" VerticalAlignment="Top" Width="33" Click="favall3_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="261,395,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
 
     </Grid>

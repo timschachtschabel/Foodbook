@@ -23,6 +23,7 @@ namespace BeepWPFApp
         static DetailsPage details = new DetailsPage();
         static Registreer registerpage = new Registreer();
         static InlogScherm login = new InlogScherm();
+        static Products productpage = new Products();
 
 
         public MainWindow()
@@ -64,6 +65,10 @@ namespace BeepWPFApp
                 case 6:
                     main.Content = login;
                     break;
+                case 7:
+                    main.Content = productpage;
+                    break;
+
             }
         }
 
