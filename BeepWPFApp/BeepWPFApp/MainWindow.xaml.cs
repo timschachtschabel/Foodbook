@@ -80,7 +80,7 @@ namespace BeepWPFApp
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
-            switchPage(1);
+            switchPage(7);
         }
 
         private void BtnList_OnClick(object sender, RoutedEventArgs e)
