@@ -68,6 +68,8 @@ namespace BeepWPFApp
         {
             if (e.Key == Key.Enter)
             {
+                searchresults.Text = "0";
+
                 productlist.Items.Clear();
 
                 foreach (var product in finalProductList)
@@ -81,6 +83,8 @@ namespace BeepWPFApp
             }
             else
             {
+                searchresults.Text = "0";
+
                 productlist.Items.Clear();
 
                 foreach (var product in finalProductList)
@@ -91,7 +95,13 @@ namespace BeepWPFApp
                         searchresults.Text = productlist.Items.Count.ToString();
                     }
                 }
+
             }
+        }
+
+        private void Grid_Initialized(object sender, EventArgs e)
+        {
+            searchresults.Text = "0";
         }
     }
 }
