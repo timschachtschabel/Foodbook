@@ -63,5 +63,22 @@ namespace BeepWPFApp
         private void searchbox_KeyUp(object sender, KeyEventArgs e)
         {
         }
+
+        private void searchbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                productlist.Items.Clear();
+
+                foreach (var product in finalProductList)
+                {
+                    if (product.naam.ToLower().Contains(searchbox.Text.ToLower()))
+                    {
+                        productlist.Items.Add(product);
+                        searchresults.Text = productlist.Items.Count.ToString();
+                    }
+                }
+            }
+        }
     }
 }
