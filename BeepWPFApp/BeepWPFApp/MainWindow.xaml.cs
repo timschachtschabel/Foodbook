@@ -23,6 +23,7 @@ namespace BeepWPFApp
         static DetailsPage details = new DetailsPage();
         static Registreer registerpage = new Registreer();
         static InlogScherm login = new InlogScherm();
+        static Products productpage = new Products();
 
 
         public MainWindow()
@@ -34,7 +35,6 @@ namespace BeepWPFApp
 
             if (Devmode)
             {
-                Database db = new Database();
                 btnCart.IsEnabled = true;
                 btnScanner.IsEnabled = true;
                 BtnList.IsEnabled = true;
@@ -65,6 +65,10 @@ namespace BeepWPFApp
                 case 6:
                     main.Content = login;
                     break;
+                case 7:
+                    main.Content = productpage;
+                    break;
+
             }
         }
 
@@ -76,7 +80,7 @@ namespace BeepWPFApp
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
-            switchPage(1);
+            switchPage(7);
         }
 
         private void BtnList_OnClick(object sender, RoutedEventArgs e)
@@ -93,15 +97,6 @@ namespace BeepWPFApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Database db = new Database();
-            if (!Devmode)
-            {
-                if (!db.OpenConnection())
-                {
-                    MessageBox.Show("Kan geen verbinding maken met de Database server!", "Error!");
-                }
-            }
-
         }
     }
 }

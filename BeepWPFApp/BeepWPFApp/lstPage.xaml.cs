@@ -48,49 +48,12 @@ namespace BeepWPFApp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            favlb1.Items.Add(lstNaam.SelectedItem);
+            MainWindow.AppWindow.switchPage(7);
         }
 
-        private void favremove1_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            favlb1.Items.Remove(lstNaam.SelectedItem);
+
         }
-
-        private void favadd2_Click(object sender, RoutedEventArgs e)
-        {
-            favlb2.Items.Add(lstNaam.SelectedItem);
-        }
-
-        private void favremove2_Click(object sender, RoutedEventArgs e)
-        {
-            favlb2.Items.Remove(lstNaam.SelectedItem);
-        }
-
-        private void favadd3_Click(object sender, RoutedEventArgs e)
-        {
-            favlb3.Items.Add(lstNaam.SelectedItem);
-        }
-
-        private void favremove3_Click(object sender, RoutedEventArgs e)
-        {
-            favlb1.Items.Remove(lstNaam.SelectedItem);
-        }
-
-        private void favall1_Click(object sender, RoutedEventArgs e)
-        {
-            lstNaam.Items.Add(favlb1.SelectedItem);
-        }
-
-        private void favall2_Click(object sender, RoutedEventArgs e)
-        {
-            lstNaam.Items.Add(favlb2.SelectedItem);
-        }
-
-        private void favall3_Click(object sender, RoutedEventArgs e)
-        {
-            lstNaam.Items.Add(favlb3.SelectedItem);
-        }
-
-
     }
 }
