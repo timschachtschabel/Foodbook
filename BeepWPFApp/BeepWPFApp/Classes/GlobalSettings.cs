@@ -8,6 +8,7 @@ namespace BeepWPFApp.Classes
 {
     public static class GlobalSettings
     {
+        public static int Id { get; set; }
         public static string Naam { get; set; }
         public static string Email { get; set; }
         public static string Pass { get; set; }

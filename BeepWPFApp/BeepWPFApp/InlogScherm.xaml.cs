@@ -33,6 +33,7 @@ namespace BeepWPFApp
             User loginUser = api.GetUser(naam, pass);
             if (loginUser.Name !=null)
             {
+                GlobalSettings.Id = loginUser.Id;
                 GlobalSettings.Naam = loginUser.Name;
                 GlobalSettings.Email = loginUser.Email;
                 GlobalSettings.Pass = loginUser.Password;

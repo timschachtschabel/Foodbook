@@ -21,6 +21,7 @@
             <Button Name="searchbutton" Content="Zoeken" HorizontalAlignment="Left" Margin="240,80,0,0" VerticalAlignment="Top" Width="90" Height="23" Click="searchbutton_Click"/>
             <Label Name="searchstatus" Content="Aantal resultaten:" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top"/>
             <TextBlock Name="searchresults" HorizontalAlignment="Left" Margin="117,400,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <Button Content="Aan lijst toevoegen" HorizontalAlignment="Left" Margin="221,395,0,0" VerticalAlignment="Top" Width="109"/>
 
         </Grid>
     </Grid>
