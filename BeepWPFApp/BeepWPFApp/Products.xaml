@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid Width="360" Height="480"
-         Background="#FFE8EBE4">
+         Background="#FFE8EBE4" Initialized="Grid_Initialized">
             <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Resources/headers.png"/>
