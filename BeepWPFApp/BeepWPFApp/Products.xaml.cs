@@ -52,7 +52,7 @@ namespace BeepWPFApp
 
             foreach (var product in finalProductList)
             {
-                if (product.naam.ToLower().Contains(searchbox.Text))
+                if (product.naam.ToLower().Contains(searchbox.Text.ToLower()))
                 {
                     productlist.Items.Add(product);
                     searchresults.Text = productlist.Items.Count.ToString();
