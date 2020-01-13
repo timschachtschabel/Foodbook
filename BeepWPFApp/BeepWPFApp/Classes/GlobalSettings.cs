@@ -16,8 +16,8 @@ namespace BeepWPFApp.Classes
         
         public static bool IsAllergic(Product product)
         {
-
-            if (AllergieList != null && !AllergieList.Any())
+            
+            if (AllergieList == null && AllergieList.Any())
             {
                 return false;
             }
