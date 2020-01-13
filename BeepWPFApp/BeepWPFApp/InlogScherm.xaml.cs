@@ -36,6 +36,7 @@ namespace BeepWPFApp
                 GlobalSettings.Naam = loginUser.Name;
                 GlobalSettings.Email = loginUser.Email;
                 GlobalSettings.Pass = loginUser.Password;
+
                 char[] seperator = ".".ToCharArray();
 
                 GlobalSettings.AllergieList = loginUser.allergies.Split(seperator).ToList();

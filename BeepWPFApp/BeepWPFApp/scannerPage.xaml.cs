@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Controls;
@@ -20,6 +24,8 @@ namespace BeepWPFApp
     {
         //list moet static anders gaat ie leeg na refresh.
         public static List<Product> ProductenLijst = new List<Product>();
+        SerialPort _serialPort = new SerialPort();
+        private string code;
 
         //var aanmaken
         private string _nummer;
@@ -27,60 +33,37 @@ namespace BeepWPFApp
         public scannerPage()
         {
             InitializeComponent();
+            InitScanner("COM8");
+        }
+
+        private void InitScanner(string name)
+        {
+            try
+            {
+                _serialPort.Handshake = Handshake.None;
+                _serialPort.PortName = name;
+                _serialPort.BaudRate = 19200;
+                _serialPort.Parity = Parity.None;
+                _serialPort.DataBits = 8;
+                _serialPort.StopBits = StopBits.One;
+                _serialPort.DataReceived += new SerialDataReceivedEventHandler(AddItem);
+                _serialPort.ReadTimeout = 500;
+                _serialPort.WriteTimeout = 500;
+                _serialPort.Open();
+
+                Thread readThread = new Thread(new ThreadStart(getBarcode));
+                readThread.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Verbind AUB een scanner");
+            }
+
         }
 
         //Capture barcode
         //Get info via barcode
-        public void Page_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            //laat alleen nummers toe
-            if ((!char.IsDigit((char) KeyInterop.VirtualKeyFromKey(e.Key)) & (e.Key != Key.Back)) |
-                (e.Key == Key.Space))
-            {
-                e.Handled = true;
-                MessageBox.Show("Alleen nummers, sorry. :(", "Error!");
-                _nummer = null;
-            }
-            //Voeg keycode toe, zet keycode om naar cijfer
-            else
-            {
-                api api = new api();
-                _nummer += e.Key;
-                int index = _nummer.Length - 2;
-                _nummer = _nummer.Remove(index, 1);
-
-                if (_nummer.Length == 13)
-                {
-                    //maak nieuw product aan
-
-                    Product nieuwProdukt = api.GetProduct(_nummer);
-                    if (nieuwProdukt == null)
-                    {
-                        MessageBox.Show("Product niet gevonden");
-                        return;
-                    }
-                    if (nieuwProdukt.naam == "notfound")
-                    {
-                        MessageBox.Show("Product niet gevonden", "error");
-                    }
-                    else
-                    {
-                        //voeg product toe aan de lijst
-                        ProductenLijst.Add(nieuwProdukt);
-
-                        //push naar lijst
-                        lstPrijs.Items.Add(nieuwProdukt.prijs);
-                        if (GlobalSettings.IsAllergic(nieuwProdukt))
-                        {
-                            lstNaam.Items.Add(new ListBoxItem {Content = nieuwProdukt, Background = Brushes.Red});
-                        }
-                        else lstNaam.Items.Add(nieuwProdukt);
-                    }
-                }
-
-                if (_nummer.Length >= 13) _nummer = null;
-            }
-        }
+       
 
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
@@ -89,7 +72,47 @@ namespace BeepWPFApp
 
         }
 
+        private void getBarcode()
+        {
+            this.Dispatcher.Invoke( new Action( () => 
+            {
+                code = _serialPort.ReadExisting();
 
+            }));
+        }
+        private void AddItem(object sender, SerialDataReceivedEventArgs e)
+        {
+            api api = new api();
+            getBarcode();
+            Product nieuwProdukt = api.GetProduct(code);
+            if (nieuwProdukt == null)
+            {
+                MessageBox.Show("Product niet gevonden", code);
+                return;
+            }
+            if (nieuwProdukt.naam == "notfound")
+            {
+                
+                MessageBox.Show("Product niet gevonden", code);
+            }
+            else
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    //voeg product toe aan de lijst
+                    ProductenLijst.Add(nieuwProdukt);
+
+                    //push naar lijst
+                    lstPrijs.Items.Add(nieuwProdukt.prijs);
+                    if (GlobalSettings.IsAllergic(nieuwProdukt))
+                    {
+                        lstNaam.Items.Add(new ListBoxItem {Content = nieuwProdukt, Background = Brushes.Red});
+                    }
+                    else lstNaam.Items.Add(nieuwProdukt);
+                });
+
+            }
+        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {

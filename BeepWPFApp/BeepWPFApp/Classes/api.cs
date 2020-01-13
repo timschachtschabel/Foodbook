@@ -120,15 +120,17 @@ namespace BeepWPFApp.Classes
 
         public bool CreateUser(string naam, string password, string email, List<string> Allergie)
         {
-            //API Enpoint
-            string url = UserEndpoint + $"Naam={naam}&Email={email}&password={password}&allergie={Allergie}";
+            string AllergieString = "";
+
 
                 //maakt van List string
-                string allergie = "";
                 foreach (var item in Allergie)
                 {
-                    allergie = allergie + item + ",";
+                    AllergieString = AllergieString + item + ".";
                 }
+                //API Enpoint
+
+                string url = UserEndpoint + $"Naam={naam}&Email={email}&password={password}&allergie={AllergieString}";
 
                 //Als 401 dan JWT token verkrijgen
                 while (Authed(url) == false)
