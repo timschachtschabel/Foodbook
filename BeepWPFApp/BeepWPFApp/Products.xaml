@@ -22,7 +22,7 @@
             <Label Name="searchstatus" Content="Aantal resultaten:" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top"/>
             <TextBlock Name="searchresults" HorizontalAlignment="Left" Margin="117,400,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
             <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="221,395,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click"/>
-            <ListBox HorizontalAlignment="Left" Height="233" Margin="240,141,0,0" VerticalAlignment="Top" Width="90"/>
+            <ListBox x:Name="shoppinglists" HorizontalAlignment="Left" Height="233" Margin="240,141,0,0" VerticalAlignment="Top" Width="90" AutomationProperties.ItemStatus="static"/>
 
         </Grid>
     </Grid>
