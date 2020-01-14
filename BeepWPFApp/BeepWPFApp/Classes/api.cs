@@ -20,6 +20,9 @@ namespace BeepWPFApp.Classes
         private readonly string ProductEndpoint = BaseUrl +"api/products?";
         private readonly string UserEndpoint = BaseUrl + "api/user?";
         private readonly string AuthEndpoint = BaseUrl + "api/auth/token";
+        private readonly string ShoppinglistEndpoint = BaseUrl + "api/shoppinglist?";
+        private readonly string ShoppinglistProductEndpoint = BaseUrl + "api/shoppinglist/addproduct?";
+
         //auth token
         private string jwt = "";
 
@@ -120,15 +123,17 @@ namespace BeepWPFApp.Classes
 
         public bool CreateUser(string naam, string password, string email, List<string> Allergie)
         {
-            //API Enpoint
-            string url = UserEndpoint + $"Naam={naam}&Email={email}&password={password}&allergie={Allergie}";
+            string AllergieString = "";
+
 
                 //maakt van List string
-                string allergie = "";
                 foreach (var item in Allergie)
                 {
-                    allergie = allergie + item + ",";
+                    AllergieString = AllergieString + item + ".";
                 }
+                //API Enpoint
+
+                string url = UserEndpoint + $"Naam={naam}&Email={email}&password={password}&allergie={AllergieString}";
 
                 //Als 401 dan JWT token verkrijgen
                 while (Authed(url) == false)
@@ -143,6 +148,44 @@ namespace BeepWPFApp.Classes
                 //Return true als het goed gaat
                 if (response.StatusCode == HttpStatusCode.OK) return true;
                 return false;
+        }
+
+        public bool CreateShoppinglist(string naam, int userid)
+        {
+            string url = ShoppinglistEndpoint + $"naam={naam}&userid={userid}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest(Method.POST));
+
+            //Return true als het goed gaat
+            if (response.StatusCode == HttpStatusCode.OK) return true;
+            return false;
+
+        }
+
+        public bool AddShoppinglistItem(int ShoppinglistID, int ProductID)
+        {
+            string url = ShoppinglistProductEndpoint + $"shoppinglistid={ShoppinglistID}&productid={ProductID}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest(Method.POST));
+
+            //Return true als het goed gaat
+            if (response.StatusCode == HttpStatusCode.OK) return true;
+            return false;
+
         }
 
 

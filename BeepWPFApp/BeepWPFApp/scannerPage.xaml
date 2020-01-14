@@ -7,7 +7,7 @@
       xmlns:emit="clr-namespace:System.Reflection.Emit;assembly=mscorlib"
       mc:Ignorable="d"
       Title="Beep Scanner"
- KeyDown="Page_KeyDown_1" Loaded="Page_Loaded">
+        Loaded="Page_Loaded">
 
 
 

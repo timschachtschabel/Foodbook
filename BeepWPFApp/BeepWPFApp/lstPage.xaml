@@ -12,23 +12,19 @@
 
     <Grid Height="480" Width="360">
         <Rectangle HorizontalAlignment="Left" Height="480" Margin="1,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" Fill="#FFE8EBE4"/>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="Zoek uw product hier..." VerticalAlignment="Top" Width="266" Margin="27,47,0,0" AutomationProperties.IsColumnHeader="True" Background="#FF9DC0BC" FontStyle="Italic" />
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Margin="298,47,0,0" Height="30" BorderBrush="#FFE8EBE4" Foreground="#FFE8EBE4" RenderTransformOrigin="0.026,0.4" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/search.png"/>
-            </Button.Background>
-        </Button>
         <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,82,0,0" SelectionMode="Extended"/>
-        <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,82,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="224,336,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1" Height="43"/>
-        <TextBox x:Name="favobox" HorizontalAlignment="Left" Height="104" Margin="27,311,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="192"/>
-        <Button x:Name="addfavo" Content="&lt;" HorizontalAlignment="Left" Margin="224,311,0,0" VerticalAlignment="Top" Width="52"/>
-        <Button x:Name="deletefavo" Content="&gt;" HorizontalAlignment="Left" Margin="284,311,0,0" VerticalAlignment="Top" Width="52" Click="Button_Click_2"/>
+        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,116,0,0" SelectionMode="Extended"/>
+        <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="203" Margin="237,116,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="224,371,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1" Height="43"/>
+        <TextBox x:Name="favobox" HorizontalAlignment="Left" Height="104" Margin="27,336,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="192"/>
+        <Button x:Name="addfavo" Content="&lt;" HorizontalAlignment="Left" Margin="224,335,0,0" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="deletefavo" Content="&gt;" HorizontalAlignment="Left" Margin="285,335,0,0" VerticalAlignment="Top" Width="52" Click="Button_Click_2"/>
+        <TextBox Name="shoppinglistname" HorizontalAlignment="Left" Height="23" Margin="27,67,0,0" TextWrapping="Wrap" Text="Naam boodschappenlijst" VerticalAlignment="Top" Width="205"/>
+        <Button Name="addshoppinglist" Content="Voeg toe" HorizontalAlignment="Left" Margin="237,67,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="Button_Click_3"/>
 
 
     </Grid>
