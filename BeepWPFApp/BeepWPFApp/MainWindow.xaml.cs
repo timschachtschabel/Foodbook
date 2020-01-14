@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Navigation;
+using BeepWPFApp.Classes;
 using BeepWPFApp.Enum;
 
 
@@ -23,7 +24,7 @@ namespace BeepWPFApp
         static DetailsPage details = new DetailsPage();
         static Registreer registerpage = new Registreer();
         static InlogScherm login = new InlogScherm();
-        static Products productpage = new Products();
+        public static Products productpage = new Products();
 
 
         public MainWindow()
@@ -42,7 +43,10 @@ namespace BeepWPFApp
             
 
         }
-
+        public void GetShoppinglist()
+        {
+            productpage.Updatelist();
+        }
         public void switchPage(int pageIndex)
         {
             switch (pageIndex)

@@ -101,6 +101,27 @@ namespace BeepWPFApp.Classes
             return resultl;
         }
 
+        public List<Shoppinglist> GetShoppinglists(int user)
+        {
+            List<Shoppinglist> shoppinglistresults = new List<Shoppinglist>();
+            string url = ShoppinglistEndpoint + $"user={user}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest());
+            if (response.StatusCode != HttpStatusCode.BadRequest)
+            {
+                shoppinglistresults = JsonConvert.DeserializeObject<List<Shoppinglist>>(response.Content);
+                return shoppinglistresults;
+            }
+            return null;
+
+        }
+
         public User GetUser(string naam, string password)
         {
             //URL voor API Endpoint
@@ -187,6 +208,8 @@ namespace BeepWPFApp.Classes
             return false;
 
         }
+
+
 
 
         //Check als we geen 401 krijgen

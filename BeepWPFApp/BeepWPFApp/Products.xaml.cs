@@ -38,6 +38,27 @@ namespace BeepWPFApp
                 productlist.Items.Add(testproduct);
             }
 
+        
+
+        }
+        public void Updatelist()
+        {
+  
+                api Listapi = new api();
+
+                List<Shoppinglist> userShoppinglists = new List<Shoppinglist>();
+
+
+                userShoppinglists = Listapi.GetShoppinglists(GlobalSettings.Id);
+                if (userShoppinglists != null)
+                {
+                    foreach (var shoppinglist in userShoppinglists)
+                    {
+
+                        shoppinglists.Items.Add(shoppinglist);
+                    }
+                }
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
