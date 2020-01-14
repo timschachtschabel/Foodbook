@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BeepWPFApp.Classes;
+
 
 namespace BeepWPFApp
 {
@@ -30,17 +32,6 @@ namespace BeepWPFApp
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.txtBox.Text != "")
-            {
-                lstNaam.Items.Add(this.txtBox.Text);
-
-            }
-
-
-        }
-
         internal object showDialog()
         {
             throw new NotImplementedException();
@@ -54,6 +45,15 @@ namespace BeepWPFApp
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            api Shoppinglistapi = new api();
+
+
+            Shoppinglistapi.CreateShoppinglist(shoppinglistname.Text, GlobalSettings.Id);
+            
         }
     }
 }
