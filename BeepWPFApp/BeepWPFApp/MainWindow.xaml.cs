@@ -46,6 +46,8 @@ namespace BeepWPFApp
         public void GetShoppinglist()
         {
             productpage.Updatelist();
+            lst.Updatelist();
+            
         }
         public void switchPage(int pageIndex)
         {
