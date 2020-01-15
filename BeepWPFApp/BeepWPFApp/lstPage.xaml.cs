@@ -32,6 +32,26 @@ namespace BeepWPFApp
 
         }
 
+        public void Updatelist()
+        {
+
+            api Listapi = new api();
+
+            List<Shoppinglist> userShoppinglists = new List<Shoppinglist>();
+
+
+            userShoppinglists = Listapi.GetShoppinglists(GlobalSettings.Id);
+            if (userShoppinglists != null)
+            {
+                foreach (var shoppinglist in userShoppinglists)
+                {
+
+                    shoppinglists.Items.Add(shoppinglist);
+                }
+            }
+
+        }
+
         internal object showDialog()
         {
             throw new NotImplementedException();
