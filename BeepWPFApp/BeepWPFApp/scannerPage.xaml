@@ -9,11 +9,12 @@
       Title="Beep Scanner"
       MaxHeight="480"
       MaxWidth="350"
+      HorizontalAlignment="Left"
       >
 
 
 
-    <Grid Background="#FFE8EBE4" Height="480" Width="348" HorizontalAlignment="Left" Margin="-5,0,0,0">
+    <Grid Background="#FFE8EBE4" Height="480" Width="348" HorizontalAlignment="Left" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="360"/>

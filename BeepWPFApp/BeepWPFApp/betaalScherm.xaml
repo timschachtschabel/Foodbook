@@ -6,7 +6,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
-      Title="Beep Scanner" >
+      Title="Beep Scanner" 
+      HorizontalAlignment="Left">
 
     
         <Grid Width="348" Height="480"

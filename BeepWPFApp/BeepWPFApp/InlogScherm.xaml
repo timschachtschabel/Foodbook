@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="348"
-      Title="InlogScherm" Width="348" Height="480">
+      Title="InlogScherm" Width="348" Height="480"
+      HorizontalAlignment="Left">
 
-    <Grid Width="348" Height="480" Background="#FFE8EBE4">
+    <Grid Width="348" Height="480" Background="#FFE8EBE4" >
         <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>

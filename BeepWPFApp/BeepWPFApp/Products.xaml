@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
       d:DesignHeight="480" d:DesignWidth="348"
-      Title="Products">
+      Title="Products"
+      HorizontalAlignment="Left">
 
     <Grid>
         <Grid Width="348" Height="480"

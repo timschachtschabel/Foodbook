@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeepWPFApp"
         mc:Ignorable="d"
-        Title="Favorieten" Height="480" Width="348" >
+        Title="Favorieten" Height="480" Width="348" 
+        HorizontalAlignment="Left">
     <Grid Width="348" Background="#FFE8EBE4" Height="480">
         <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
