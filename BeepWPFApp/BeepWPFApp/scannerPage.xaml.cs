@@ -68,9 +68,7 @@ namespace BeepWPFApp
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
-            api api = new api();
-            Product product = api.GetProduct("80793335");
-            ProductenLijst.Add(product);
+
         }
 
         private void getBarcode()
