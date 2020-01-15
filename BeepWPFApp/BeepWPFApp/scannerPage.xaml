@@ -33,11 +33,13 @@
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox Name="productListbox" ItemsSource="{Binding}" Margin="10,173,22,10" Grid.Column="1" MouseDoubleClick="ProductListbox_OnMouseDoubleClick">
+        <ListBox
+            Name="productListbox" ItemsSource="{Binding}" Margin="10,173,22,10" Grid.Column="1" MouseDoubleClick="ProductListbox_OnMouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text = "{Binding naam}" FontWeight="Bold" />
+                        
+                        <TextBlock Text = "{Binding naam}" FontWeight="Bold" TextTrimming="CharacterEllipsis"/>
                         <TextBlock Text = "{Binding prijs, StringFormat=f2}" />
                     </StackPanel>
                 </DataTemplate>
