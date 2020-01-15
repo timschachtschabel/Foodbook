@@ -5,23 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
-      d:DesignHeight="480" d:DesignWidth="360"
+      d:DesignHeight="480" d:DesignWidth="348"
       Title="Registreer">
 
-    <Grid Width="360" Height="480" Background="#FFE8EBE4">
+    <Grid Width="348" Height="480" Background="#FFE8EBE4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.521,1.872" Grid.ColumnSpan="3">
+        <Rectangle HorizontalAlignment="Left" Height="53" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="RegisterUsername" HorizontalAlignment="Left" Height="23" Margin="117,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
         <PasswordBox x:Name="RegisterPass" HorizontalAlignment="Left" Height="23" Margin="117,118,0,0" PasswordChar="*" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-        <Rectangle HorizontalAlignment="Left" Height="162" Margin="77,318,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="3">
+        <Rectangle HorizontalAlignment="Left" Height="132" Margin="105,329,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="132" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/bleep.png" Stretch="Uniform"/>
             </Rectangle.Fill>

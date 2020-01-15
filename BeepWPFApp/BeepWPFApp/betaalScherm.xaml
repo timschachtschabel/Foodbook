@@ -9,9 +9,9 @@
       Title="Beep Scanner" >
 
     
-        <Grid Width="360" Height="480"
+        <Grid Width="348" Height="480"
          Background="#FFE8EBE4">
-        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360">
+        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Resources/headers.png"/>
                 </Rectangle.Fill>

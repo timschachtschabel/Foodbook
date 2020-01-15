@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="480" d:DesignWidth="348"
       Title="Products">
 
     <Grid>
-        <Grid Width="360" Height="480"
+        <Grid Width="348" Height="480"
          Background="#FFE8EBE4" Initialized="Grid_Initialized">
-            <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360">
+            <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Resources/headers.png"/>
                 </Rectangle.Fill>

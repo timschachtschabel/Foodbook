@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
@@ -23,7 +24,7 @@ namespace BeepWPFApp
     public partial class scannerPage : Page
     {
         //list moet static anders gaat ie leeg na refresh.
-        public static List<Product> ProductenLijst = new List<Product>();
+        public static BindingList<Product> ProductenLijst = new BindingList<Product>();
         SerialPort _serialPort = new SerialPort();
         private string code;
 
@@ -34,6 +35,7 @@ namespace BeepWPFApp
         {
             InitializeComponent();
             InitScanner("COM8");
+            productListbox.ItemsSource = ProductenLijst;
         }
 
         private void InitScanner(string name)
@@ -58,28 +60,24 @@ namespace BeepWPFApp
             {
                 MessageBox.Show("Verbind AUB een scanner");
             }
-
         }
 
         //Capture barcode
         //Get info via barcode
-       
 
 
         private void btnScan_Click(object sender, RoutedEventArgs e)
         {
-
-
+            api api = new api();
+            Product product = api.GetProduct("80793335");
+            ProductenLijst.Add(product);
         }
 
         private void getBarcode()
         {
-            this.Dispatcher.Invoke( new Action( () => 
-            {
-                code = _serialPort.ReadExisting();
-
-            }));
+            this.Dispatcher.Invoke(new Action(() => { code = _serialPort.ReadExisting(); }));
         }
+
         private void AddItem(object sender, SerialDataReceivedEventArgs e)
         {
             api api = new api();
@@ -90,9 +88,9 @@ namespace BeepWPFApp
                 MessageBox.Show("Product niet gevonden", code);
                 return;
             }
+
             if (nieuwProdukt.naam == "notfound")
             {
-                
                 MessageBox.Show("Product niet gevonden", code);
             }
             else
@@ -101,35 +99,14 @@ namespace BeepWPFApp
                 {
                     //voeg product toe aan de lijst
                     ProductenLijst.Add(nieuwProdukt);
-
-                    //push naar lijst
-                    lstPrijs.Items.Add(nieuwProdukt.prijs);
-                    if (GlobalSettings.IsAllergic(nieuwProdukt))
-                    {
-                        lstNaam.Items.Add(new ListBoxItem {Content = nieuwProdukt, Background = Brushes.Red});
-                    }
-                    else lstNaam.Items.Add(nieuwProdukt);
                 });
-
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            //clear om daarna toe te voegen, als ik dit niet doe gaat t mis
-            lstNaam.Items.Clear();
-            lstPrijs.Items.Clear();
-            foreach (var product in ProductenLijst)
-            {
-                lstPrijs.Items.Add(product.prijs);
-                lstNaam.Items.Add(product);
-            }
-        }
 
-        //Krijg product informatie
-        private void lstNaam_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ProductListbox_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Product product = lstNaam.SelectedItem as Product;
+            Product product = productListbox.SelectedItem as Product;
 
             //Maak nieuwe window aan
             var mw = Application.Current.Windows
@@ -161,7 +138,7 @@ namespace BeepWPFApp
                 else detail.AllergieLstBox.Items.Add("Dit product heeft geen Allergie informatie!");
 
                 //Heb je wel iets geselecteerd?
-                if (lstNaam.SelectedItem != null)
+                if (productListbox.SelectedItem != null)
                 {
                     mw.main.Content = detail;
                 }
