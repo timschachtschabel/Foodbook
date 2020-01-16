@@ -32,6 +32,46 @@ namespace BeepWPFApp
 
         }
 
+        public void Updatelist()
+        {
+
+            api Listapi = new api();
+
+            List<Shoppinglist> userShoppinglists = new List<Shoppinglist>();
+
+
+            userShoppinglists = Listapi.GetShoppinglists(GlobalSettings.Id);
+            if (userShoppinglists != null)
+            {
+                foreach (var shoppinglist in userShoppinglists)
+                {
+
+                    shoppinglists.Items.Add(shoppinglist);
+                }
+            }
+
+        }
+
+        public void showProducts()
+        {
+            api listProductsApi = new api();
+
+            List<Shoppinglistproduct> shoppinglistproducts = new List<Shoppinglistproduct>();
+
+            Shoppinglist shoppinglist = shoppinglists.SelectedItem as Shoppinglist;
+
+            shoppinglistproducts = listProductsApi.GetShoppinglistProducts(GlobalSettings.Id, shoppinglist.Id);
+
+            if (shoppinglistproducts != null)
+            {
+                foreach (var product in shoppinglistproducts)
+                {
+                    lstNaam.Items.Add(product.Name);
+                }
+            }
+
+        }
+
         internal object showDialog()
         {
             throw new NotImplementedException();
@@ -54,6 +94,12 @@ namespace BeepWPFApp
 
             Shoppinglistapi.CreateShoppinglist(shoppinglistname.Text, GlobalSettings.Id);
             
+        }
+
+        private void shoppinglists_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            lstNaam.Items.Clear();
+            showProducts();
         }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BeepWPFApp.Classes;
 
+
 namespace BeepWPFApp
 {
     /// <summary>
@@ -38,6 +39,27 @@ namespace BeepWPFApp
                 productlist.Items.Add(testproduct);
             }
 
+        
+
+        }
+        public void Updatelist()
+        {
+  
+                api Listapi = new api();
+
+                List<Shoppinglist> userShoppinglists = new List<Shoppinglist>();
+
+
+                userShoppinglists = Listapi.GetShoppinglists(GlobalSettings.Id);
+                if (userShoppinglists != null)
+                {
+                    foreach (var shoppinglist in userShoppinglists)
+                    {
+
+                        shoppinglists.Items.Add(shoppinglist);
+                    }
+                }
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -106,6 +128,26 @@ namespace BeepWPFApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            api AddShopListItemApi = new api();
+
+            Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
+            Product product = finalProductList[productlist.SelectedIndex];
+
+            MessageBox.Show(product.naam);
+            MessageBox.Show(shoppinglist.Name);
+
+            if (AddShopListItemApi.AddShoppinglistItem(shoppinglist.Id, product.Id))
+            {
+                MessageBox
+                    .Show("gelukt");
+            }
+            else
+            {
+                MessageBox.Show("nee");
+            }
+
+            
 
         }
     }

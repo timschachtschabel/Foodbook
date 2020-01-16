@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace BeepWPFApp.Classes
 {
-    class Shoppinglist
+    class Shoppinglistproduct
     {
-        public int Id { get; set; }
-        public string User_id { get; set; }
+        public int Shoppinglist_Id { get; set; }
+        public int User_id { get; set; }
+        public int Product_Id { get; set; }
         public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
     }
-
-    
 }

@@ -43,6 +43,8 @@ namespace BeepWPFApp
                 GlobalSettings.AllergieList = loginUser.allergies.Split(seperator).ToList();
                 MainWindow.AppWindow.switchPage(2);
                 MainWindow.AppWindow.EnableButtons();
+
+                MainWindow.AppWindow.GetShoppinglist();
             }
             else 
             {
@@ -53,6 +55,8 @@ namespace BeepWPFApp
 
 
         }
+
+
         private void Button_Click(object sender, RoutedEventArgs e) // inlogknop
         {
             Login(TxtUser.Text, TxtPass.Password);

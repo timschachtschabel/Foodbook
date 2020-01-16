@@ -5,18 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="InlogScherm" Width="360" Height="480">
+      d:DesignHeight="450" d:DesignWidth="348"
+      Title="InlogScherm" Width="348" Height="480"
+      HorizontalAlignment="Left">
 
-    <Grid Width="360" Height="480" Background="#FFE8EBE4">
-        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.521,1.872">
+    <Grid Width="348" Height="480" Background="#FFE8EBE4" >
+        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="TxtUser" HorizontalAlignment="Left" Height="23" Margin="117,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="TxtPass" HorizontalAlignment="Left" Height="23" Margin="117,118,0,0" PasswordChar="*" VerticalAlignment="Top" Width="120" KeyDown="txtPass_KeyDown"/>
-        <Rectangle HorizontalAlignment="Left" Height="222" Margin="90,216,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="170">
+        <Rectangle HorizontalAlignment="Left" Height="169" Margin="90,216,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="170">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/bleep.png" Stretch="Uniform"/>
             </Rectangle.Fill>

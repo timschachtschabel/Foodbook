@@ -5,18 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
       mc:Ignorable="d" 
-      d:DesignHeight="480" d:DesignWidth="360"
+      HorizontalAlignment="Left"
       Title="DetailsPage">
 
-    <Grid Background="White">
-        <ListView x:Name="ingredientenLstBox" HorizontalAlignment="Left" Height="460" VerticalAlignment="Top" Width="177" Margin="10,10,0,0">
+    <Grid Background="White" Width="348" Height="480">
+        <ListView x:Name="ingredientenLstBox" HorizontalAlignment="Left" Height="460" VerticalAlignment="Top" Width="161.5" Margin="10,10,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="AllergieLstBox" HorizontalAlignment="Left" Height="460" VerticalAlignment="Top" Width="177" Margin="192,10,-9,0">
+        <ListView x:Name="AllergieLstBox" HorizontalAlignment="Left" Height="460" VerticalAlignment="Top" Width="162" Margin="176,10,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
