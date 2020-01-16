@@ -19,8 +19,6 @@
         </Rectangle>
         <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="203" VerticalAlignment="Top" Width="205" Margin="27,116,0,0" SelectionMode="Extended"/>
         <ListBox x:Name="shoppinglists" HorizontalAlignment="Left" Height="203" Margin="237,116,0,0" VerticalAlignment="Top" Width="100" AutomationProperties.ItemStatus="static"/>
-        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="224,371,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1" Height="43"/>
-        <TextBox x:Name="favobox" HorizontalAlignment="Left" Height="104" Margin="27,336,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="192"/>
         <Button x:Name="addfavo" Content="&lt;" HorizontalAlignment="Left" Margin="224,335,0,0" VerticalAlignment="Top" Width="52"/>
         <Button x:Name="deletefavo" Content="&gt;" HorizontalAlignment="Left" Margin="285,335,0,0" VerticalAlignment="Top" Width="52" Click="Button_Click_2"/>
         <TextBox Name="shoppinglistname" HorizontalAlignment="Left" Height="23" Margin="27,67,0,0" TextWrapping="Wrap" Text="Naam boodschappenlijst" VerticalAlignment="Top" Width="205"/>

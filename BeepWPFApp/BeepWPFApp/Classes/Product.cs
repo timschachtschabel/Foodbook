@@ -12,6 +12,7 @@ namespace BeepWPFApp
         public double prijs { get; set; }
         public string ingredient { get; set; }
         public string allergie { get; set; }
+        public int Id { get; set; }
 
         public List<string> AllergieList = new List<string>();
         public List<string> IngredientList = new List<string>();

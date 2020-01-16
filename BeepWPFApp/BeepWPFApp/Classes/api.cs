@@ -122,6 +122,8 @@ namespace BeepWPFApp.Classes
 
         }
 
+      
+
         public User GetUser(string naam, string password)
         {
             //URL voor API Endpoint

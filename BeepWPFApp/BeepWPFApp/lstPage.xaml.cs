@@ -75,5 +75,7 @@ namespace BeepWPFApp
             Shoppinglistapi.CreateShoppinglist(shoppinglistname.Text, GlobalSettings.Id);
             
         }
+
+      
     }
 }
