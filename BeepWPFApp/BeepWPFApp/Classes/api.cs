@@ -22,6 +22,9 @@ namespace BeepWPFApp.Classes
         private readonly string AuthEndpoint = BaseUrl + "api/auth/token";
         private readonly string ShoppinglistEndpoint = BaseUrl + "api/shoppinglist?";
         private readonly string ShoppinglistProductEndpoint = BaseUrl + "api/shoppinglist/addproduct?";
+        private readonly string AllProductsEndpoint = BaseUrl + "api/shoppinglist/getlistproducts?";
+
+
 
         //auth token
         private string jwt = "";
@@ -117,6 +120,27 @@ namespace BeepWPFApp.Classes
             {
                 shoppinglistresults = JsonConvert.DeserializeObject<List<Shoppinglist>>(response.Content);
                 return shoppinglistresults;
+            }
+            return null;
+
+        }
+
+        public List<Shoppinglistproduct> GetShoppinglistProducts(int userID, int shoppinglistID)
+        {
+            List<Shoppinglistproduct> shoppinglistproductsresults = new List<Shoppinglistproduct>();
+            string url = AllProductsEndpoint + $"userID={userID}" + $"&shoppinglistID={shoppinglistID}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest());
+            if (response.StatusCode != HttpStatusCode.BadRequest)
+            {
+                shoppinglistproductsresults = JsonConvert.DeserializeObject<List<Shoppinglistproduct>>(response.Content);
+                return shoppinglistproductsresults;
             }
             return null;
 
