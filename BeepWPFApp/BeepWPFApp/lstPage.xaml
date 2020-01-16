@@ -4,15 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BeepWPFApp"
-    
+      HorizontalAlignment="Left"
       mc:Ignorable="d" 
       Title="Beep Scanner">
 
 
 
-    <Grid Height="480" Width="360">
-        <Rectangle HorizontalAlignment="Left" Height="480" Margin="1,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" Fill="#FFE8EBE4"/>
-        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.521,1.872">
+    <Grid Height="480" Width="348">
+        <Rectangle HorizontalAlignment="Left" Height="480" VerticalAlignment="Top" Width="348" Fill="#FFE8EBE4"/>
+        <Rectangle HorizontalAlignment="Left" Height="53" Margin="0,-6,0,0" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.521,1.872">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
