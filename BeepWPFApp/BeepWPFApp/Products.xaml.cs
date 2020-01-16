@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BeepWPFApp.Classes;
 
+
 namespace BeepWPFApp
 {
     /// <summary>
@@ -127,6 +128,26 @@ namespace BeepWPFApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            api AddShopListItemApi = new api();
+
+            Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
+            Product product = finalProductList[productlist.SelectedIndex];
+
+            MessageBox.Show(product.naam);
+            MessageBox.Show(shoppinglist.Name);
+
+            if (AddShopListItemApi.AddShoppinglistItem(shoppinglist.Id, product.Id))
+            {
+                MessageBox
+                    .Show("gelukt");
+            }
+            else
+            {
+                MessageBox.Show("nee");
+            }
+
+            
 
         }
     }
