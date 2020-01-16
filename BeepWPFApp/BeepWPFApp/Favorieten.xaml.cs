@@ -17,7 +17,7 @@ namespace BeepWPFApp
     /// <summary>
     /// Interaction logic for Favorieten.xaml
     /// </summary>
-    public partial class Favorieten : Window
+    public partial class Favorieten : Page
     {
         public Favorieten()
         {

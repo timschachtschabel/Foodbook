@@ -7,29 +7,43 @@
       xmlns:emit="clr-namespace:System.Reflection.Emit;assembly=mscorlib"
       mc:Ignorable="d"
       Title="Beep Scanner"
-        Loaded="Page_Loaded">
+      MaxHeight="480"
+      MaxWidth="350"
+      HorizontalAlignment="Left"
+      >
 
 
 
-    <Grid Background="#FFE8EBE4" Height="480" Width="360">
+    <Grid Background="#FFE8EBE4" Height="480" Width="348" HorizontalAlignment="Left" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="17*"/>
-            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="360"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnScan" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="62.76,72,0,0" VerticalAlignment="Top" Width="170" Height="96" Click="btnScan_Click" Grid.Column="1">
+        <Button x:Name="btnScan" Content="&#xD;&#xA;" VerticalAlignment="Top" 
+                HorizontalAlignment="Center" Height="96" Width="200" 
+                Click="btnScan_Click" 
+                Grid.Column="1" 
+                Margin="80,60,80,0">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/bleep.png"/>
             </Button.Background>
         </Button>
-        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="360" Grid.ColumnSpan="2">
+        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#FF9DC0BC" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Resources/headers.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="lstNaam" HorizontalAlignment="Left" Height="172" Margin="10,235,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" Width="275" Grid.ColumnSpan="2" MouseDoubleClick="lstNaam_MouseDoubleClick"/>
-        <Label Content="PRODUCTNAAM" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="218" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="lstPrijs" HorizontalAlignment="Left" Height="172" Margin="255.76,235,0,0" VerticalAlignment="Top" Width="42" Grid.Column="1"/>
-        <Label Content="PRIJS" HorizontalAlignment="Left" Margin="255.76,209,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
-
+        <ListBox
+            Name="productListbox" ItemsSource="{Binding}" Margin="10,173,22,10" Grid.Column="1" MouseDoubleClick="ProductListbox_OnMouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        
+                        <TextBlock Text = "{Binding naam}" FontWeight="Bold" TextTrimming="CharacterEllipsis"/>
+                        <TextBlock Text = "{Binding prijs, StringFormat=f2}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Page>
