@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BeepWPFApp.Classes;
 
 
@@ -31,13 +22,15 @@ namespace BeepWPFApp
             api Testapi = new api();
             //Product testproduct = Testapi.GetProduct("8710398159458");
             //productlist.Items.Add(testproduct);
-
             finalProductList = Testapi.GetAllProducts();
-
-            foreach (var testproduct in finalProductList)
+            if (finalProductList != null)
             {
-                productlist.Items.Add(testproduct);
+                foreach (var testproduct in finalProductList)
+                {
+                    productlist.Items.Add(testproduct);
+                }
             }
+
 
         
 
@@ -133,9 +126,6 @@ namespace BeepWPFApp
 
             Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
             Product product = finalProductList[productlist.SelectedIndex];
-
-            MessageBox.Show(product.naam);
-            MessageBox.Show(shoppinglist.Name);
 
             if (AddShopListItemApi.AddShoppinglistItem(shoppinglist.Id, product.Id))
             {

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -16,7 +14,7 @@ namespace BeepWPFApp.Classes
     class api
     {
         //URL voor API endpoints
-        private static readonly string BaseUrl = "https://webapibeep.azurewebsites.net/";
+        private static readonly string BaseUrl = "https://bleep.azurewebsites.net/";
         private readonly string ProductEndpoint = BaseUrl +"api/products?";
         private readonly string UserEndpoint = BaseUrl + "api/user?";
         private readonly string AuthEndpoint = BaseUrl + "api/auth/token";
@@ -73,35 +71,47 @@ namespace BeepWPFApp.Classes
 
         public List<Product> GetAllProducts()
         {
-            List<Product> resultl = new List<Product>();
-            string url = "https://webapibeep.azurewebsites.net/api/products/all";
-            while (Authed(url) == false)
+            try
             {
-                Auth();
-            }
-            var client = new RestClient(url);
-            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
-            var response = client.Execute(new RestRequest());
-
-            resultl = JsonConvert.DeserializeObject<List<Product>>(response.Content);
-            char[] seperator = ".".ToCharArray();
-
-            foreach (Product result in resultl)
-            {
-                if (result.allergie != null)
+                List<Product> resultl = new List<Product>();
+                string url = "https://bleep.azurewebsites.net/api/products/all";
+                while (Authed(url) == false)
                 {
-                    result.AllergieList = result.allergie.Split(seperator).ToList();
+                    Auth();
                 }
 
-                if (result.ingredient != null)
+                var client = new RestClient(url);
+                client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+                var response = client.Execute(new RestRequest());
+
+                resultl = JsonConvert.DeserializeObject<List<Product>>(response.Content);
+
+
+                char[] seperator = ".".ToCharArray();
+
+                foreach (Product result in resultl)
                 {
-                    result.IngredientList = result.ingredient.Split(seperator).ToList();
+                    if (result.allergie != null)
+                    {
+                        result.AllergieList = result.allergie.Split(seperator).ToList();
+                    }
+
+                    if (result.ingredient != null)
+                    {
+                        result.IngredientList = result.ingredient.Split(seperator).ToList();
+                    }
+
+                    result.naam = result.naam.Replace("&#39;", "'");
                 }
 
-                result.naam = result.naam.Replace("&#39;", "'");
+                return resultl;
             }
-
-            return resultl;
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+            
         }
 
         public List<Shoppinglist> GetShoppinglists(int user)

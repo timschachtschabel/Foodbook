@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Navigation;
-using BeepWPFApp.Classes;
-using BeepWPFApp.Enum;
 
 
 namespace BeepWPFApp
@@ -23,8 +17,8 @@ namespace BeepWPFApp
         static lstPage lst = new lstPage();
         static DetailsPage details = new DetailsPage();
         static Registreer registerpage = new Registreer();
-        static InlogScherm login = new InlogScherm();
-        public static Products productpage = new Products();
+        static InlogScherm login = new InlogScherm(); 
+        static Products productpage = new Products();
 
 
         public MainWindow()
@@ -32,7 +26,7 @@ namespace BeepWPFApp
             InitializeComponent();
             AppWindow = this;
 
-            main.Content = new InlogScherm();
+            Main.Content = new InlogScherm();
 
             if (Devmode)
             {
@@ -54,25 +48,25 @@ namespace BeepWPFApp
             switch (pageIndex)
             {
                 case 1:
-                    main.Content = betaal;
+                    Main.Content = betaal;
                     break;
                 case 2:
-                    main.Content = scan;
+                    Main.Content = scan;
                     break;
                 case 3:
-                    main.Content = lst;
+                    Main.Content = lst;
                     break;
                 case 4:
-                    main.Content = details;
+                    Main.Content = details;
                     break;
                 case 5:
-                    main.Content = registerpage;
+                    Main.Content = registerpage;
                     break;
                 case 6:
-                    main.Content = login;
+                    Main.Content = login;
                     break;
                 case 7:
-                    main.Content = productpage;
+                    Main.Content = productpage;
                     break;
 
             }

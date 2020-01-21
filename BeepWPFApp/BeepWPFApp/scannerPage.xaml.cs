@@ -136,7 +136,7 @@ namespace BeepWPFApp
                 //Heb je wel iets geselecteerd?
                 if (productListbox.SelectedItem != null)
                 {
-                    mw.main.Content = detail;
+                    mw.Main.Content = detail;
                 }
             }
         }
