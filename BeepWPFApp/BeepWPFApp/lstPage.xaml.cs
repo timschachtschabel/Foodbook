@@ -101,5 +101,12 @@ namespace BeepWPFApp
             lstNaam.Items.Clear();
             showProducts();
         }
+
+        private void deleteList_Click(object sender, RoutedEventArgs e)
+        {
+            api deleteapi = new api();
+
+            string selectedlist = deleteapi.DeleteShoppinglist()
+        }
     }
 }
