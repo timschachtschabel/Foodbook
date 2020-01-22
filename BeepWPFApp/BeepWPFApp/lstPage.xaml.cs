@@ -107,7 +107,18 @@ namespace BeepWPFApp
         {
             api deleteapi = new api();
 
-            //string selectedlist = deleteapi.DeleteShoppinglist()
+            Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
+
+            if (deleteapi.DeleteShoppinglist(shoppinglist.Id))
+            {
+                MessageBox
+                    .Show("gelukt");
+            }
+            else
+            {
+                MessageBox.Show("nee");
+            }
+
         }
     }
 }
