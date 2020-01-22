@@ -81,11 +81,15 @@ namespace BeepWPFApp
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
             switchPage(7);
+            productpage.shoppinglists.Items.Clear();
+            productpage.Updatelist();
         }
 
         private void BtnList_OnClick(object sender, RoutedEventArgs e)
         {
             switchPage(3);
+            lst.shoppinglists.Items.Clear();
+            lst.Updatelist();
         }
 
         public void EnableButtons()

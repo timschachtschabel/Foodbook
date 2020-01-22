@@ -22,6 +22,7 @@ namespace BeepWPFApp.Classes
         private readonly string ShoppinglistProductEndpoint = BaseUrl + "api/shoppinglist/addproduct?";
         private readonly string AllProductsEndpoint = BaseUrl + "api/shoppinglist/getlistproducts?";
         private readonly string DeleteListEndpoint = BaseUrl + "api/shoppinglist/deletelist?";
+        private readonly string DeleteListitemsEndpoint = BaseUrl + "api/shoppinglist/deletelistitem?";
 
 
 
@@ -260,7 +261,7 @@ namespace BeepWPFApp.Classes
 
             var client = new RestClient(url);
             client.AddDefaultHeader("Authorization", "Bearer " + jwt);
-            var response = client.Execute(new RestRequest(Method.POST));
+            var response = client.Execute(new RestRequest(Method.DELETE));
 
             //Return true als het goed gaat
             if (response.StatusCode == HttpStatusCode.OK) return true;
@@ -288,9 +289,25 @@ namespace BeepWPFApp.Classes
 
         }
 
+        public bool DeleteShoppinglistItems(int shoppinglistID)
+        {
+            string url = DeleteListitemsEndpoint + $"shoppinglistid={shoppinglistID}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
 
 
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest(Method.DELETE));
 
+            //Return true als het goed gaat
+            if (response.StatusCode == HttpStatusCode.OK) return true;
+            return false;
+
+        }
 
 
         //Check als we geen 401 krijgen

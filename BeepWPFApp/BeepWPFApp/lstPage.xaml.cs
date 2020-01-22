@@ -55,7 +55,7 @@ namespace BeepWPFApp
             {
                 foreach (var product in shoppinglistproducts)
                 {
-                    lstNaam.Items.Add(product.Name);
+                    lstNaam.Items.Add(product);
                 }
             }
         }
@@ -70,6 +70,8 @@ namespace BeepWPFApp
             MainWindow.AppWindow.switchPage(7);
         }
 
+
+        // Delete single product in shoppinglist
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             api DeleteShoppinglistItemApi = new api();
@@ -81,6 +83,8 @@ namespace BeepWPFApp
             {
                 MessageBox
                     .Show("gelukt");
+                shoppinglists.Items.Clear();
+                Updatelist();
             }
             else
             {
@@ -89,12 +93,17 @@ namespace BeepWPFApp
 
         }
 
+
+        // Create shoppinglist
     private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             api Shoppinglistapi = new api();
 
 
             Shoppinglistapi.CreateShoppinglist(shoppinglistname.Text, GlobalSettings.Id);
+
+            shoppinglists.Items.Clear();
+            Updatelist();
         }
 
         private void shoppinglists_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -103,19 +112,28 @@ namespace BeepWPFApp
             showProducts();
         }
 
+
+
+        // Delete all items in shoppinglist and delete shoppinglist
         private void deleteList_Click(object sender, RoutedEventArgs e)
         {
             api deleteapi = new api();
 
             Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
 
+            deleteapi.DeleteShoppinglistItems(shoppinglist.Id);
+
+           
+
             if (deleteapi.DeleteShoppinglist(shoppinglist.Id))
             {
                 MessageBox
                     .Show("gelukt");
-            }
+                shoppinglists.Items.Clear();
+                Updatelist();            }
             else
             {
+                System.Console.WriteLine(shoppinglist.Id);
                 MessageBox.Show("nee");
             }
 
