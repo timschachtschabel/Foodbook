@@ -36,17 +36,28 @@ namespace BeepWPFApp
         public scannerPage()
         {
             InitializeComponent();
-            InitScanner("COM5");
+            
+            InitScanner();
             productListbox.ItemsSource = ProductenLijst;
         }
 
-        private void InitScanner(string name)
+        private void InitScanner()
         {
-
             string[] ports = SerialPort.GetPortNames();
 
+            foreach (var VARIABLE in ports)
+            {
+                Debug.WriteLine(VARIABLE);
+                if (TestScanner(VARIABLE))
+                {
+                    return;
+                }
+            }
 
-            int i =0;
+            MessageBox.Show("Connect Scanner");
+        }
+        private bool TestScanner(string name)
+        {
             try
             {
                 _serialPort.Handshake = Handshake.None;
@@ -62,16 +73,11 @@ namespace BeepWPFApp
 
                 Thread readThread = new Thread(new ThreadStart(getBarcode));
                 readThread.Start();
+                return true;
             }
             catch (Exception e)
             {
-                if (i > 0)
-                {
-                    MessageBox.Show("Verbind AUB een scanner");
-                    return;
-                }
-
-                i++;
+                return false;
             }
         }
 
