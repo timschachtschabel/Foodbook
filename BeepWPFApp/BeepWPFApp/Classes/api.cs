@@ -243,6 +243,25 @@ namespace BeepWPFApp.Classes
 
         }
 
+        public bool DeleteShoppinglistItem(int shoppinglistID, int ProductID)
+        {
+            string url = ShoppinglistProductEndpoint + $"shoppinglistid={shoppinglistID}&productid={ProductID}";
+
+            while (Authed(url) == false)
+            {
+                Auth();
+            }
+
+
+            var client = new RestClient(url);
+            client.AddDefaultHeader("Authorization", "Bearer " + jwt);
+            var response = client.Execute(new RestRequest(Method.DELETE));
+
+            //Return true als het goed gaat
+            if (response.StatusCode == HttpStatusCode.OK) return true;
+            return false;
+
+        }
 
 
 

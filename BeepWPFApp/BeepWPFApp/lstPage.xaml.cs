@@ -20,11 +20,9 @@ namespace BeepWPFApp
 
     public partial class lstPage : Page
     {
-
-
-
-        public lstPage()
+        public lstPage()     
         {
+        
 
             InitializeComponent();
             for (int i = 0; i < lstNaam.Items.Count; i++) ;
@@ -66,7 +64,7 @@ namespace BeepWPFApp
             {
                 foreach (var product in shoppinglistproducts)
                 {
-                    lstNaam.Items.Add(product.Name);
+                    lstNaam.Items.Add(product);
                 }
             }
 
@@ -84,6 +82,20 @@ namespace BeepWPFApp
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            api DeleteShoppinglistItemApi = new api();
+
+            Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
+            Shoppinglistproduct product = (Shoppinglistproduct)lstNaam.SelectedItem;
+
+            if (DeleteShoppinglistItemApi.DeleteShoppinglistItem(shoppinglist.Id, product.Product_Id))
+            {
+                MessageBox
+                    .Show("gelukt");
+            }
+            else
+            {
+                MessageBox.Show("nee");
+            }
 
         }
 
@@ -101,5 +113,6 @@ namespace BeepWPFApp
             lstNaam.Items.Clear();
             showProducts();
         }
+
     }
 }
