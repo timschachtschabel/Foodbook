@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
@@ -40,6 +42,10 @@ namespace BeepWPFApp
 
         private void InitScanner(string name)
         {
+
+            string[] ports = SerialPort.GetPortNames();
+
+
             int i =0;
             try
             {
