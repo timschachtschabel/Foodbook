@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
@@ -34,11 +36,27 @@ namespace BeepWPFApp
         public scannerPage()
         {
             InitializeComponent();
-            InitScanner("COM8");
+            
+            InitScanner();
             productListbox.ItemsSource = ProductenLijst;
         }
 
-        private void InitScanner(string name)
+        private void InitScanner()
+        {
+            string[] ports = SerialPort.GetPortNames();
+
+            foreach (var VARIABLE in ports)
+            {
+                Debug.WriteLine(VARIABLE);
+                if (TestScanner(VARIABLE))
+                {
+                    return;
+                }
+            }
+
+            MessageBox.Show("Connect Scanner");
+        }
+        private bool TestScanner(string name)
         {
             try
             {
@@ -55,10 +73,11 @@ namespace BeepWPFApp
 
                 Thread readThread = new Thread(new ThreadStart(getBarcode));
                 readThread.Start();
+                return true;
             }
             catch (Exception e)
             {
-                MessageBox.Show("Verbind AUB een scanner");
+                return false;
             }
         }
 

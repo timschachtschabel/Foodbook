@@ -42,7 +42,11 @@ namespace BeepWPFApp.Classes
             var client = new RestClient(url);
             client.AddDefaultHeader("Authorization", "Bearer " + jwt);
             var response = client.Execute(new RestRequest());
-
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                Debug.WriteLine(response.StatusCode);
+                return null;
+            }
             //Zet JSON om in Product
             Product resultProduct = JsonConvert.DeserializeObject<Product>(response.Content);
 

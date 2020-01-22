@@ -17,24 +17,15 @@ using BeepWPFApp.Classes;
 
 namespace BeepWPFApp
 {
-
     public partial class lstPage : Page
     {
-
-
-
         public lstPage()
         {
-
             InitializeComponent();
-            for (int i = 0; i < lstNaam.Items.Count; i++) ;
-
-
         }
 
         public void Updatelist()
         {
-
             api Listapi = new api();
 
             List<Shoppinglist> userShoppinglists = new List<Shoppinglist>();
@@ -45,11 +36,9 @@ namespace BeepWPFApp
             {
                 foreach (var shoppinglist in userShoppinglists)
                 {
-
                     shoppinglists.Items.Add(shoppinglist);
                 }
             }
-
         }
 
         public void showProducts()
@@ -69,7 +58,6 @@ namespace BeepWPFApp
                     lstNaam.Items.Add(product.Name);
                 }
             }
-
         }
 
         internal object showDialog()
@@ -84,7 +72,6 @@ namespace BeepWPFApp
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -93,7 +80,6 @@ namespace BeepWPFApp
 
 
             Shoppinglistapi.CreateShoppinglist(shoppinglistname.Text, GlobalSettings.Id);
-            
         }
 
         private void shoppinglists_MouseDoubleClick(object sender, MouseButtonEventArgs e)
