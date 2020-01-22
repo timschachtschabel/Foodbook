@@ -34,12 +34,13 @@ namespace BeepWPFApp
         public scannerPage()
         {
             InitializeComponent();
-            InitScanner("COM8");
+            InitScanner("COM5");
             productListbox.ItemsSource = ProductenLijst;
         }
 
         private void InitScanner(string name)
         {
+            int i =0;
             try
             {
                 _serialPort.Handshake = Handshake.None;
@@ -58,7 +59,13 @@ namespace BeepWPFApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Verbind AUB een scanner");
+                if (i > 0)
+                {
+                    MessageBox.Show("Verbind AUB een scanner");
+                    return;
+                }
+
+                i++;
             }
         }
 
