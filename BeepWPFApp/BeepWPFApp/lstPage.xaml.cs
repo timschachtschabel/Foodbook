@@ -72,9 +72,24 @@ namespace BeepWPFApp
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            api DeleteShoppinglistItemApi = new api();
+
+            Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
+            Shoppinglistproduct product = (Shoppinglistproduct)lstNaam.SelectedItem;
+
+            if (DeleteShoppinglistItemApi.DeleteShoppinglistItem(shoppinglist.Id, product.Product_Id))
+            {
+                MessageBox
+                    .Show("gelukt");
+            }
+            else
+            {
+                MessageBox.Show("nee");
+            }
+
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+    private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             api Shoppinglistapi = new api();
 
@@ -92,7 +107,7 @@ namespace BeepWPFApp
         {
             api deleteapi = new api();
 
-            string selectedlist = deleteapi.DeleteShoppinglist()
+            //string selectedlist = deleteapi.DeleteShoppinglist()
         }
     }
 }
