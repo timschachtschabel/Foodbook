@@ -271,7 +271,7 @@ namespace BeepWPFApp.Classes
 
         public bool DeleteShoppinglistItem(int shoppinglistID, int ProductID)
         {
-            string url = ShoppinglistProductEndpoint + $"shoppinglistid={shoppinglistID}&productid={ProductID}";
+            string url = "http://"+$"bleep.azurewebsites.net/api/shoppinglist/deleteproduct?shoppinglistid={shoppinglistID}&productid={ProductID}";
 
             while (Authed(url) == false)
             {

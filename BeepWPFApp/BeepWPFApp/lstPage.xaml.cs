@@ -77,7 +77,7 @@ namespace BeepWPFApp
             api DeleteShoppinglistItemApi = new api();
 
             Shoppinglist shoppinglist = (Shoppinglist)shoppinglists.SelectedItem;
-            Shoppinglistproduct product = (Shoppinglistproduct)lstNaam.SelectedItem;
+            Shoppinglistproduct product = lstNaam.SelectedItem as Shoppinglistproduct;
 
             if (DeleteShoppinglistItemApi.DeleteShoppinglistItem(shoppinglist.Id, product.Product_Id))
             {
