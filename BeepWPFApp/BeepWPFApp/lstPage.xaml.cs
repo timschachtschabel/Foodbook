@@ -83,8 +83,8 @@ namespace BeepWPFApp
             {
                 MessageBox
                     .Show("gelukt");
-                shoppinglists.Items.Clear();
-                Updatelist();
+                lstNaam.Items.Clear();
+                showProducts();
             }
             else
             {
